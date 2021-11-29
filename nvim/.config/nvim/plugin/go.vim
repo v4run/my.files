@@ -29,6 +29,14 @@ let g:go_rename_command = 'gopls'
 let g:go_metalinter_command = 'golangci-lint'
 let g:go_gopls_complete_unimported = 1
 
+function! RemoveComment()
+	execute ':silent! s/^\(\s*\)\/\/\s\?/\1'
+endfunction
+
+function! AddComment()
+	execute ':silent! s/\(\S\)/\/\/ \1/'
+endfunction
+
 " Custom mappings
 function! GoCustomMappings()
 	nmap <buffer> gi :GoImplements<CR>
@@ -47,6 +55,8 @@ function! GoCustomMappings()
 	nmap <buffer> <Leader>l :GoMetaLinter<CR>
 	nmap <buffer> <Leader>9 :GoDecls<CR>
 	nmap <buffer> <Leader>0 :GoDeclsDir<CR>
+	map <buffer> <Leader>cc :call AddComment()<CR>
+	map <buffer> <Leader>cu :call RemoveComment()<CR>
 	inoremap <buffer> <C-p> <C-x><C-o>
 	inoremap <buffer> <C-n> <C-x><C-o>
 endfunction

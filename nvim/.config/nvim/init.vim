@@ -1,3 +1,4 @@
+" ~/.config/nvim/plugin
 " Basic Settings
 set showmatch " show matching bracket for a brief moment
 set autowrite " auto write buffer to file on some commands
@@ -43,7 +44,6 @@ function! RemoveTrailingWhiteSpaces()
 endfunction
 
 au BufWritePre * call RemoveTrailingWhiteSpaces() " Automatically remove trailing white spaces on save
-
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
