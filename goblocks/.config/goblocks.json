@@ -1,0 +1,36 @@
+{
+	"separator": "  ",
+	"actions":
+	[
+		{
+			"prefix": "CPU: ",
+			"updateSignal": "38",
+			"command": "#Cpu",
+			"suffix": "%",
+			"format": "%.2f",
+			"timer": "2s"
+		},
+		{
+			"prefix": "RAM: ",
+			"updateSignal": "37",
+			"command": "#Memory",
+			"suffix": "%",
+			"format": "%.2f",
+			"timer": "2s"
+		},
+		{
+			"prefix": "奄 ",
+			"updateSignal": "36",
+			"command": "pamixer --get-volume || echo 0 > /dev/null",
+			"timer": "1s",
+			"suffix": " %"
+		},
+		{
+			"prefix": "",
+			"updateSignal": "35",
+			"command": "#Date",
+			"format": "Mon, 02 Jan 06  03:04 pm ",
+			"timer": "1s"
+		}
+	]
+}
