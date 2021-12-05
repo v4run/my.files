@@ -19,7 +19,7 @@ __load_modules() {
 		MODULE=$(basename "$MODULE_DIR")
 		# Create the function such that it passes the MODULE_DIR and all the parameters used when calling the function to __find_and_execute_task
 		eval "$__FUNCTION_PREFIX$MODULE() { __find_and_execute_task $MODULE_DIR "'"$@"'"; }"
-	done< <(find "$__SCRIPT_ROOT_DIR" -maxdepth 1 -mindepth 1 -not \( -path "$__SCRIPT_ROOT_DIR/.git" -prune \) -type d -print0)
+	done< <(find "$__SCRIPT_ROOT_DIR/" -maxdepth 1 -mindepth 1 -not \( -path "$__SCRIPT_ROOT_DIR/.git" -prune \) -type d -print0)
 }
 
 # Load modules when script is initialized
