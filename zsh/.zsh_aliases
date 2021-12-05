@@ -3,3 +3,4 @@ alias vi=nvim
 alias v=nvim
 alias x="pgrep dwm > /dev/null || startx"
 alias po="popd"
+alias t="tmux"
