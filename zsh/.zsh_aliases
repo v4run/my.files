@@ -6,7 +6,7 @@ alias t="tmux"
 
 gnu_aliases() {
 	alias cpwd='pwd | xclip -r -selection clipboard'
-	alias x="pgrep dwm > /dev/null || startx"
+	alias x='pgrep dwm > /dev/null || startx'
 }
 
 [ "$OSTYPE" = 'linux-gnu' ] && gnu_aliases
