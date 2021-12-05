@@ -1,6 +1,13 @@
 alias vim=nvim
 alias vi=nvim
 alias v=nvim
-alias x="pgrep dwm > /dev/null || startx"
 alias po="popd"
 alias t="tmux"
+
+gnu_aliases() {
+	alias cpwd='pwd | xclip -r -selection clipboard'
+	alias x="pgrep dwm > /dev/null || startx"
+}
+
+[ "$OSTYPE" = 'linux-gnu' ] && gnu_aliases
+
