@@ -2,6 +2,6 @@
 set background=dark
 autocmd vimenter * ++nested colorscheme onehalfdark
 " transparent background
-" autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 " transparent not text background
-" autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
