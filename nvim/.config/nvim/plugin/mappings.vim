@@ -24,7 +24,7 @@ nmap <silent> <Leader>a :cclose<CR>:lclose<CR>
 nmap <silent> <C-j> :cnext<CR>
 nmap <silent> <C-k> :cprev<CR>
 nmap <silent> <Leader>z :set wrap!<CR>
-nmap <silent> <Leader>ff :Neoformat<CR>
+map <silent> <Leader>ff :Neoformat<CR>
 nmap <silent> <Leader>ft :Telescope filetypes<CR>
 " Open new scratch file in new tab
 nmap <silent> <Leader>fs :call NewScratch()<CR>

@@ -59,5 +59,6 @@ Plug 'mhinz/vim-signify'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'APZelos/blamer.nvim'
 Plug 'sbdchd/neoformat'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 

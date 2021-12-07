@@ -1,13 +1,22 @@
 alias vim=nvim
 alias vi=nvim
 alias v=nvim
-alias po="popd"
-alias t="tmux"
+alias po='popd'
+alias t='tmux'
+alias vn='nvim $(date "+%Y%m%d_%b_%d_%Y").txt'
 
 gnu_aliases() {
 	alias cpwd='pwd | xclip -r -selection clipboard'
 	alias x='pgrep dwm > /dev/null || startx'
 }
 
-[ "$OSTYPE" = 'linux-gnu' ] && gnu_aliases
+wsl_aliases() {
+	alias cpwd='pwd | tr -d "\n" | clip.exe'
+}
+
+# check if in wsl
+WSL="$IS_WSL$WSL_DISTRO_NAME"
+
+[ "$OSTYPE" = 'linux-gnu' ] && [ "$WSL" = "" ] && gnu_aliases
+[ "$OSTYPE" = 'linux-gnu' ] && [ "$WSL" != "" ] && wsl_aliases
 
