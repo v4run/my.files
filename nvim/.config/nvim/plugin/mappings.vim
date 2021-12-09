@@ -24,6 +24,8 @@ nmap <silent> <Leader>a :cclose<CR>:lclose<CR>
 nmap <silent> <C-j> :cnext<CR>
 nmap <silent> <C-k> :cprev<CR>
 nmap <silent> <Leader>z :set wrap!<CR>
+nmap <silent> <Leader>qo :copen<CR>
+nmap <silent> <Leader>qc :cclose<CR>
 map <silent> <Leader>ff :Neoformat<CR>
 nmap <silent> <Leader>ft :Telescope filetypes<CR>
 " Open new scratch file in new tab
