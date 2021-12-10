@@ -1,11 +1,10 @@
-lua <<EOF
-require 'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup({
 	ensure_installed = "maintained", -- "all", "maintained" or list of languages
 	sync_install = false,
 	ignore_install = {},
 	highlight = {
 		enable = true,
-		disable = {},
+		disable = { "vim" },
 		additional_vim_regex_highlighting = false,
 	},
 	textobjects = {
@@ -18,5 +17,4 @@ require 'nvim-treesitter.configs'.setup {
 			},
 		},
 	},
-}
-EOF
+})
