@@ -1,9 +1,17 @@
 " Colorscheme
 set background=dark
-autocmd vimenter * ++nested colorscheme onehalfdark
+" colorscheme onehalfdark
+colorscheme onedark
+" let g:PaperColor_Theme_Options = {
+" 	\   'theme': {
+" 	\     'default': {
+" 	\       'transparent_background': 1
+" 	\     }
+" 	\   }
+" 	\ }
 " transparent background
-autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 " transparent not text background
-autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+" hi EndOfBuffer guibg=NONE ctermbg=NONE
 " transparent line number background
-autocmd vimenter * hi LineNR guibg=NONE ctermbg=NONE
+" hi LineNR guibg=NONE ctermbg=NONE

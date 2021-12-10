@@ -1,8 +1,3 @@
-" Mappings
-nmap <C-p> :Telescope find_files<CR>
-nmap <Leader>fe :Telescope file_browser<CR>
-nmap <Leader>/ :Telescope live_grep<CR>
-
 " Wrap text in telescope preview
 autocmd User TelescopePreviewerLoaded setlocal wrap
 
@@ -10,7 +5,7 @@ lua << EOF
 local actions = require('telescope.actions')
 local telescope = require('telescope')
 
-require('telescope').setup({
+telescope.setup({
 	defaults = {
 		color_devicons = true,
 		mappings = {
@@ -39,5 +34,5 @@ require('telescope').setup({
 	},
 })
 
-require('telescope').load_extension('fzf')
+telescope.load_extension('fzf')
 EOF

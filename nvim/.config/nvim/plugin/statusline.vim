@@ -1,6 +1,6 @@
 " Status line settings
 let g:lightline = {
-			\ 	'colorscheme': 'onehalfdark',
+			\ 	'colorscheme': 'onedark',
 			\ 	'active': {
 			\ 		'left': [
 			\ 			[ 'mode', 'paste'],

@@ -24,7 +24,7 @@ set noerrorbells " disable bell on error
 set termguicolors " enable 24-bit color
 set noshowmode " don't show current mode [will be displayed in the status line]
 set nowrap " don't wrap the line
-set completeopt-=preview " prevent preview window from opening in completion
+set completeopt=menuone,noinsert,noselect " show menu even if only one item, don't auto insert or select
 set list listchars=tab:\|\  " adding set indent guide lines
 " set cursorcolumn " highlight the current col
 " set colorcolumn=120 " add a vertical line at column
@@ -43,6 +43,12 @@ function! RemoveTrailingWhiteSpaces()
 	call winrestview(l:save)
 endfunction
 
+" Autoformat on write
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup END
+
 au BufWritePre * call RemoveTrailingWhiteSpaces() " Automatically remove trailing white spaces on save
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -50,7 +56,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -59,6 +64,13 @@ Plug 'mhinz/vim-signify'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'APZelos/blamer.nvim'
 Plug 'sbdchd/neoformat'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'joshdick/onedark.vim'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'tpope/vim-commentary'
+Plug 'mfussenegger/nvim-dap'
 call plug#end()
 

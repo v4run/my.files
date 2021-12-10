@@ -4,10 +4,6 @@ nnoremap <Leader><Space> :syntax sync fromstart<CR>
 nnoremap n nzzzv
 " go to prev match and move current line to center
 nnoremap N Nzzzv
-" move line up and down using J and K. reselect reindent and select again
-" in visual mode
-nnoremap <leader>j :move .+1<CR>==
-nnoremap <leader>k :move .-2<CR>==
 " Send line to oblivion
 nnoremap <Leader>d "_d
 
@@ -28,14 +24,20 @@ nmap <silent> <Leader>qo :copen<CR>
 nmap <silent> <Leader>qc :cclose<CR>
 map <silent> <Leader>ff :Neoformat<CR>
 nmap <silent> <Leader>ft :Telescope filetypes<CR>
+map <silent> <Leader>c <Plug>Commentary
+nmap <silent> <Leader>cc <Plug>CommentaryLine
 " Open new scratch file in new tab
 nmap <silent> <Leader>fs :call NewScratch()<CR>
 nmap <silent> <Leader>fb :Telescope buffers<CR>
 
 " Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <C-x><C-k> <plug>(fzf-complete-word)
+imap <C-x><C-f> <plug>(fzf-complete-path)
+imap <C-x><C-l> <plug>(fzf-complete-line)
 
-inoremap <C-c> <esc>
+imap <C-c> <esc>
+
+nmap <C-p> :Telescope find_files<CR>
+nmap <Leader>fe :Telescope file_browser<CR>
+nmap <Leader>/ :Telescope live_grep<CR>
 
