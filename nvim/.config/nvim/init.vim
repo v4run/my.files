@@ -24,8 +24,8 @@ set noerrorbells " disable bell on error
 set termguicolors " enable 24-bit color
 set noshowmode " don't show current mode [will be displayed in the status line]
 set nowrap " don't wrap the line
-set completeopt=menuone,noinsert,noselect " show menu even if only one item, don't auto insert or select
-set list listchars=tab:\|\  " adding set indent guide lines
+set completeopt=menu,menuone,noselect " insert mode completion menu
+set list listchars=tab:\│\  " adding set indent guide lines
 " set cursorcolumn " highlight the current col
 " set colorcolumn=120 " add a vertical line at column
 set cmdheight=1
@@ -72,5 +72,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'tpope/vim-commentary'
 Plug 'mfussenegger/nvim-dap'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-buffer'
 call plug#end()
 
