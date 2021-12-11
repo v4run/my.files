@@ -75,7 +75,9 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'rafamadriz/friendly-snippets'
 call plug#end()
 
