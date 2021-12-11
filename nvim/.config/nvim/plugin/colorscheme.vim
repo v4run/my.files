@@ -1,14 +1,6 @@
 " Colorscheme
 set background=dark
-" colorscheme onehalfdark
 colorscheme onedark
-" let g:PaperColor_Theme_Options = {
-" 	\   'theme': {
-" 	\     'default': {
-" 	\       'transparent_background': 1
-" 	\     }
-" 	\   }
-" 	\ }
 " transparent background
 " hi Normal guibg=NONE ctermbg=NONE
 " transparent not text background

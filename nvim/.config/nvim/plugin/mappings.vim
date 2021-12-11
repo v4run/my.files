@@ -12,8 +12,8 @@ vnoremap <Leader>d "_d
 vnoremap <Leader>p "_dP
 " move selection up and down using J and K. reselect reindent and select again
 " in visual mode
-vnoremap J :move '>+1<CR>gv=gv
-vnoremap K :move '<-2<CR>gv=gv
+vnoremap <C-j> :move '>+1<CR>gv=gv
+vnoremap <C-k> :move '<-2<CR>gv=gv
 
 " Mappings
 nmap <silent> <Leader>a :cclose<CR>:lclose<CR>

@@ -7,6 +7,9 @@ require("nvim-treesitter.configs").setup({
 		disable = { "vim" },
 		additional_vim_regex_highlighting = false,
 	},
+	refactor = {
+		highlight_definitions = { enable = false },
+	},
 	textobjects = {
 		select = {
 			enable = true,
@@ -15,6 +18,13 @@ require("nvim-treesitter.configs").setup({
 				["af"] = "@function.outer",
 				["if"] = "@function.inner",
 			},
+		},
+	},
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			node_incremental = "<C-l>",
+			node_decremental = "<C-h>",
 		},
 	},
 })
