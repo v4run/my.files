@@ -8,7 +8,7 @@ ZSH_THEME="lambda"
 # Plugins
 plugins=(git)
 
-export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
+export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
 
 # Sources
 source $ZSH/oh-my-zsh.sh
