@@ -25,7 +25,7 @@ set termguicolors " enable 24-bit color
 set noshowmode " don't show current mode [will be displayed in the status line]
 set nowrap " don't wrap the line
 set completeopt=menu,menuone,noselect " insert mode completion menu
-set list listchars=tab:\│\  " adding set indent guide lines
+set list listchars=tab:\│\  " adding set indent guide lines (there is a space after second \)
 " set cursorcolumn " highlight the current col
 " set colorcolumn=120 " add a vertical line at column
 set cmdheight=1
@@ -53,7 +53,6 @@ au BufWritePre * call RemoveTrailingWhiteSpaces() " Automatically remove trailin
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'nvim-lua/plenary.nvim'
@@ -80,5 +79,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'gruvbox-community/gruvbox'
+Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
