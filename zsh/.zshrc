@@ -16,6 +16,8 @@ source $HOME/.zsh_aliases
 
 export PATH=/usr/local/go/bin:$PATH
 
+(cat ~/.cache/wal/sequences &)
+
 # Load script runner
 SCRIPT_ROOT_DIR="$HOME/.scripts" # Assuming the scripts are in ~/.scripts directory
 __FUNCTION_PREFIX="_" # Can be anything. I added '_' just to prevent any conflicts

@@ -43,7 +43,7 @@ xrandr --output HDMI-1 --mode 1920x1080 --rate 144 &
 picom --no-fading-openclose &
 
 # Wallpaper
-nitrogen --restore &
+wal -R
 
 # Execute DWM
 exec dwm

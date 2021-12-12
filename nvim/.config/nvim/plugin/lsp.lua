@@ -52,3 +52,5 @@ nvim_lsp.gopls.setup(config({
 }))
 
 nvim_lsp.pyright.setup(config())
+
+nvim_lsp.bashls.setup({})

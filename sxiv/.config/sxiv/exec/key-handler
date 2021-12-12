@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while read file
+do
+	fullpath="$(pwd)/$file"
+	case "$1" in
+		"w") wal -a 1 -i "$file"
+	esac
+done
+
