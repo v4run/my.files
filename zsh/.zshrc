@@ -16,7 +16,7 @@ source $HOME/.zsh_aliases
 
 export PATH=/usr/local/go/bin:$PATH
 
-PYWAL_SEQ_FILE="~/.cache/wal/sequences"; [ -f "$PYWAL_SEQ_FILE" ] && (cat "$PYWAL_SEQ_FILE" &)
+PYWAL_SEQ_FILE="$HOME/.cache/wal/sequences"; [ -f "$PYWAL_SEQ_FILE" ] && (cat "$PYWAL_SEQ_FILE" &)
 
 # Load script runner
 SCRIPT_ROOT_DIR="$HOME/.scripts" # Assuming the scripts are in ~/.scripts directory
