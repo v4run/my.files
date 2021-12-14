@@ -41,6 +41,7 @@ imap <C-x><C-f> <plug>(fzf-complete-path)
 imap <C-x><C-l> <plug>(fzf-complete-line)
 
 imap <C-c> <esc>
+nmap <C-s> :Telescope spell_suggest<CR>
 
 nmap <C-p> :Telescope find_files<CR>
 nmap <Leader>fe :Telescope file_browser<CR>

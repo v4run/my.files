@@ -7,6 +7,28 @@ local telescope = require('telescope')
 
 telescope.setup({
 	defaults = {
+		winblend = 10,
+		layout_config = {
+			bottom_pane = {
+				height = 25,
+				preview_cutoff = 0,
+				prompt_position = "top"
+			},
+			vertical = {
+				height = 0.95,
+				preview_cutoff = 40,
+				preview_height = 0.6,
+				prompt_position = "bottom",
+				width = 0.95
+			},
+			horizontal = {
+				height = 0.95,
+				preview_cutoff = 120,
+				preview_width = 0.7,
+				prompt_position = "bottom",
+				width = 0.95
+			},
+		},
 		color_devicons = true,
 		mappings = {
 			i = {
@@ -22,9 +44,17 @@ telescope.setup({
 	pickers = {
 		file_browser = {
 			hidden = true,
+			previewer = false,
+			shorten_path = true,
+			layout_strategy = 'bottom_pane',
 		},
 		find_files = {
 			hidden = true,
+			path_display = {'smart'},
+			layout_strategy = 'vertical',
+		},
+		live_grep = {
+			layout_strategy = 'vertical',
 		},
 	},
 	extensions = {

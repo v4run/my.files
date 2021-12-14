@@ -30,6 +30,9 @@ set list listchars=tab:\│\  " adding set indent guide lines (there is a space 
 " set colorcolumn=120 " add a vertical line at column
 set cmdheight=1
 set updatetime=100
+set undodir=~/.vim/undodir " directory to store undo files
+set undofile " enable undo files. allow undo across restarts
+set noswapfile " disable creating swap file
 
 filetype plugin on " enable loading plugin files for the file type
 filetype indent on " enable loading indent files for the file type
