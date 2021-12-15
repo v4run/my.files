@@ -12,7 +12,7 @@ telescope.setup({
 			bottom_pane = {
 				height = 25,
 				preview_cutoff = 0,
-				prompt_position = "top"
+				prompt_position = "top",
 			},
 			vertical = {
 				height = 0.95,
@@ -46,7 +46,7 @@ telescope.setup({
 			hidden = true,
 			previewer = false,
 			shorten_path = true,
-			layout_strategy = 'bottom_pane',
+			theme = 'ivy',
 		},
 		find_files = {
 			hidden = true,
