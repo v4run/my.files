@@ -38,6 +38,16 @@ end
 
 telescope.setup({
 	defaults = {
+		vimgrep_arguments = {
+			"rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+			"--hidden",
+		},
 		buffer_previewer_maker = binary_hider,
 		winblend = 10,
 		layout_config = {
