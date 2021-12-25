@@ -37,7 +37,7 @@ fi
 goblocks &
 
 # Display Resolution
-xrandr --output HDMI-1 --mode 1920x1080 --rate 144 &
+# xrandr --output HDMI-1 --mode 1920x1080 --rate 165 &
 
 # Compositor
 picom --no-fading-openclose &

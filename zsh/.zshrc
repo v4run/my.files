@@ -1,6 +1,9 @@
 # Exports
 export EDITOR=nvim
-export ZSH="/home/varun/.oh-my-zsh"
+export VISUAL=nvim
+export ZSH="$HOME/.oh-my-zsh"
+export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
 
 # Theme
 ZSH_THEME="lambda"
@@ -8,15 +11,13 @@ ZSH_THEME="lambda"
 # Plugins
 plugins=(git)
 
-export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
-
 # Sources
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
 
-export PATH=/usr/local/go/bin:$PATH
-
-PYWAL_SEQ_FILE="$HOME/.cache/wal/sequences"; [ -f "$PYWAL_SEQ_FILE" ] && (cat "$PYWAL_SEQ_FILE" &)
+# Reset pywal color
+# PYWAL_SEQ_FILE="$HOME/.cache/wal/sequences"; [ -f "$PYWAL_SEQ_FILE" ] && (cat "$PYWAL_SEQ_FILE" &)
+LF_ICONS_FILE="$HOME/.config/lf/icons"; [ -f "$LF_ICONS_FILE" ] && source "$LF_ICONS_FILE"
 
 # Load script runner
 SCRIPT_ROOT_DIR="$HOME/.scripts" # Assuming the scripts are in ~/.scripts directory
