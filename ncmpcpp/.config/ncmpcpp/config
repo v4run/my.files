@@ -1,8 +1,22 @@
 mpd_host = "127.0.0.1"
 mpd_port = 6600
 mpd_music_dir = ~/Music
+
+header_visibility = "yes"
+autocenter_mode = "yes"
+external_editor = "vim"
+centered_cursor = "yes"
+display_bitrate = "yes"
+
 visualizer_data_source = "localhost:5555"
+# If you set format to 44100:16:2, make it 'yes'.
 visualizer_in_stereo = "yes"
-visualizer_type = "ellipse" (spectrum/wave)
-visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
-visualizer_look = "+|"
+# Available values: spectrum, wave, wave_filled, ellipse.
+visualizer_type = "wave_filled"
+visualizer_fps = 144
+
+progressbar_look = "─╼-"
+
+# Time of inactivity (in seconds) after playlist highlighting will be disabled (0 = always on).
+playlist_disable_highlight_delay = 0
+execute_on_song_change = dunstify -i "$HOME/Pictures/icons/16x16/audio.png" -t 5000 "Now playing" "$(ncmpcpp --current-song '{%a - %t}|{%f}{ [%l]}{ [%y]}' 2>/dev/null)"
