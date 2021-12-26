@@ -3,7 +3,7 @@
 	"actions":
 	[
 		{
-			"prefix": "CPU: ",
+			"prefix": " ",
 			"updateSignal": "38",
 			"command": "#Cpu",
 			"suffix": "%",
@@ -11,7 +11,7 @@
 			"timer": "2s"
 		},
 		{
-			"prefix": "RAM: ",
+			"prefix": " ",
 			"updateSignal": "37",
 			"command": "#Memory",
 			"suffix": "%",
@@ -19,7 +19,7 @@
 			"timer": "2s"
 		},
 		{
-			"prefix": "奄 ",
+			"prefix": "墳 ",
 			"updateSignal": "36",
 			"command": "pamixer --get-volume || echo 0 > /dev/null",
 			"timer": "1s",
