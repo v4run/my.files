@@ -228,9 +228,9 @@ def_key "ctrl-d"
 #def_key "delete"
 #  delete_stored_playlist
 #
-#def_key "right"
-#  next_column
-#
+def_key "l"
+  next_column
+
 #def_key "right"
 #  slave_screen
 #
@@ -240,9 +240,9 @@ def_key "ctrl-d"
 def_key "="
   volume_up
 
-#def_key "left"
-#  previous_column
-#
+def_key "h"
+  previous_column
+
 #def_key "left"
 #  master_screen
 #
@@ -444,9 +444,9 @@ def_key "+"
 #def_key "g"
 #  jump_to_position_in_song
 #
-#def_key "l"
-#  show_lyrics
-#
+def_key "ctrl-l"
+  show_lyrics
+
 #def_key "ctrl-v"
 #  select_range
 #

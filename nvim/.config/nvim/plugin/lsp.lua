@@ -45,6 +45,7 @@ nvim_lsp.gopls.setup(config({
 		gopls = {
 			analyses = {
 				unusedparams = true,
+				shadow = true,
 			},
 			staticcheck = true,
 		},

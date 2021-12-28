@@ -40,7 +40,7 @@ goblocks &
 # xrandr --output HDMI-1 --mode 1920x1080 --rate 165 &
 
 # Compositor
-picom --no-fading-openclose &
+picom --config "$HOME/.config/picom/picom.conf" &
 
 # Wallpaper
 wal -R
