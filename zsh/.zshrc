@@ -5,6 +5,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 
+fpath=($HOME/.zsh_completions $fpath)
+
 # Theme
 ZSH_THEME="lambda"
 
