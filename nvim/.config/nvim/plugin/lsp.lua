@@ -43,9 +43,13 @@ nvim_lsp.gopls.setup(config({
 	cmd = { "gopls", "serve" },
 	settings = {
 		gopls = {
+			usePlaceholders = true,
 			analyses = {
-				unusedparams = true,
+				fieldalignment = true,
+				nilness = true,
 				shadow = true,
+				unusedparams = true,
+				unusedwrite = true,
 			},
 			staticcheck = true,
 		},

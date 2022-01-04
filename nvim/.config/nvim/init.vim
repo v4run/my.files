@@ -84,5 +84,7 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'gruvbox-community/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
+let g:vimwiki_list = [{'path': '~/notes/wiki'}]
