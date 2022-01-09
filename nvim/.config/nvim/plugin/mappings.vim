@@ -44,6 +44,6 @@ imap <C-c> <esc>
 nmap <C-s> :Telescope spell_suggest<CR>
 
 nmap <C-p> :Telescope find_files<CR>
-nmap <Leader>fe :Telescope file_browser<CR>
+nmap <Leader>fe :NvimTreeToggle<CR>
 nmap <Leader>/ :Telescope live_grep<CR>
 

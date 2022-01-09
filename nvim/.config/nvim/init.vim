@@ -85,6 +85,8 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'gruvbox-community/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'vimwiki/vimwiki'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 let g:vimwiki_list = [{'path': '~/notes/wiki'}]
