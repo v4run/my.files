@@ -20,8 +20,12 @@ nightfox.setup({
   },
   -- colors = {}, -- Override default colors
   hlgroups = {
-	  TelescopeNormal = { bg = "#3b4252" },
-	  TelescopeBorder = { bg = "#3b4252" },
+	  Pmenu = { bg = "#3e4655" },
+	  PmenuSel = { bg = "#353B49" },
+	  WildMenu = { bg = "#353B49" },
+	  NormalFloat = { bg = "#353B49" },
+	  TelescopeNormal = { bg = "#3e4655" },
+	  TelescopeBorder = { bg = "#3e4655" },
 	  NvimTreeNormal = { bg = "NONE" },
   }, -- Override highlight groups
 })
