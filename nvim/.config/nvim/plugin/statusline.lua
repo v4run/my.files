@@ -2,7 +2,7 @@ local filename = { "filename", path = 1 }
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "nightfox",
+		theme = "material-stealth",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {},
@@ -25,5 +25,6 @@ require("lualine").setup({
 		lualine_z = {},
 	},
 	tabline = { lualine_a = { "tabs" }, lualine_b = { "filename" } },
+	-- tabline = { lualine_a = { "tabs" }, lualine_b = { "filename" }, lualine_b = { "buffers" } },
 	extensions = { 'nvim-tree' },
 })

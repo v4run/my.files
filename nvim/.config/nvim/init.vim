@@ -87,6 +87,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'vimwiki/vimwiki'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'EdenEast/nightfox.nvim'
+Plug 'marko-cerovac/material.nvim'
 call plug#end()
 
 let g:vimwiki_list = [{'path': '~/notes/wiki'}]

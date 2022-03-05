@@ -1,33 +1,37 @@
-local nightfox = require('nightfox')
-vim.o.background = "dark"
-
-nightfox.setup({
-  fox = "nordfox", -- Which fox style should be applied
-  transparent = true, -- Disable setting the background color
-  alt_nc = false, -- Non current window bg to alt color see `hl-NormalNC`
-  terminal_colors = true, -- Configure the colors used when opening :terminal
-  styles = {
-    comments = "italic", -- Style that is applied to comments: see `highlight-args` for options
-    functions = "italic", -- Style that is applied to functions: see `highlight-args` for options
-    keywords = "bold", -- Style that is applied to keywords: see `highlight-args` for options
-    -- strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
-    -- variables = "NONE", -- Style that is applied to variables: see `highlight-args` for options
-  },
-  inverse = {
-    match_paren = true, -- Enable/Disable inverse highlighting for match parens
-    visual = false, -- Enable/Disable inverse highlighting for visual selection
-    search = false, -- Enable/Disable inverse highlights for search highlights
-  },
-  -- colors = {}, -- Override default colors
-  hlgroups = {
-	  Pmenu = { bg = "#3e4655" },
-	  PmenuSel = { bg = "#353B49" },
-	  WildMenu = { bg = "#353B49" },
-	  NormalFloat = { bg = "#353B49" },
-	  TelescopeNormal = { bg = "#3e4655" },
-	  TelescopeBorder = { bg = "#3e4655" },
-	  NvimTreeNormal = { bg = "NONE" },
-  }, -- Override highlight groups
-})
-nightfox.load()
-
+local material = require('material');
+vim.g.material_style = 'darker';
+material.setup({
+	contrast = {
+		sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+		floating_windows = true, -- Enable contrast for floating windows
+		line_numbers = false, -- Enable contrast background for line numbers
+		sign_column = false, -- Enable contrast background for the sign column
+		cursor_line = true, -- Enable darker background for the cursor line
+		non_current_windows = false, -- Enable darker background for non-current windows
+		popup_menu = false, -- Enable lighter background for the popup menu
+	},
+	italics = {
+		comments = false, -- Enable italic comments
+		keywords = false, -- Enable italic keywords
+		functions = false, -- Enable italic functions
+		strings = false, -- Enable italic strings
+		variables = false -- Enable italic variables
+	},
+	contrast_filetypes = { -- Specify which filetypes get the contrasted (darker) background
+		"terminal", -- Darker terminal background
+		"packer", -- Darker packer background
+		"qf" -- Darker qf list background
+	},
+	high_visibility = {
+		lighter = false, -- Enable higher contrast text for lighter style
+		darker = false -- Enable higher contrast text for darker style
+	},
+	disable = {
+		borders = false, -- Disable borders between verticaly split windows
+		background = true, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
+		term_colors = false, -- Prevent the theme from setting terminal colors
+		eob_lines = false -- Hide the end-of-buffer lines
+	},
+	custom_highlights = {} -- Overwrite highlights with your own
+});
+vim.cmd[[colorscheme material]];

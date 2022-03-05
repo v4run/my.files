@@ -60,5 +60,6 @@ nvim_lsp.pyright.setup(config())
 
 nvim_lsp.bashls.setup(config())
 
--- nvim_lsp.ccls.setup(config())
 nvim_lsp.clangd.setup(config())
+
+nvim_lsp.tsserver.setup(config())
