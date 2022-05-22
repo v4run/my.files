@@ -63,14 +63,12 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'mhinz/vim-signify'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'APZelos/blamer.nvim'
 Plug 'sbdchd/neoformat'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-Plug 'joshdick/onedark.vim'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'tpope/vim-commentary'
 Plug 'mfussenegger/nvim-dap'
@@ -82,11 +80,9 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'rafamadriz/friendly-snippets'
-Plug 'gruvbox-community/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'vimwiki/vimwiki'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'EdenEast/nightfox.nvim'
 Plug 'marko-cerovac/material.nvim'
 call plug#end()
 

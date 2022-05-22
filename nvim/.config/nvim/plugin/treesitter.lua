@@ -1,7 +1,7 @@
 local highlight_disabled_langs = { ["vim"] = true }
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = "maintained", -- "all", "maintained" or list of languages
+	ensure_installed = "all", -- "all", "maintained" or list of languages
 	sync_install = false,
 	ignore_install = {},
 	highlight = {
