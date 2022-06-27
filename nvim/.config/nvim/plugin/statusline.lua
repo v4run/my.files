@@ -24,7 +24,7 @@ require("lualine").setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = { lualine_a = { "tabs" }, lualine_b = { "filename" } },
-	-- tabline = { lualine_a = { "tabs" }, lualine_b = { "filename" }, lualine_b = { "buffers" } },
+	-- tabline = { lualine_a = { "tabs" }, lualine_b = { "filename" } },
+	tabline = { lualine_a = { "tabs" }, lualine_b = { "buffers" } },
 	extensions = { 'nvim-tree' },
 })

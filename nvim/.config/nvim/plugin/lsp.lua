@@ -57,9 +57,9 @@ nvim_lsp.gopls.setup(config({
 }))
 
 nvim_lsp.pyright.setup(config())
-
 nvim_lsp.bashls.setup(config())
-
 nvim_lsp.clangd.setup(config())
-
 nvim_lsp.tsserver.setup(config())
+nvim_lsp.sumneko_lua.setup(config())
+nvim_lsp.yamlls.setup(config())
+nvim_lsp.hls.setup(config())

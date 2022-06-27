@@ -49,3 +49,14 @@ nmap <C-p> :Telescope find_files<CR>
 nmap <Leader>fe :NvimTreeToggle<CR>
 nmap <Leader>/ :Telescope live_grep<CR>
 
+" Switch between buffers
+nmap <silent> <C-h> :bp<CR>
+nmap <silent> <C-l> :bn<CR>
+
+" Delete the buffer
+nmap <silent> <C-q> :bd<CR>
+
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
