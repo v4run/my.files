@@ -2,7 +2,7 @@
     "output": {
         "blocklist": [],
         "equalizer": {
-            "input-gain": -5.5,
+            "input-gain": -7.5,
             "left": {
                 "band0": {
                     "frequency": 28.0,

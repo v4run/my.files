@@ -60,3 +60,9 @@ nmap <silent> <C-q> :bd<CR>
 nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
+
+" search and replace current selection
+xmap <C-g> "hy:%s/<C-r>h//gc<left><left><left>
+
+" search and replace current selection
+xmap <C-f> "hy/<C-r>h

@@ -3,6 +3,7 @@ alias l='ls -alh'
 alias po='popd'
 alias t='tmux'
 alias vn='nvim $(date "+%Y%m%d_%b_%d_%Y").txt'
+alias p='ping 8.8.8.8'
 
 # Vim related
 alias vim=nvim
@@ -12,15 +13,25 @@ alias v=nvim
 # GIT
 alias gst='git status'
 
+# Router
+alias bsnl_reconnect='ssh router /interface/pppoe-client/disable BSNL\; /beep\; /delay 3\; /interface/pppoe-client/enable BSNL\; /beep'
+alias bsnl_ip='ssh router /interface/pppoe-client/monitor BSNL once'
 
 # Functions
 gnu_aliases() {
+	alias copy='xclip -selection clipboard'
 	alias cpwd='pwd | xclip -r -selection clipboard'
 	alias x='pgrep dwm > /dev/null || startx'
 }
 
 wsl_aliases() {
+	alias copy='clip.exe'
 	alias cpwd='pwd | tr -d "\n" | clip.exe'
+}
+
+mac_aliases() {
+	alias copy='pbcopy'
+	alias cpwd='pwd | tr -d "\n" | pbcopy'
 }
 
 # WSL
@@ -28,4 +39,4 @@ WSL="$IS_WSL$WSL_DISTRO_NAME"
 
 [ "$OSTYPE" = 'linux-gnu' ] && [ "$WSL" = "" ] && gnu_aliases
 [ "$OSTYPE" = 'linux-gnu' ] && [ "$WSL" != "" ] && wsl_aliases
-
+[[ "$OSTYPE" == 'darwin'* ]] && mac_aliases

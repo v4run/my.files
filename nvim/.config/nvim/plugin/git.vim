@@ -2,6 +2,7 @@
 let g:blamer_delay = 500
 let g:blamer_template = '(<commit-short>) <committer>, <author-time> • <summary>'
 let g:blamer_enabled = 1
+let g:blamer_prefix = ' •  • '
 
 " Toggle git blame
 function! s:ToggleGitBlame()

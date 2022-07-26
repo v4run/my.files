@@ -87,4 +87,5 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'puremourning/vimspector'
 call plug#end()
 
+let g:ftplugin_sql_omni_key = '<C-h>'
 let g:vimwiki_list = [{'path': '~/notes/wiki'}]
