@@ -8,7 +8,6 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	use("ThePrimeagen/harpoon")
-	use("folke/tokyonight.nvim")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/nvim-cmp")
@@ -26,10 +25,7 @@ return require("packer").startup(function(use)
 	use("sbdchd/neoformat")
 	use("simrat39/symbols-outline.nvim")
 	use("tpope/vim-commentary")
-	use({
-		"kyazdani42/nvim-tree.lua",
-		requires = {
-			"kyazdani42/nvim-web-devicons", -- optional, for file icons
-		},
-	})
+	use("sainnhe/gruvbox-material")
+	use({ "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } })
+	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
 end)

@@ -55,3 +55,7 @@ nmap("<C-l>", ":bn<CR>")
 
 -- Delete current buffer
 nmap("<C-q>", ":bd<CR>")
+
+nmap("<C-j>", ":cnext<CR>")
+nmap("<C-k>", ":cprev<CR>")
+nmap("<Leader>a", ":cclose<CR>:lclose<CR>")
