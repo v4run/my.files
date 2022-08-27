@@ -1,7 +1,3 @@
-" Wrap text in telescope preview
-autocmd User TelescopePreviewerLoaded setlocal wrap
-
-lua << EOF
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local previewers = require("telescope.previewers")
@@ -15,25 +11,23 @@ for i = 1, #mime_types_to_hide do
 end
 local binary_hider = function(filepath, bufnr, opts)
 	filepath = vim.fn.expand(filepath)
-	Job
-		:new({
-			command = "file",
-			args = { "--mime-type", "-b", filepath },
-			on_exit = function(j)
-				local mime_type = j:result()[1]
-				if mime_types_set_to_hide[mime_type] then
-					vim.schedule_wrap(putils.set_preview_message)(
-						bufnr,
-						opts.winid,
-						"Cannot be previewed",
-						opts.preview.msg_bg_fillchar
-					)
-				else
-					previewers.buffer_previewer_maker(filepath, bufnr, opts)
-				end
-			end,
-		})
-		:sync()
+	Job:new({
+		command = "file",
+		args = { "--mime-type", "-b", filepath },
+		on_exit = function(j)
+			local mime_type = j:result()[1]
+			if mime_types_set_to_hide[mime_type] then
+				vim.schedule_wrap(putils.set_preview_message)(
+					bufnr,
+					opts.winid,
+					"Cannot be previewed",
+					opts.preview.msg_bg_fillchar
+				)
+			else
+				previewers.buffer_previewer_maker(filepath, bufnr, opts)
+			end
+		end,
+	}):sync()
 end
 
 telescope.setup({
@@ -107,4 +101,3 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
-EOF
