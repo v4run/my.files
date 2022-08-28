@@ -33,4 +33,7 @@ return require("packer").startup(function(use)
 	use({ "leoluz/nvim-dap-go", requires = { "mfussenegger/nvim-dap" } })
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("nvim-telescope/telescope-dap.nvim")
+
+	-- git
+	use("lewis6991/gitsigns.nvim")
 end)
