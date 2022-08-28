@@ -64,11 +64,6 @@ require("nvim-treesitter.configs").setup({
 		disable = disable_treesitter,
 		additional_vim_regex_highlighting = false,
 	}),
-	refactor = {
-		highlight_definitions = merge({ enable = true }),
-		highlight_current_scope = merge({ enable = true }),
-		highlight_references = merge({ enable = true }),
-	},
 	textobjects = {
 		select = merge({
 			enable = true,

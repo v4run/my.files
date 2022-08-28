@@ -3,6 +3,7 @@ local nnoremap = keymap.nnoremap
 local nmap = keymap.nmap
 local vnoremap = keymap.vnoremap
 local inoremap = keymap.inoremap
+local onoremap = keymap.onoremap
 
 -- Open netrw
 nnoremap("<Leader>fe", "<cmd>NvimTreeToggle<CR>")
@@ -41,6 +42,7 @@ nnoremap("<Leader>cc", "<Plug>CommentaryLine")
 
 -- Ctrl-c -> Esc
 inoremap("<C-c>", "<esc>")
+onoremap("<C-c>", "<esc>")
 
 -- Spelling suggestion
 nmap("<C-s>", ":Telescope spell_suggest<CR>")

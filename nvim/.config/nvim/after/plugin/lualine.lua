@@ -1,4 +1,4 @@
-local filename = { "filename", path = 2 }
+local filename = { "filename", path = 3 }
 require("lualine").setup({
 	sections = {
 		lualine_a = { "mode" },
