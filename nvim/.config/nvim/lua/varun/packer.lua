@@ -38,4 +38,7 @@ return require("packer").startup(function(use)
 
 	-- commenting
 	use("numToStr/Comment.nvim")
+
+	-- surround
+	use({ "kylechui/nvim-surround", tag = "*" })
 end)
