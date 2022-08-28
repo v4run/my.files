@@ -36,10 +36,6 @@ nnoremap("<Leader>ff", ":Neoformat<CR>")
 -- Select filetype
 nnoremap("<Leader>ft", ":Telescope filetypes<CR>")
 
--- Commentry
-vnoremap("<Leader>c", "<Plug>Commentary")
-nnoremap("<Leader>cc", "<Plug>CommentaryLine")
-
 -- Ctrl-c -> Esc
 inoremap("<C-c>", "<esc>")
 onoremap("<C-c>", "<esc>")
@@ -60,4 +56,4 @@ nmap("<C-q>", ":bd<CR>")
 
 nmap("<C-j>", ":cnext<CR>")
 nmap("<C-k>", ":cprev<CR>")
-nmap("<Leader>a", ":cclose<CR>:lclose<CR>")
+nmap("<Leader>h", ":cclose<CR>:lclose<CR>")
