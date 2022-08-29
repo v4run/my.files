@@ -1,0 +1,35 @@
+local vo = vim.opt
+vo.showmatch = true -- Show matching bracket for a brief moment
+vo.autowrite = true -- auto write buffer on file change
+vo.ignorecase = true -- ignore case on search
+vo.hlsearch = false -- don't highlight all matches
+vo.incsearch = true -- highlight during search
+vo.tabstop = 4 -- number of spaces for a tab
+vo.softtabstop = 4
+vo.shiftwidth = 4 -- number of spaces for auto indent
+vo.expandtab = true
+vo.number = true -- line number
+vo.relativenumber = true -- relative line number
+vo.wildmenu = true
+vo.wildmode = { "longest:full", "full" } -- on first tab open wildmenu, on next move through the menu
+vo.cursorline = true
+vo.scrolloff = 1 -- keep N lines above or below when scrolling
+vo.showcmd = true -- show partial commands in status line
+vo.showmode = true -- show the current mode
+vo.smartindent = true
+vo.splitright = true -- put new window on right side on vsplit
+vo.splitbelow = true -- put new window below on split
+vo.errorbells = false -- disable bell on error
+vo.wrap = false
+vo.termguicolors = true -- enable 24-bit colors
+vo.completeopt = { "menu", "menuone", "noselect" } -- insert mode completion menu
+vo.list = true
+vo.listchars = { tab = "␉·", space = "·", eol = "↵", trail = "␠" } -- indent guide lines
+vo.cursorcolumn = true -- highlight the current column
+vo.updatetime = 4000
+vo.undofile = true
+vo.swapfile = true
+vo.laststatus = 3 -- enable global status line
+
+local vg = vim.g
+vg.mapleader = " "

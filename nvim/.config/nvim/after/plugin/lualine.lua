@@ -1,13 +1,5 @@
-local filename = { "filename", path = 1 }
+local filename = { "filename", path = 3 }
 require("lualine").setup({
-	options = {
-		icons_enabled = true,
-		theme = "material-stealth",
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-		disabled_filetypes = {},
-		always_divide_middle = true,
-	},
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
@@ -24,7 +16,6 @@ require("lualine").setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	-- tabline = { lualine_a = { "tabs" }, lualine_b = { "filename" } },
 	tabline = { lualine_a = { "tabs" }, lualine_b = { "buffers" } },
-	extensions = { 'nvim-tree' },
+	extensions = { "nvim-tree" },
 })
