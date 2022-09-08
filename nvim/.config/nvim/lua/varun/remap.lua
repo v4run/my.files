@@ -57,3 +57,8 @@ nmap("<C-q>", ":bd<CR>")
 nmap("<C-j>", ":cnext<CR>")
 nmap("<C-k>", ":cprev<CR>")
 nmap("<Leader>h", ":cclose<CR>:lclose<CR>")
+
+nmap("<Up>", ":resize +2,<CR>")
+nmap("<Down>", ":resize -2,<CR>")
+nmap("<S-Up>", ":vertical resize +5,<CR>")
+nmap("<S-Down>", ":vertical resize -5,<CR>")

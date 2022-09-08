@@ -1,42 +1,11 @@
 local lspkind = require("lspkind")
-local km = require("varun.keymap")
-local snoremap = km.snoremap
-local inoremap = km.inoremap
 local cmp = require("cmp")
+local ls = require("luasnip")
+
 if cmp == nil then
 	print("nvim-cmp not installed")
 	return
 end
-
-local ls = require("luasnip")
-ls.config.set_config({
-	history = true,
-	updateevents = "TextChanged,TextChangedI",
-	enable_autosnippets = true,
-})
-
--- Jump between snippet positions.
--- TODO: Find a better way
-local function jump_next()
-	if ls.jumpable(1) then
-		return "<Plug>luasnip-expand-or-jump"
-	else
-		return "<Tab>"
-	end
-end
-
-local function jump_prev()
-	if ls.jumpable(1) then
-		return "<Plug>luasnip-jump-prev"
-	else
-		return "<S-Tab>"
-	end
-end
-
-inoremap("<S-Tab>", jump_prev, { expr = true })
-snoremap("<S-Tab>", jump_prev, { expr = true })
-inoremap("<Tab>", jump_next, { expr = true })
-snoremap("<Tab>", jump_next, { expr = true })
 
 local cmp_config = {
 	snippet = {
