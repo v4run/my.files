@@ -2,7 +2,7 @@ local keymap = require("varun.keymap")
 local nnoremap = keymap.nnoremap
 local inoremap = keymap.inoremap
 
-local on_attach = function(--[[client, bufnr--]])
+local on_attach = function(--[[ client, bufnr ]])
 	nnoremap("gi", function()
 		vim.lsp.buf.implementation()
 	end)
