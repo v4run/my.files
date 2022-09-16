@@ -22,7 +22,6 @@ return require("packer").startup(function(use)
 	use("nvim-treesitter/playground")
 	use("onsails/lspkind-nvim")
 	use("saadparwaiz1/cmp_luasnip")
-	use("sainnhe/gruvbox-material")
 	use("sbdchd/neoformat")
 	use({ "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } })
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
@@ -44,4 +43,9 @@ return require("packer").startup(function(use)
 
 	-- Snippets
 	use("rafamadriz/friendly-snippets")
+
+	-- Themes
+	use("rebelot/kanagawa.nvim")
+	use("folke/tokyonight.nvim")
+	use("sainnhe/gruvbox-material")
 end)
