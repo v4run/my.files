@@ -13,7 +13,6 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
-	use("neovim/nvim-lspconfig")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope-fzf-native.nvim", { run = "make" })
 	use("nvim-telescope/telescope.nvim")
@@ -25,6 +24,10 @@ return require("packer").startup(function(use)
 	use("sbdchd/neoformat")
 	use({ "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } })
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+
+	-- LSP
+	use("neovim/nvim-lspconfig")
+	use({ "glepnir/lspsaga.nvim", branch = "main" })
 
 	-- Debugger
 	use("mfussenegger/nvim-dap")
