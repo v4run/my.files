@@ -4,6 +4,8 @@ alias po='popd'
 alias t='tmux'
 alias vn='nvim $(date "+%Y%m%d_%b_%d_%Y").txt'
 alias p='ping 8.8.8.8'
+alias k='kubectl'
+alias wt='cd $(ws || echo .)'
 
 # Vim related
 alias vim=nvim
@@ -40,3 +42,4 @@ WSL="$IS_WSL$WSL_DISTRO_NAME"
 [ "$OSTYPE" = 'linux-gnu' ] && [ "$WSL" = "" ] && gnu_aliases
 [ "$OSTYPE" = 'linux-gnu' ] && [ "$WSL" != "" ] && wsl_aliases
 [[ "$OSTYPE" == 'darwin'* ]] && mac_aliases
+
