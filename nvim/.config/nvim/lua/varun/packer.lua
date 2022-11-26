@@ -45,7 +45,7 @@ return require("packer").startup(function(use)
 	use("rafamadriz/friendly-snippets")
 
 	-- Themes
-	use("rebelot/kanagawa.nvim")
 	use("folke/tokyonight.nvim")
 	use("sainnhe/gruvbox-material")
+	use("navarasu/onedark.nvim")
 end)
