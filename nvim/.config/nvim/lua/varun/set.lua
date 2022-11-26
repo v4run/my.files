@@ -7,7 +7,7 @@ vo.incsearch = true -- highlight during search
 vo.tabstop = 4 -- number of spaces for a tab
 vo.softtabstop = 4
 vo.shiftwidth = 4 -- number of spaces for auto indent
-vo.expandtab = true
+vo.expandtab = false
 vo.number = true -- line number
 vo.relativenumber = true -- relative line number
 vo.wildmenu = true
@@ -33,3 +33,4 @@ vo.laststatus = 3 -- enable global status line
 
 local vg = vim.g
 vg.mapleader = " "
+vg.ftplugin_sql_omni_key = "<C-e>"
