@@ -58,6 +58,12 @@ terminal = os.getenv("TERMINAL") or "kitty"
 browser = os.getenv("BROWSER") or "chromium"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
+screenshot_cmd = "scrot "
+	.. os.getenv("HOME")
+	.. "/Pictures/screenshots/%Y-%m-%d-%H%M%S_$wx$h_scrot.png "
+	.. "-s "
+	.. "-e "
+	.. "'xclip -selection clipboard -t image/png -i $f'"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -99,6 +105,7 @@ myawesomemenu = {
 	{ "manual", terminal .. " -e man awesome" },
 	{ "edit config", editor_cmd .. " " .. awesome.conffile },
 	{ "restart", awesome.restart },
+	{ "screenshot", screenshot_cmd },
 	{
 		"quit",
 		function()
@@ -355,7 +362,11 @@ globalkeys = gears.table.join(
 	-- Menubar
 	awful.key({ modkey }, "p", function()
 		menubar.show()
-	end, { description = "show the menubar", group = "launcher" })
+	end, { description = "show the menubar", group = "launcher" }),
+	awful.key({ modkey, "Shift" }, "s", function()
+		naughty.notify({ title = screenshot_cmd })
+		awful.spawn(screenshot_cmd)
+	end, { description = "Take screenshot and copy to clipboard", group = "launcher" })
 )
 
 clientkeys = gears.table.join(
