@@ -16,6 +16,7 @@ require("nvim-treesitter.configs").setup({
 		"c",
 		"cmake",
 		"commonlisp",
+		"comment",
 		"cpp",
 		"css",
 		"dockerfile",

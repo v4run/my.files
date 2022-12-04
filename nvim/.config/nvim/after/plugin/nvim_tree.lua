@@ -27,6 +27,7 @@ require("nvim-tree").setup({
 				none = " ",
 			},
 		},
+		symlink_destination = false,
 	},
 	filesystem_watchers = {
 		enable = true,

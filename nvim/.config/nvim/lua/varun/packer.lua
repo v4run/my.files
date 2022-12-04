@@ -51,4 +51,8 @@ return require("packer").startup(function(use)
 	use("folke/tokyonight.nvim")
 	use("sainnhe/gruvbox-material")
 	use("navarasu/onedark.nvim")
+	use("sainnhe/sonokai")
+
+	-- Workspaces
+	use("natecraddock/workspaces.nvim")
 end)

@@ -64,6 +64,9 @@ nvim_lsp.gopls.setup(config({
 	cmd = { "gopls", "serve" },
 	settings = {
 		gopls = {
+			codelenses = {
+				generate = true,
+			},
 			usePlaceholders = true,
 			analyses = {
 				fieldalignment = true,
@@ -71,6 +74,8 @@ nvim_lsp.gopls.setup(config({
 				shadow = true,
 				unusedparams = true,
 				unusedwrite = true,
+				useany = true,
+				unusedvariable = true,
 			},
 			staticcheck = true,
 		},

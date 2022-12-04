@@ -10,3 +10,6 @@ set incsearch true
 set scrolloff 2
 
 map <enter> shell
+set drawbox true
+set period 1
+set incsearch true

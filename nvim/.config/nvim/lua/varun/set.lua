@@ -24,7 +24,7 @@ vo.wrap = false
 vo.termguicolors = true -- enable 24-bit colors
 vo.completeopt = { "menu", "menuone", "noselect" } -- insert mode completion menu
 vo.list = true
-vo.listchars = { tab = "␉·", space = "·", eol = "↵", trail = "␠" } -- indent guide lines
+vo.listchars = { tab = " ", space = "·", eol = "", trail = "␠" } -- indent guide lines
 vo.cursorcolumn = true -- highlight the current column
 vo.updatetime = 4000
 vo.undofile = true

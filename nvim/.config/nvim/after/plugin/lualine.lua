@@ -43,3 +43,10 @@ require("lualine").setup({
 	},
 	extensions = { "nvim-tree" },
 })
+
+local function toggle_lualine()
+	local config = ll.get_config()
+	print(vim.inspect(config))
+end
+
+vim.api.nvim_create_user_command("LualineToggle", toggle_lualine, {})
