@@ -41,7 +41,7 @@ xrandr --output HDMI-1 --mode 1920x1080 --rate 165 &
 xrandr --output HDMI-A-0 --left-of DisplayPort-2 &
 
 # Compositor
-# picom --config "$HOME/.config/picom/picom.conf" &
+picom --config "$HOME/.config/picom/picom.conf" &
 
 # Wallpaper
 # wal -R
