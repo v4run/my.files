@@ -386,6 +386,12 @@ clientkeys = gears.table.join(
 	awful.key({ modkey }, "Return", function(c)
 		local master = awful.client.getmaster()
 		if c.window == master.window then
+			-- TODO: Fix tiled_clients order issue
+			-- if #c.screen.clients <= 1 then
+			-- 	return
+			-- end
+			-- local next_client = c.screen.tiled_clients[2]
+			-- c:swap(next_client)
 			local next_client
 			-- find the first cilent with the same tag
 			for _, current_client in ipairs(client.get()) do
@@ -427,7 +433,13 @@ clientkeys = gears.table.join(
 	awful.key({ modkey }, "space", function(c)
 		c.floating = not c.floating
 		c:raise()
-	end, { description = "toggle float", group = "layout" })
+	end, { description = "toggle float", group = "layout" }),
+	awful.key({ modkey, "Shift" }, ".", function(c)
+		c:move_to_screen(1)
+	end, { description = "focus the next screen", group = "screen" }),
+	awful.key({ modkey, "Shift" }, ",", function(c)
+		c:move_to_screen(-1)
+	end, { description = "focus the previous screen", group = "screen" })
 )
 
 -- Bind all key numbers to tags.
