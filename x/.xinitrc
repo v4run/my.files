@@ -55,4 +55,4 @@ xrandr --output HDMI-A-0 --left-of DisplayPort-2 &
 # Execute DWM
 # exec dwm
 # Execute awesome
-exec awesome
+exec awesome >>~/.cache/awesome/stdout 2>>~/.cache/awesome/stderr
