@@ -2,6 +2,8 @@
 export EDITOR=nvim
 export VISUAL=nvim
 export OPENER=open
+export TERMINAL=kitty
+export BROWSER=chromium
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
@@ -20,12 +22,11 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
 
 # Go to directory and copy git diff and comeback
-cpdiff ()
-{
+cpdiff() {
 	if [ -z "$1" ]; then
 		return
 	fi
-	pushd "$1" && git diff | copy && popd;
+	pushd "$1" && git diff | copy && popd
 }
 
 # Reset pywal color
