@@ -37,6 +37,12 @@ return require("packer").startup(function(use)
 
 	-- git
 	use("lewis6991/gitsigns.nvim")
+	use({
+		"tanvirtin/vgit.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 
 	-- commenting
 	use("numToStr/Comment.nvim")
