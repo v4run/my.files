@@ -14,6 +14,7 @@ alias v=nvim
 
 # GIT
 alias gst='git status'
+alias lg=lazygit
 
 # Router
 alias bsnl_reconnect='ssh router /interface/pppoe-client/disable BSNL\; /beep\; /delay 3\; /interface/pppoe-client/enable BSNL\; /beep'
