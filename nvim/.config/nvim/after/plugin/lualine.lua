@@ -2,7 +2,7 @@ local filename = { "filename", path = 3 }
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "onedark",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
@@ -36,7 +36,12 @@ require("lualine").setup({
 	},
 	tabline = {
 		lualine_a = { "tabs" },
-		lualine_b = { "buffers" },
+		lualine_b = {
+			{
+				"buffers",
+				mode = 4,
+			},
+		},
 		lualine_x = { "encoding" },
 		lualine_y = { "filetype" },
 		lualine_z = { "fileformat" },
