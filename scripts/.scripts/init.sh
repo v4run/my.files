@@ -6,7 +6,7 @@ __FUNCTION_PREFIX=${__FUNCTION_PREFIX:-}
 # Find the files inside the module directory so that it can be searched using fzf
 # NOTE: Make sure the files are executable
 __find_and_execute_task() {
-	task=$(find "$1" -maxdepth 1 -type f | sort | fzf --query="$2" --info=inline --delimiter='/' --with-nth=-1 --preview "bat --color=always --style=numbers --line-range :500 {}")
+	task=$(find "$1" -maxdepth 1 -type f | sort | fzf --query="$2" --info=inline --delimiter='/' --with-nth=-1 --preview-window wrap --preview "bat --color=always --style=numbers --line-range :500 {}")
 	# shellcheck source=/dev/null
 	# The actual script that get executed is located at $__SCRIPT_ROOT_DIR/$1/$task
 	[ -z "$task" ] || . "$task"
