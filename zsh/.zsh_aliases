@@ -33,6 +33,8 @@ wsl_aliases() {
 }
 
 mac_aliases() {
+	alias bud='brew update'
+	alias bug='brew upgrade'
 	alias copy='pbcopy'
 	alias cpwd='pwd | tr -d "\n" | pbcopy'
 }
