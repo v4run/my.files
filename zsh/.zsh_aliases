@@ -1,11 +1,15 @@
 # General
+alias ls='ls --color=always'
 alias l='ls -alh'
+alias ll='ls -lh'
 alias po='popd'
 alias t='tmux'
 alias vn='nvim $(date "+%Y%m%d_%b_%d_%Y").txt'
 alias p='ping 8.8.8.8'
 alias k='kubectl'
 alias wt='cd $(ws || echo .)'
+alias diff='diff --color'
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
 
 # Vim related
 alias vim=nvim
@@ -14,6 +18,10 @@ alias v=nvim
 
 # GIT
 alias gst='git status'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gco='git checkout'
+alias lg=lazygit
 
 # Router
 alias bsnl_reconnect='ssh router /interface/pppoe-client/disable BSNL\; /beep\; /delay 3\; /interface/pppoe-client/enable BSNL\; /beep'
@@ -32,6 +40,8 @@ wsl_aliases() {
 }
 
 mac_aliases() {
+	alias bud='brew update'
+	alias bug='brew upgrade'
 	alias copy='pbcopy'
 	alias cpwd='pwd | tr -d "\n" | pbcopy'
 }
