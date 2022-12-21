@@ -42,6 +42,15 @@ client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
 
+-- focus next client in screen when the currently focussed client is closed
+client.connect_signal("unmanage", function(c)
+	naughty.notify({ text = tostring(c.name) })
+	local next_client = c.screen.clients[1]
+	if next_client then
+		next_client:emit_signal("request::activate", "client_unmanaged")
+	end
+end)
+
 -- focus a client when it gets tagged
 client.connect_signal("tagged", function(c)
 	local visible_clients = c.screen.clients
