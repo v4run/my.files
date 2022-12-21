@@ -37,17 +37,16 @@ fi
 goblocks &
 
 # Display Resolution
-xrandr --output HDMI-1 --mode 1920x1080 --rate 165 &
-xrandr --output HDMI-A-0 --left-of DisplayPort-2 &
+./.screenlayout/current.sh
 
 # Compositor
-picom --config "$HOME/.config/picom/picom.conf" &
+# picom --config "$HOME/.config/picom/picom.conf" &
 
 # Wallpaper
 # wal -R
 
 # Live wallpaper
-# paperview "$HOME/Pictures/wallpapers/live/1" 11 0 0 2560 1440 "$HOME/Pictures/wallpapers/live/2" 7 2560 0 1980 1080 &
+paperview "$HOME/Pictures/wallpapers/live/1" 11 0 0 2560 1440 "$HOME/Pictures/wallpapers/live/2" 7 2560 180 1980 1080 &
 
 # run easyeffects in background
 # easyeffects --gapplication-service &
