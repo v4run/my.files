@@ -68,7 +68,11 @@ function _M.get()
 				local next_client
 				-- find the first cilent with the same tag
 				for _, current_client in ipairs(client.get()) do
-					if current_client.window ~= c.window and current_client.first_tag.name == c.first_tag.name then
+					if
+						current_client.window ~= c.window
+						and current_client.first_tag.name == c.first_tag.name
+						and current_client.screen.index == c.screen.index
+					then
 						next_client = current_client
 						break
 					end
