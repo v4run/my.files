@@ -42,11 +42,30 @@ client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
 
--- focus next client in screen when the currently focussed client is untagged
-client.connect_signal("untagged", function(c)
-	local next_client = c.screen.clients[1]
-	if next_client then
-		next_client:emit_signal("request::activate", "client_untagged")
+-- focus a client when it gets tagged
+client.connect_signal("tagged", function(c)
+	local visible_clients = c.screen.clients
+	if not visible_clients then
+		return
+	end
+	local client_found = false
+	for _, cl in ipairs(visible_clients) do
+		if cl.window == c.window then
+			client_found = true
+			break
+		end
+	end
+	if client_found then
+		-- if the client is visible in the new screen
+		-- usually happens when moving clients between screens
+		c:emit_signal("request::activate", "client_tagged")
+	else
+		-- client is moved to a different tag
+		local next_client = visible_clients[1]
+		if not next_client then
+			return
+		end
+		next_client:emit_signal("request::activate", "client_tagged")
 	end
 end)
 
