@@ -11,7 +11,7 @@ export BROWSER=chromium
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH="$PATH:$HOME/.config/rofi/bin"
-export WORDCHARS='.-'
+export WORDCHARS=''
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 
@@ -24,6 +24,9 @@ setopt complete_in_word
 # disable XON/XOFF flow control
 unsetopt flowcontrol
 bindkey -e
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+bindkey "^[[3~" delete-char
 
 fpath=($HOME/.zsh_completions $fpath)
 
