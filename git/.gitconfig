@@ -3,3 +3,5 @@
 	name = Varun Vasan V
 [init]
 	defaultBranch = main
+[core]
+	pager = less -+X -+F
