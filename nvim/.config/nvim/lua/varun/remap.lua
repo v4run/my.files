@@ -23,6 +23,8 @@ vnoremap("<Leader>P", '"_dP')
 -- move selection up or down, reindent and reselect
 vnoremap("<C-j>", ":move '>+1<CR>gv=gv")
 vnoremap("<C-k>", ":move '<-2<CR>gv=gv")
+vnoremap(">", ">gv")
+vnoremap("<", "<gv")
 
 -- copy to system clipboard
 vnoremap("Y", '"+y')
