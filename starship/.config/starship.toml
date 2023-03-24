@@ -2,11 +2,19 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """\
+[](#3B4252)\
 $username\
+[](bg:#434C5E fg:#3B4252)\
 $directory\
+[](fg:#434C5E bg:#4C566A)\
 $git_branch\
+[](fg:#4C566A bg:#86BBD8)\
 $git_status\
+[](fg:#86BBD8 bg:#06969A)\
 $character\
+[](fg:#06969A bg:#33658A)\
+$time\
+[ ](fg:#33658A)\
 """
 
 # Insert a blank line between shell prompts?
@@ -14,32 +22,55 @@ add_newline = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character] # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red)"
+success_symbol = "[➜](bg:#06969A)"
+error_symbol = "[➜](bold bg:#06969A fg:#AD416A)"
+vicmd_symbol = '[](bg:#06969A)'
+format = '$symbol'
 
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
 
 [username]
-style_root = "bold red"
-show_always = false
+# style_root = "bold red"
 disabled = false
+show_always = true
+style_user = "bg:#3B4252"
+style_root = "bold red"
+format = '[]($style)'
 
 [directory]
+style = "bg:#434C5E"
+format = "[ $path ]($style)"
 truncation_length = 3
-truncate_to_repo = false
-disabled = false
+truncation_symbol = "…/"
+# truncation_length = 3
+# truncate_to_repo = false
+# disabled = false
+
+[git_branch]
+symbol = ""
+style = "bg:#4C566A"
+format = '[ $symbol $branch ]($style)'
 
 [git_status]
+style = "bg:#86BBD8 fg:#3B4252"
+format = '[$all_status$ahead_behind]($style)'
 conflicted = "🏳"
 ahead = ""
 behind = ""
 diverged = "😵"
-up_to_date = "[✓](green)"
+up_to_date = "[✓](fg:#1C884C bg:#86BBD8)"
 untracked = ""
 stashed = ""
 modified = ""
-staged = '[++\($count\)](green)'
+staged = '[++\($count\)](fg:#1C884C bg:#86BBD8)'
 renamed = ""
 deleted = ""
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#33658A"
+format = '[ $time ]($style)'
+
