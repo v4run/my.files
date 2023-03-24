@@ -1,0 +1,8 @@
+# Go to directory and copy git diff and comeback
+cpdiff() {
+	if [ -z "$1" ]; then
+		return
+	fi
+	pushd "$1" && git diff | copy && popd
+}
+

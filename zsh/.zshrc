@@ -1,47 +1,66 @@
-autoload -Uz compinit
-compinit
+# ZSH home
+export ZSH=$HOME
+source $ZSH/.zsh_aliases
+source $ZSH/.zsh_functions
 
-# Exports
+# {{ History
+export HISTFILE=~/.cache/zsh/history
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+# }}
+
+# {{ Completion
+# Enable
+zmodload zsh/complist
+autoload -U compinit && compinit
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' format $'%B- %{\e[0;33m%}%d%{\e[0m%}%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:warnings' format $'%{\e[0;33m%}Wow, such empty%{\e[0m%}'
+zstyle ':completion:*' matcher-list \
+    'm:{[:lower:]}={[:upper:]}' \
+    '+r:|[._-]=* r:|=*' \
+    '+l:|=*'
+_comp_options+=(globdots) # include hidden files in completion
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+fpath=($HOME/.zsh_completions $fpath)
+# }}
+
+# {{ Exports
 export EDITOR=nvim
 export VISUAL=nvim
 export OPENER=open
 export TERMINAL=kitty
 export BROWSER=chromium
-
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH="$PATH:$HOME/.config/rofi/bin"
-export WORDCHARS=''
+# }}
 
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-
+# {{ Auto pushd
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 setopt pushdsilent
 setopt autocd
-setopt complete_in_word
-# disable XON/XOFF flow control
 unsetopt flowcontrol
-bindkey -e
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[4~" end-of-line
-bindkey "^[[3~" delete-char
+# }}
 
-fpath=($HOME/.zsh_completions $fpath)
+# {{ vi mode
+bindkey -v
+export KEYTIMEOUT=1
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+# }}
 
-source $HOME/.zsh_aliases
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
-# Go to directory and copy git diff and comeback
-cpdiff() {
-	if [ -z "$1" ]; then
-		return
-	fi
-	pushd "$1" && git diff | copy && popd
-}
-
-# Reset pywal color
-# PYWAL_SEQ_FILE="$HOME/.cache/wal/sequences"; [ -f "$PYWAL_SEQ_FILE" ] && (cat "$PYWAL_SEQ_FILE" &)
 LF_ICONS_FILE="$HOME/.config/lf/icons"
 [ -f "$LF_ICONS_FILE" ] && source "$LF_ICONS_FILE"
 
