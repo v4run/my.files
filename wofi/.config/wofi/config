@@ -1,0 +1,10 @@
+stylesheet=style.css
+mode=drun
+allow_images=true
+prompt=
+key_down=Control_L-j,Down
+key_up=Control_L-k,Up
+key_exit=Control_L-q,Escape,Control_L-c
+key_pgup=Control_L-u
+key_pgdn=Control_L-d
+# key_expand=Control_L-Tab
