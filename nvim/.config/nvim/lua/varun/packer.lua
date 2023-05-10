@@ -61,4 +61,7 @@ return require("packer").startup(function(use)
 
 	-- Workspaces
 	use("natecraddock/workspaces.nvim")
+
+	use("MunifTanjim/nui.nvim")
+	use("rcarriga/nvim-notify")
 end)

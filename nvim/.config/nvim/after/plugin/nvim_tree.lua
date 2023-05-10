@@ -9,11 +9,12 @@ require("nvim-tree").setup({
 	on_attach = "disable", -- function(bufnr). If nil, will use the deprecated mapping strategy
 	view = {
 		adaptive_size = true,
-		hide_root_folder = true,
+		-- hide_root_folder = true,
 		side = "left",
 		signcolumn = "yes",
 	},
 	renderer = {
+		root_folder_label = false,
 		add_trailing = true,
 		full_name = false,
 		highlight_git = true,
@@ -23,7 +24,7 @@ require("nvim-tree").setup({
 			icons = {
 				corner = "└",
 				edge = "│",
-				item = "│",
+				item = "├",
 				none = " ",
 			},
 		},
