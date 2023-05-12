@@ -64,4 +64,8 @@ return require("packer").startup(function(use)
 
 	use("MunifTanjim/nui.nvim")
 	use("rcarriga/nvim-notify")
+	-- Colorize
+	use("norcalli/nvim-colorizer.lua")
+
+	use("kdheepak/lazygit.nvim")
 end)

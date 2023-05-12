@@ -64,3 +64,5 @@ nmap("<Up>", ":resize +2,<CR>")
 nmap("<Down>", ":resize -2,<CR>")
 nmap("<S-Up>", ":vertical resize +5,<CR>")
 nmap("<S-Down>", ":vertical resize -5,<CR>")
+
+nnoremap("<Leader>lg", ":LazyGit<CR>")
