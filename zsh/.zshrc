@@ -13,6 +13,7 @@ setopt HIST_FIND_NO_DUPS
 
 # {{ Completion
 # Enable
+fpath=($ZSH/.zsh_completions $fpath)
 zmodload zsh/complist
 autoload -U compinit && compinit
 
@@ -26,7 +27,6 @@ zstyle ':completion:*' matcher-list \
     '+l:|=*'
 _comp_options+=(globdots) # include hidden files in completion
 bindkey -M menuselect '^[[Z' reverse-menu-complete
-fpath=($HOME/.zsh_completions $fpath)
 # }}
 
 # {{ Exports
@@ -68,6 +68,10 @@ LF_ICONS_FILE="$HOME/.config/lf/icons"
 # export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 # export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 # export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# {{ Plugins
+source $ZSH/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# }}
 
 # Load script runner
 SCRIPT_ROOT_DIR="$HOME/.scripts" # Assuming the scripts are in ~/.scripts directory
