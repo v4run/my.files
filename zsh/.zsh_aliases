@@ -23,6 +23,9 @@ alias gds='git diff --staged'
 alias gco='git checkout'
 alias lg=lazygit
 
+# Docker
+alias ldr=lazydocker
+
 # Router
 alias bsnl_reconnect='ssh router /interface/pppoe-client/disable BSNL\; /beep\; /delay 3\; /interface/pppoe-client/enable BSNL\; /beep'
 alias bsnl_ip='ssh router /interface/pppoe-client/monitor BSNL once'
