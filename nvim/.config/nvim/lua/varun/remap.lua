@@ -28,6 +28,8 @@ vnoremap("<", "<gv")
 
 -- copy to system clipboard
 vnoremap("Y", '"+y')
+-- append to system clipboard
+vnoremap("<Leader>y", '"cy<cmd>let @+ .= @c<CR>')
 
 -- Toggle wrap
 nnoremap("<Leader>z", ":set wrap!<CR>")
