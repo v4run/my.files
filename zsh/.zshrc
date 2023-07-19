@@ -9,6 +9,7 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
+setopt SHARE_HISTORY
 # }}
 
 # {{ Completion
@@ -60,6 +61,8 @@ bindkey -M menuselect 'l' vi-forward-char
 
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+bindkey '^r' history-incremental-pattern-search-backward
+bindkey '^s' history-incremental-pattern-search-forward
 
 LF_ICONS_FILE="$HOME/.config/lf/icons"
 [ -f "$LF_ICONS_FILE" ] && source "$LF_ICONS_FILE"
