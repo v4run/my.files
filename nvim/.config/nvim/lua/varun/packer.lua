@@ -68,4 +68,11 @@ return require("packer").startup(function(use)
 	use("norcalli/nvim-colorizer.lua")
 
 	use("kdheepak/lazygit.nvim")
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
 end)
