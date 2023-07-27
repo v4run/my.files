@@ -30,6 +30,7 @@ vo.updatetime = 4000
 vo.undofile = true
 vo.swapfile = true
 vo.laststatus = 3 -- enable global status line
+vo.signcolumn = "yes"
 
 local vg = vim.g
 vg.mapleader = " "
