@@ -76,9 +76,11 @@ nvim_lsp.gopls.setup(config({
 		gopls = {
 			codelenses = {
 				generate = true,
+				gc_details = true,
 			},
 			usePlaceholders = true,
 			analyses = {
+				unreachable = true,
 				fieldalignment = true,
 				nilness = true,
 				shadow = true,
@@ -88,6 +90,7 @@ nvim_lsp.gopls.setup(config({
 				unusedvariable = true,
 			},
 			staticcheck = true,
+			vulncheck = "Imports", -- "Imports" or "Off"
 		},
 	},
 }))
