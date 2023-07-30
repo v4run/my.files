@@ -2,7 +2,7 @@ local filename = { "filename", path = 3 }
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "onedark",
+		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
@@ -48,10 +48,3 @@ require("lualine").setup({
 	},
 	extensions = { "nvim-tree" },
 })
-
-local function toggle_lualine()
-	local config = ll.get_config()
-	print(vim.inspect(config))
-end
-
-vim.api.nvim_create_user_command("LualineToggle", toggle_lualine, {})

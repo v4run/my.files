@@ -54,10 +54,7 @@ return require("packer").startup(function(use)
 	use("rafamadriz/friendly-snippets")
 
 	-- Themes
-	use("folke/tokyonight.nvim")
-	use("sainnhe/gruvbox-material")
-	use("navarasu/onedark.nvim")
-	use("sainnhe/sonokai")
+	use({ "nyoom-engineering/oxocarbon.nvim" })
 
 	-- Workspaces
 	use("natecraddock/workspaces.nvim")
