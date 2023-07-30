@@ -1,4 +1,5 @@
 local filename = { "filename", path = 3 }
+local oxocarbon = require("oxocarbon")
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -40,6 +41,9 @@ require("lualine").setup({
 			{
 				"buffers",
 				mode = 4,
+				buffers_color = {
+					active = { fg = "#ffffff" },
+				},
 			},
 		},
 		lualine_x = { "encoding" },
