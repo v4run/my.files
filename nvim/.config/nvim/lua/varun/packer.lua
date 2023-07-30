@@ -86,4 +86,5 @@ return require("packer").startup(function(use)
 			"nvim-telescope/telescope.nvim",
 		},
 	})
+	use({ "stevearc/dressing.nvim" })
 end)
