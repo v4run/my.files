@@ -31,6 +31,10 @@ vo.undofile = true
 vo.swapfile = true
 vo.laststatus = 3 -- enable global status line
 vo.signcolumn = "yes"
+vo.foldmethod = "expr"
+vo.foldexpr = "nvim_treesitter#foldexpr()"
+vo.foldenable = false
+vo.foldlevelstart = 99
 
 local vg = vim.g
 vg.mapleader = " "
