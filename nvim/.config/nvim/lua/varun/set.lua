@@ -35,6 +35,7 @@ vo.foldmethod = "expr"
 vo.foldexpr = "nvim_treesitter#foldexpr()"
 vo.foldenable = false
 vo.foldlevelstart = 99
+vo.pumblend = 20
 
 local vg = vim.g
 vg.mapleader = " "
