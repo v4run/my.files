@@ -3,6 +3,7 @@
 
 format = """\
 [](#3B4252)\
+$hostname\
 $username\
 [](bg:#434C5E fg:#3B4252)\
 $directory\
@@ -22,7 +23,9 @@ add_newline = false
 
 [hostname]
 ssh_only = true
-ssh_symbol = '🌏 '
+ssh_symbol = 'SSH '
+format = '[$ssh_symbol]($style)'
+style = "bg:#3B4252"
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character] # The name of the module we are configuring is "character"
