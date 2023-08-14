@@ -1,16 +1,16 @@
+local Msg = require("noice.ui.msg")
 require("noice").setup({
 	routes = {
 		{
 			filter = {
-				event = "msg_show",
-				kind = "search_count",
+				event = Msg.events.show,
+				kind = Msg.kinds.search_count,
 			},
 			opts = { skip = true },
 		},
 		{
 			filter = {
-				event = "msg_show",
-				kind = "",
+				event = Msg.events.show,
 				find = "written",
 			},
 			opts = { skip = true },
