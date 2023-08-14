@@ -15,6 +15,27 @@ require("noice").setup({
 			},
 			opts = { skip = true },
 		},
+		{
+			filter = {
+				event = Msg.events.show,
+				find = "Already at newest change",
+			},
+			opts = { skip = true },
+		},
+		{
+			filter = {
+				event = Msg.events.show,
+				find = "; before #",
+			},
+			opts = { skip = true },
+		},
+		{
+			filter = {
+				event = Msg.events.show,
+				find = "; after #",
+			},
+			opts = { skip = true },
+		},
 	},
 	views = {
 		relative = "editor",
