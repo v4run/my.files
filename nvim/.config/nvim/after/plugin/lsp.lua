@@ -131,3 +131,4 @@ nvim_lsp.lua_ls.setup(config({
 nvim_lsp.yamlls.setup(config())
 nvim_lsp.hls.setup(config())
 nvim_lsp.tailwindcss.setup(config())
+nvim_lsp.cmake.setup(config())
