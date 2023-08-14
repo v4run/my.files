@@ -17,9 +17,10 @@ require("noice").setup({
 		},
 	},
 	views = {
+		relative = "editor",
 		cmdline_popup = {
 			border = {
-				style = "none",
+				style = "shadow", -- "'double'"|"'none'"|"'rounded'"|"'shadow'"|"'single'"|"'solid'"
 				padding = { 2, 3 },
 			},
 			size = {
@@ -27,7 +28,8 @@ require("noice").setup({
 			},
 			filter_options = {},
 			win_options = {
-				winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+				winblend = 20,
+				winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "FloatBorder" },
 			},
 		},
 		popupmenu = {
@@ -41,7 +43,8 @@ require("noice").setup({
 				padding = { 0, 1 },
 			},
 			win_options = {
-				winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+				winblend = 20,
+				winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "FloatBorder" },
 			},
 		},
 	},
