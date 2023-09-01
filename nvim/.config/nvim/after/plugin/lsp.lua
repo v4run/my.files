@@ -1,4 +1,5 @@
 local keymap = require("varun.keymap")
+local utils = require("varun.utils")
 local nnoremap = keymap.nnoremap
 local inoremap = keymap.inoremap
 
@@ -65,6 +66,18 @@ local nvim_lsp = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+local on_new_config = function(new_config, new_root_dir)
+	local override_file_path = new_root_dir .. "/.lspconfig.lua"
+	if utils.FileExists(override_file_path) then
+		local _config = dofile(override_file_path)
+		if _config.name ~= new_config.name then
+			return
+		end
+		_config = vim.tbl_deep_extend("force", new_config, _config.config)
+		new_config.settings = _config.settings
+	end
+end
+
 -- Merge configs
 local config = function(_config)
 	return vim.tbl_deep_extend("force", {
@@ -73,6 +86,7 @@ local config = function(_config)
 		flags = {
 			debounce_text_changes = 150,
 		},
+		on_new_config = on_new_config,
 	}, _config or {})
 end
 
