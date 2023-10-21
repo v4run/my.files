@@ -1,2 +1,2 @@
-require("wip.liveoutput")
 require("wip.gomodifytags")
+require("wip.liveoutput")

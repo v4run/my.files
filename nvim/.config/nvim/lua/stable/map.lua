@@ -1,11 +1,11 @@
-local keymap = require("varun.keymap")
-local nnoremap = keymap.nnoremap
-local nmap = keymap.nmap
-local vnoremap = keymap.vnoremap
-local inoremap = keymap.inoremap
-local onoremap = keymap.onoremap
+local utils = require("stable.utils")
+local nnoremap = utils.nnoremap
+local nmap = utils.nmap
+local vnoremap = utils.vnoremap
+local inoremap = utils.inoremap
+local onoremap = utils.onoremap
 
--- Open netrw
+-- Open file manager
 nnoremap("<Leader>fe", "<cmd>NvimTreeToggle<CR>")
 
 -- go to next/previous match, move current line to center, open just enough folds in case
@@ -67,4 +67,4 @@ nmap("<Down>", ":resize -2,<CR>")
 nmap("<S-Up>", ":vertical resize +5,<CR>")
 nmap("<S-Down>", ":vertical resize -5,<CR>")
 
-nnoremap("<Leader>lg", ":LazyGit<CR>")
+-- nnoremap("<Leader>lg", ":LazyGit<CR>")

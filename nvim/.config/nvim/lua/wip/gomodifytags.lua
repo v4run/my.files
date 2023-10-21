@@ -87,3 +87,4 @@ end
 
 vim.api.nvim_create_user_command("GoAddTags", add_tags, { nargs = 1, range = 0 })
 vim.api.nvim_create_user_command("GoRemoveTags", remove_tags, { nargs = 1, range = 0 })
+

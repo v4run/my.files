@@ -46,7 +46,6 @@ require("nvim-treesitter.configs").setup({
 		"regex",
 		"ruby",
 		"rust",
-		"scala",
 		"scheme",
 		"scss",
 		"sql",
@@ -59,6 +58,7 @@ require("nvim-treesitter.configs").setup({
 		"yaml",
 	}, -- "all", "maintained" or list of languages
 	sync_install = false,
+	auto_install = true,
 	ignore_install = {},
 	highlight = merge({
 		enable = true,
@@ -86,5 +86,8 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		use_virtual_text = true,
 		lint_events = { "BufWrite", "CursorHold" },
+	},
+	indent = {
+		enable = true,
 	},
 })

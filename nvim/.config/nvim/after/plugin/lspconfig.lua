@@ -1,7 +1,6 @@
-local keymap = require("varun.keymap")
-local utils = require("varun.utils")
-local nnoremap = keymap.nnoremap
-local inoremap = keymap.inoremap
+local utils = require("stable.utils")
+local nnoremap = utils.nnoremap
+local inoremap = utils.inoremap
 
 local on_attach = function(--[[ client, bufnr ]])
 	nnoremap("gi", function()
@@ -10,7 +9,6 @@ local on_attach = function(--[[ client, bufnr ]])
 	nnoremap("gc", function()
 		vim.lsp.buf.incoming_calls()
 	end)
-	-- nnoremap("gr", "<cmd>Lspsaga lsp_finder<CR>")
 	nnoremap("gr", function()
 		vim.lsp.buf.references()
 	end)
