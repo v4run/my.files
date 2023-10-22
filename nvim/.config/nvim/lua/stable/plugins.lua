@@ -32,6 +32,7 @@ local plugins = {
 	"nvim-lualine/lualine.nvim",
 	"lewis6991/gitsigns.nvim",
 	"sbdchd/neoformat",
+	"stevearc/dressing.nvim",
 }
 local opts = {}
 lazy.setup(plugins, opts)
