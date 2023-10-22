@@ -18,7 +18,8 @@ require("dressing").setup({
 		-- These are passed to nvim_open_win
 		border = "rounded",
 		-- 'editor' and 'win' will default to being centered
-		relative = "cursor",
+		-- relative = "cursor",
+		relative = "editor",
 
 		-- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
 		prefer_width = 40,
