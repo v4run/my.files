@@ -14,6 +14,8 @@ require("nvim-tree").setup({
 		add_trailing = true,
 		full_name = false,
 		highlight_git = true,
+		highlight_diagnostics = true,
+		highlight_modified = "all",
 		indent_markers = {
 			enable = true,
 			inline_arrows = true,
@@ -58,3 +60,4 @@ require("nvim-tree").setup({
 		debounce_delay = 50,
 	},
 })
+vim.api.nvim_set_hl(0, "NvimTreeNormalFloat", { link = "NvimTreeNormal" })

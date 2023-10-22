@@ -35,6 +35,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.opt.foldlevelstart = 99
 vim.opt.pumblend = 20
+vim.opt.fillchars = "eob: "
 
 vim.g.mapleader = " "
 vim.g.ftplugin_sql_omni_key = "<C-e>"
