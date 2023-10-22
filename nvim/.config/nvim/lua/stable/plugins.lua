@@ -33,6 +33,7 @@ local plugins = {
 	"lewis6991/gitsigns.nvim",
 	"sbdchd/neoformat",
 	"stevearc/dressing.nvim",
+	"nvim-treesitter/nvim-treesitter-textobjects",
 }
 local opts = {}
 lazy.setup(plugins, opts)
