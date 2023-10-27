@@ -37,6 +37,7 @@ vim.opt.foldlevelstart = 99
 vim.opt.pumblend = 20
 vim.opt.fillchars = "eob: "
 vim.opt.winblend = 10
+vim.opt.cmdheight = 0
 
 vim.g.mapleader = " "
 vim.g.ftplugin_sql_omni_key = "<C-e>"
