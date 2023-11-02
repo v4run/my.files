@@ -25,6 +25,7 @@ alias lg=lazygit
 
 # Docker
 alias lzd=lazydocker
+alias dc='docker compose'
 
 # Router
 alias bsnl_reconnect='ssh router /interface/pppoe-client/disable BSNL\; /beep\; /delay 3\; /interface/pppoe-client/enable BSNL\; /beep'
@@ -61,4 +62,3 @@ WSL="$IS_WSL$WSL_DISTRO_NAME"
 [ "$OSTYPE" = 'linux-gnu' ] && [ "$WSL" = "" ] && gnu_aliases
 [ "$OSTYPE" = 'linux-gnu' ] && [ "$WSL" != "" ] && wsl_aliases
 [[ "$OSTYPE" == 'darwin'* ]] && mac_aliases
-

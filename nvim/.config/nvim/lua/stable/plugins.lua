@@ -42,6 +42,16 @@ local plugins = {
 			vim.o.timeoutlen = 300
 		end,
 		opts = {
+			window = {
+				position = "top",
+				margin = { 0, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
+				winblend = 50,
+			},
+			layout = {
+				height = { min = 20, max = 100 }, -- min and max height of the columns
+				width = { min = 4, max = 50 }, -- min and max width of the columns
+				align = "right",
+			},
 			-- your configuration comes here
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
