@@ -20,7 +20,7 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { "branch", "diagnostics" },
+		lualine_b = { { "branch", icon = "" }, "diff", "diagnostics" },
 		lualine_c = { filename },
 		lualine_x = {
 			-- {
@@ -48,6 +48,7 @@ require("lualine").setup({
 				mode = 4,
 				buffers_color = {
 					active = { fg = "#ffffff" },
+					inactive = { fg = "#727072" },
 				},
 			},
 		},

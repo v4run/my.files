@@ -57,6 +57,8 @@ local plugins = {
 			-- refer to the configuration section below
 		},
 	},
+	{ "nyoom-engineering/oxocarbon.nvim" },
+	{ "loctvl842/monokai-pro.nvim" },
 }
 local opts = {}
 lazy.setup(plugins, opts)
