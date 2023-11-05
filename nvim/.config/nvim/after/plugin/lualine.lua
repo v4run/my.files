@@ -47,8 +47,9 @@ require("lualine").setup({
 				"buffers",
 				mode = 4,
 				buffers_color = {
-					active = { fg = "#ffffff" },
-					inactive = { fg = "#727072" },
+					-- Same values as the general color option can be used here.
+					active = "lualine_c_inactive", -- Color for active buffer.
+					inactive = "lualine_c_normal", -- Color for inactive buffer.
 				},
 			},
 		},

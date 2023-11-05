@@ -77,3 +77,4 @@ require("monokai-pro").setup({
 	override = function(c) end,
 })
 vim.cmd([[colorscheme monokai-pro]])
+vim.api.nvim_set_hl(0, "lualine_c_normal", { link = "Comment" })
