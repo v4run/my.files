@@ -31,7 +31,9 @@ require("monokai-pro").setup({
 		-- "neo-tree",
 	}, -- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree", "nvim-tree", "bufferline"
 	---@param c Colorscheme
-	override = function(c) end,
+	override = function(c)
+		return {}
+	end,
 })
 vim.cmd([[colorscheme monokai-pro]])
 vim.api.nvim_set_hl(0, "lualine_c_normal", { link = "Comment" })
