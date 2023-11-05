@@ -61,4 +61,4 @@ require("nvim-tree").setup({
 		debounce_delay = 50,
 	},
 })
-vim.api.nvim_set_hl(0, "NvimTreeNormalFloat", { link = "NvimTreeNormal" })
+-- vim.api.nvim_set_hl(0, "NvimTreeNormalFloat", { link = "NvimTreeNormal" })
