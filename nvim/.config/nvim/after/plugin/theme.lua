@@ -37,3 +37,4 @@ require("monokai-pro").setup({
 })
 vim.cmd([[colorscheme monokai-pro]])
 vim.api.nvim_set_hl(0, "lualine_c_normal", { link = "Comment" })
+vim.api.nvim_set_hl(0, "CursorColumn", { link = "CursorLine" })
