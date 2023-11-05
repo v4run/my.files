@@ -6,3 +6,17 @@ cpdiff() {
 	pushd "$1" && git diff | copy && popd
 }
 
+
+# ANSI color codes
+ESC_CODE='\033'
+CLEAR='\033[0m'
+
+# log level colors
+ERR="${ESC_CODE}[1;31m" # bold red
+INF="${ESC_CODE}[0;32m" # green
+WAR="${ESC_CODE}[0;33m" # yellow
+
+# logging helper functions
+log_info() { echo "[${INF}INFO${CLEAR}]" "$@" }
+log_error() { echo "[${ERR}ERROR$CLEAR]" "$@" }
+log_warn() { echo "[${WAR}WARN$CLEAR]" "$@" }
