@@ -6,6 +6,28 @@ cpdiff() {
 	pushd "$1" && git diff | copy && popd
 }
 
+# Create a new docker container with current directory mounted to '/project'
+function rund() {
+	docker container run -it --rm -v "$(pwd)":/project -w /project "$@"
+}
+
+# build a new docker image from a dockerfile in the current directory
+# and run the container with current directory mounted
+function brund() {
+	DOCKERFILE=${DOCKERFILE:-Dockerfile}
+	local IMAGE_NAME
+	local CURRENT_DIR
+	CURRENT_DIR=$(dirname "$0")
+	if [ -f "$CURRENT_DIR/$DOCKERFILE" ]; then
+		# Build new image using the Dockerfile
+		log_info "Dockerfile found. Building new image with it"
+		IMAGE_NAME="$(docker image build -f $DOCKERFILE -q . | cut -d: -f 2)"
+	else
+		log_error "No Dockerfile found. Please create a Dockerfile and try again"
+		return 1
+	fi
+	rund "$IMAGE_NAME" "$@"
+}
 
 # ANSI color codes
 ESC_CODE='\033'
