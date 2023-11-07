@@ -25,7 +25,15 @@ alias lg=lazygit
 
 # Docker
 alias lzd=lazydocker
+alias d='docker'
 alias dc='docker compose'
+alias dcl='docker compose logs'
+alias dclf='docker compose logs -f'
+alias dcu='docker compose up'
+alias dcud='docker compose up -d'
+alias dcd='docker compose down'
+alias dcdv='docker compose down -v'
+alias dcp='docker compose ps'
 
 # Router
 alias bsnl_reconnect='ssh router /interface/pppoe-client/disable BSNL\; /beep\; /delay 3\; /interface/pppoe-client/enable BSNL\; /beep'
