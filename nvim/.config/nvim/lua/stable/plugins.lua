@@ -59,6 +59,7 @@ local plugins = {
 	},
 	{ "nyoom-engineering/oxocarbon.nvim" },
 	{ "loctvl842/monokai-pro.nvim" },
+	{"nvim-treesitter/playground"},
 }
 local opts = {}
 lazy.setup(plugins, opts)

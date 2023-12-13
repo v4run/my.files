@@ -1,4 +1,27 @@
+local keymap = require("stable.utils")
+local nnoremap = keymap.nnoremap
 require("gitsigns").setup({
+	on_attach = function()
+		local gs = package.loaded.gitsigns
+		nnoremap("]c", function()
+			if vim.wo.diff then
+				return "]c"
+			end
+			vim.schedule(function()
+				gs.next_hunk()
+			end)
+			return "<Ignore>"
+		end)
+		nnoremap("[c", function()
+			if vim.wo.diff then
+				return "[c"
+			end
+			vim.schedule(function()
+				gs.prev_hunk()
+			end)
+			return "<Ignore>"
+		end)
+	end,
 	signs = {
 		add = { text = "+" },
 		change = { text = "│" },
