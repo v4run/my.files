@@ -34,6 +34,7 @@ alias dcud='docker compose up -d'
 alias dcd='docker compose down'
 alias dcdv='docker compose down -v'
 alias dcp='docker compose ps'
+alias trimnl='tr -d "\n"'
 
 # Router
 alias bsnl_reconnect='ssh router /interface/pppoe-client/disable BSNL\; /beep\; /delay 3\; /interface/pppoe-client/enable BSNL\; /beep'
@@ -43,25 +44,26 @@ alias bsnl_ip='ssh router /interface/pppoe-client/monitor BSNL once'
 gnu_aliases() {
 	if [ "$XDG_SESSION_TYPE" = 'wayland' ]; then
 		alias copy='wl-copy'
-		alias cpwd='pwd | wl-copy -n'
+		# alias cpwd='pwd | wl-copy -n'
 	else
 		alias copy='xclip -selection clipboard'
-		alias cpwd='pwd | xclip -r -selection clipboard'
+		# alias cpwd='pwd | xclip -r -selection clipboard'
 	fi
+	# alias cpsha='git rev-parse --short HEAD | tr -d "\n" | copy'
 	alias x='pgrep dwm > /dev/null || startx'
 	alias h='pgrep Hyprland > /dev/null || Hyprland'
 }
 
 wsl_aliases() {
 	alias copy='clip.exe'
-	alias cpwd='pwd | tr -d "\n" | clip.exe'
+	# alias cpwd='pwd | tr -d "\n" | clip.exe'
+	# alias cpsha='git rev-parse --short HEAD | tr -d "\n" | copy'
 }
 
 mac_aliases() {
 	alias bud='brew update'
 	alias bug='brew upgrade'
 	alias copy='pbcopy'
-	alias cpwd='pwd | tr -d "\n" | pbcopy'
 }
 
 # WSL
@@ -70,3 +72,7 @@ WSL="$IS_WSL$WSL_DISTRO_NAME"
 [ "$OSTYPE" = 'linux-gnu' ] && [ "$WSL" = "" ] && gnu_aliases
 [ "$OSTYPE" = 'linux-gnu' ] && [ "$WSL" != "" ] && wsl_aliases
 [[ "$OSTYPE" == 'darwin'* ]] && mac_aliases
+
+alias cpwd='pwd | trimnl | copy'
+alias cpsha='git rev-parse --short HEAD | trimnl | copy'
+alias cpbranch='git branch --show-current | trimnl | copy'

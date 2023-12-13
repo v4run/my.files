@@ -23,9 +23,9 @@ zstyle ':completion:*' format $'%B- %{\e[0;33m%}%d%{\e[0m%}%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:warnings' format $'%{\e[0;33m%}Wow, such empty%{\e[0m%}'
 zstyle ':completion:*' matcher-list \
-    'm:{[:lower:]}={[:upper:]}' \
-    '+r:|[._-]=* r:|=*' \
-    '+l:|=*'
+	'm:{[:lower:]}={[:upper:]}' \
+	'+r:|[._-]=* r:|=*' \
+	'+l:|=*'
 _comp_options+=(globdots) # include hidden files in completion
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 # }}
@@ -59,7 +59,8 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 # }}
 
-autoload edit-command-line; zle -N edit-command-line
+autoload edit-command-line
+zle -N edit-command-line
 bindkey '^e' edit-command-line
 bindkey '^r' history-incremental-pattern-search-backward
 bindkey '^s' history-incremental-pattern-search-forward
