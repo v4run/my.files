@@ -16,7 +16,7 @@ vicmd_symbol = ''
 format = '$symbol'
 
 [directory]
-format = "[$path](inverted)"
+format = "[$path](inverted)"
 truncation_length = 3
 truncate_to_repo = false
 fish_style_pwd_dir_length = 2
@@ -24,10 +24,10 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-format = '$symbol $branch '
+format = "$symbol [$branch](dimmed) "
 
 [git_status]
-format = '[$conflicted$untracked$modified$staged$deleted$ahead_behind ](dimmed)'
+format = '[$conflicted$untracked$modified$staged$deleted$ahead_behind ](yellow dimmed)'
 conflicted = '='
 ahead = '⇡'
 behind = '⇣'
