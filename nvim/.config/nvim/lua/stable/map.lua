@@ -56,7 +56,7 @@ nmap("<C-h>", ":bp<CR>")
 nmap("<C-l>", ":bn<CR>")
 
 -- Delete current buffer
-nmap("<C-q>", ":bd<CR>")
+nmap("<C-q>", ":confirm bd<CR>")
 
 nmap("<C-j>", ":cnext<CR>")
 nmap("<C-k>", ":cprev<CR>")
