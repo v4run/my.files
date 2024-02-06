@@ -2,12 +2,22 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """\
-$git_branch$git_status$directory
+$localip$git_branch$git_status$directory
 $character """
 
 right_format = """$time"""
 
 add_newline = false
+
+[hostname]
+ssh_only = true
+ssh_symbol = '\[󱫋\]'
+format = '$ssh_symbol'
+
+[localip]
+ssh_only = true
+format = "󱫋 [$localipv4](dimmed) "
+disabled = false
 
 [character]
 success_symbol = "[󰘧](fg:yellow)"
