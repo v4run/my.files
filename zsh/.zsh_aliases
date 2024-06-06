@@ -10,9 +10,7 @@ alias k='kubectl'
 alias wt='cd $(ws || echo .)'
 alias diff='diff --color'
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
-alias dccd='cd $(dc ls --format json | jq '"'.[] | .ConfigFiles'"' -r | xargs dirname | gum filter)'
-alias cmm='rm -rf build; mkdir build; pushd build; cmake ..; make; popd'
-alias jind='docker container run --rm -it -v $(pwd):/project -w /project amazoncorretto bash'
+alias trimnl='tr -d "\n"'
 
 # Vim related
 alias vim=nvim
@@ -37,7 +35,9 @@ alias dcud='docker compose up -d'
 alias dcd='docker compose down'
 alias dcdv='docker compose down -v'
 alias dcp='docker compose ps'
-alias trimnl='tr -d "\n"'
+alias dccd='cd $(dc ls --format json | jq '"'.[] | .ConfigFiles'"' -r | xargs dirname | gum filter)'
+alias cmm='rm -rf build; mkdir build; pushd build; cmake ..; make; popd'
+alias jind='docker container run --rm -it -v $(pwd):/project -w /project amazoncorretto bash'
 
 # Router
 alias bsnl_reconnect='ssh router /interface/pppoe-client/disable BSNL\; /beep\; /delay 3\; /interface/pppoe-client/enable BSNL\; /beep'
