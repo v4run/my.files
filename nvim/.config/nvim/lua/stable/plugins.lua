@@ -17,7 +17,7 @@ local plugins = {
 		end,
 	},
 	{ "leoluz/nvim-dap-go", dependencies = { "mfussenegger/nvim-dap" } },
-	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
+	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
 	"numToStr/Comment.nvim",
 	"neovim/nvim-lspconfig",
 	"hrsh7th/nvim-cmp",
@@ -59,7 +59,8 @@ local plugins = {
 	},
 	{ "nyoom-engineering/oxocarbon.nvim" },
 	{ "loctvl842/monokai-pro.nvim" },
-	{"nvim-treesitter/playground"},
+	{ "nvim-treesitter/playground" },
+	{ "rose-pine/neovim", name = "rose-pine" },
 }
 local opts = {}
 lazy.setup(plugins, opts)
