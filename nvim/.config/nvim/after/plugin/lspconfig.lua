@@ -144,3 +144,8 @@ nvim_lsp.yamlls.setup(config())
 nvim_lsp.hls.setup(config())
 nvim_lsp.tailwindcss.setup(config())
 nvim_lsp.cmake.setup(config())
+nvim_lsp.rust_analyzer.setup(config({
+	settings = {
+		["rust-analyzer"] = {},
+	},
+}))
