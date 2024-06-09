@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while read file; do
+	fullpath="$(pwd)/$file"
+	case "$1" in
+	"C-c") echo -n "$file" | xclip -selection clipboard ;;
+	# "C-w") nitrogen --save --set-zoom-fill "$file" ;;
+	"C-r") magick "$file" -rotate 90 "$file" ;;
+	esac
+done
