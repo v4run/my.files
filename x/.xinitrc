@@ -17,7 +17,6 @@ fi
 
 if [ -f "$userresources" ]; then
 	xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -33,25 +32,16 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 	unset f
 fi
 
-# GoBlocks
-goblocks &
-
-# Display Resolution
+# Set screen layout
 ./.screenlayout/current.sh
 
-# Compositor
-# picom --config "$HOME/.config/picom/picom.conf" &
+# Start tray icons
+## network manager
+nm-applet &
+## audio
+pasystray --key-grabbing --volume-max=100 &
 
-# Wallpaper
-# wal -R
+# load compositor config
+picom --config "$HOME/.config/picom/picom.conf" &
 
-# Live wallpaper
-paperview "$HOME/Pictures/wallpapers/live/1" 11 0 0 2560 1440 "$HOME/Pictures/wallpapers/live/2" 7 2560 180 1980 1080 &
-
-# run easyeffects in background
-# easyeffects --gapplication-service &
-
-# Execute DWM
-# exec dwm
-# Execute awesome
-exec awesome >>~/.cache/awesome/stdout 2>>~/.cache/awesome/stderr
+exec dwm
