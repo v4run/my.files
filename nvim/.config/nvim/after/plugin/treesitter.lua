@@ -78,8 +78,10 @@ require("nvim-treesitter.configs").setup({
 	incremental_selection = merge({
 		enable = true,
 		keymaps = {
-			node_incremental = "<C-l>",
-			node_decremental = "<C-h>",
+			init_selection = "gnn", -- set to `false` to disable one of the mappings
+			node_incremental = "grn",
+			scope_incremental = "grc",
+			node_decremental = "grm",
 		},
 	}),
 	query_linter = {
