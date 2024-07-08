@@ -56,6 +56,7 @@ require("nvim-treesitter.configs").setup({
 		"vim",
 		"vue",
 		"yaml",
+		"zig",
 	}, -- "all", "maintained" or list of languages
 	sync_install = false,
 	auto_install = true,

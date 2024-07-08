@@ -149,3 +149,4 @@ nvim_lsp.rust_analyzer.setup(config({
 		["rust-analyzer"] = {},
 	},
 }))
+nvim_lsp.zls.setup(config())
