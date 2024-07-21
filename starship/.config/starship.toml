@@ -21,7 +21,7 @@ disabled = false
 
 [character]
 success_symbol = "[󰘧](fg:yellow)"
-error_symbol = "[](bold fg:red)"
+error_symbol = "[χ](bold fg:red)"
 vicmd_symbol = ''
 format = '$symbol'
 
