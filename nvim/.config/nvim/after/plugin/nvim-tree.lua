@@ -32,7 +32,7 @@ require("nvim-tree").setup({
 		signcolumn = "no",
 		float = {
 			enable = true,
-			quit_on_focus_loss = false,
+			quit_on_focus_loss = true,
 			open_win_config = function()
 				local screen_w = vim.opt.columns:get()
 				local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()

@@ -32,7 +32,7 @@ end
 
 telescope.setup({
 	defaults = {
-		borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
+		-- borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
 		vimgrep_arguments = {
 			"rg",
 			"--color=never",
