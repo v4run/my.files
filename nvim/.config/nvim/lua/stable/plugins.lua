@@ -42,10 +42,23 @@ local plugins = {
 			vim.o.timeoutlen = 300
 		end,
 		opts = {
-			window = {
-				position = "top",
-				margin = { 0, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
-				winblend = 50,
+			win = {
+				-- don't allow the popup to overlap with the cursor
+				no_overlap = true,
+				-- width = 1,
+				-- height = { min = 4, max = 25 },
+				-- col = 0,
+				row = 0,
+				-- border = "none",
+				padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+				title = true,
+				title_pos = "center",
+				zindex = 1000,
+				-- Additional vim.wo and vim.bo options
+				bo = {},
+				wo = {
+					winblend = 50, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+				},
 			},
 			layout = {
 				height = { min = 20, max = 100 }, -- min and max height of the columns
