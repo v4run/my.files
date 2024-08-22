@@ -12,6 +12,7 @@ alias diff='diff --color'
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
 alias trimnl='tr -d "\n"'
 alias dwweb='wget --no-parent --convert-links --content-on-error --page-requisites --mirror'
+alias zigdev="$HOME/tools/zig/bin/zig"
 
 # Vim related
 alias vim=nvim
