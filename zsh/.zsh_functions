@@ -29,6 +29,19 @@ function brund() {
 	rund "$IMAGE_NAME" "$@"
 }
 
+function cstow() {
+	if [ -z "$1" ]; then
+		echo "Usage: $0 <config>"
+		return
+	fi
+	msg=$(stow -Snv "$1" 2>&1 | grep -v WARNING)
+	if [ -z "$msg" ]; then
+		echo "No changes needed"
+		return
+	fi
+	gum confirm --prompt.foreground="15" --default=no --affirmative="Stow" --negative="Cancel" "$msg" && stow -Sv "$1" || echo "Stow cancelled"
+}
+
 # ANSI color codes
 ESC_CODE='\033'
 CLEAR='\033[0m'
