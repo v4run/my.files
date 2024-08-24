@@ -63,7 +63,6 @@ require("nvim-treesitter.configs").setup({
 	ignore_install = {},
 	highlight = merge({
 		enable = true,
-		disable = disable_treesitter,
 		additional_vim_regex_highlighting = false,
 	}),
 	textobjects = {

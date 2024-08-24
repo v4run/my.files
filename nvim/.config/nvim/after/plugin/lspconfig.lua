@@ -2,7 +2,8 @@ local utils = require("stable.utils")
 local nnoremap = utils.nnoremap
 local inoremap = utils.inoremap
 
-local on_attach = function(--[[ client, bufnr ]])
+local on_attach = function(--[[ client --]]_, bufnr)
+	vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 	nnoremap("gi", function()
 		vim.lsp.buf.implementation()
 	end)
@@ -114,6 +115,7 @@ nvim_lsp.gopls.setup(config({
 }))
 
 nvim_lsp.pyright.setup(config())
+-- nvim_lsp.ruff_lsp.setup(config())
 nvim_lsp.bashls.setup(config())
 nvim_lsp.clangd.setup(config())
 nvim_lsp.tsserver.setup(config())
@@ -144,9 +146,24 @@ nvim_lsp.yamlls.setup(config())
 nvim_lsp.hls.setup(config())
 nvim_lsp.tailwindcss.setup(config())
 nvim_lsp.cmake.setup(config())
-nvim_lsp.rust_analyzer.setup(config({
+nvim_lsp.rust_analyzer.setup(config({}))
+nvim_lsp.zls.setup(config({
 	settings = {
-		["rust-analyzer"] = {},
+		["rust-analyzer"] = {
+			imports = {
+				granularity = {
+					group = "module",
+				},
+				prefix = "self",
+			},
+			cargo = {
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true,
+			},
+		},
 	},
 }))
-nvim_lsp.zls.setup(config())
