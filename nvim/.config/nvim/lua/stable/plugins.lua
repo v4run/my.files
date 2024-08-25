@@ -74,6 +74,7 @@ local plugins = {
 	},
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "David-Kunz/gen.nvim" },
+	{ "nvim-telescope/telescope-ui-select.nvim" },
 }
 local opts = {}
 lazy.setup(plugins, opts)

@@ -70,4 +70,7 @@ nmap("<S-Down>", ":vertical resize -5,<CR>")
 nnoremap("<Leader>ge", ":Gen<CR>")
 vnoremap("<Leader>ge", ":Gen<CR>")
 
+nnoremap("<C-w><C-z>", "<C-w>|<C-w>_")
+nnoremap("<C-w>z", "<C-w>=")
+
 -- nnoremap("<Leader>lg", ":LazyGit<CR>")
