@@ -67,8 +67,13 @@ nmap("<Down>", ":resize -2,<CR>")
 nmap("<S-Up>", ":vertical resize +5,<CR>")
 nmap("<S-Down>", ":vertical resize -5,<CR>")
 
-nnoremap("<Leader>ge", ":Gen<CR>")
-vnoremap("<Leader>ge", ":Gen<CR>")
+-- Gen ai bindings
+nnoremap("<Leader>gep", ":Gen<CR>")
+vnoremap("<Leader>gep", ":Gen<CR>")
+nnoremap("<Leader>gea", ":Gen Ask<CR>")
+vnoremap("<Leader>gea", ":Gen Ask<CR>")
+nnoremap("<Leader>gec", ":Gen Chat<CR>")
+vnoremap("<Leader>gec", ":Gen Chat<CR>")
 
 nnoremap("<C-w><C-z>", "<C-w>|<C-w>_")
 nnoremap("<C-w>z", "<C-w>=")
