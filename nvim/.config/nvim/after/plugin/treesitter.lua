@@ -72,6 +72,9 @@ require("nvim-treesitter.configs").setup({
 			keymaps = {
 				["af"] = "@function.outer",
 				["if"] = "@function.inner",
+				["ic"] = "@class.inner",
+				["ac"] = "@class.outer",
+				["as"] = "@scope",
 			},
 		}),
 	},

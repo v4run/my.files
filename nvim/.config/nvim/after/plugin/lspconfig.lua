@@ -118,7 +118,7 @@ nvim_lsp.pyright.setup(config())
 -- nvim_lsp.ruff_lsp.setup(config())
 nvim_lsp.bashls.setup(config())
 nvim_lsp.clangd.setup(config())
-nvim_lsp.tsserver.setup(config())
+nvim_lsp.ts_ls.setup(config())
 nvim_lsp.lua_ls.setup(config({
 	settings = {
 		Lua = {
