@@ -43,3 +43,4 @@ vim.g.mapleader = " "
 vim.g.ftplugin_sql_omni_key = "<C-e>"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.o.guifont = "Iosevka:h16" -- text below applies for VimScript
