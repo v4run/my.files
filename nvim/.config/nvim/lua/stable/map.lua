@@ -79,3 +79,4 @@ nnoremap("<C-w><C-z>", "<C-w>|<C-w>_")
 nnoremap("<C-w>z", "<C-w>=")
 
 -- nnoremap("<Leader>lg", ":LazyGit<CR>")
+nnoremap("<Leader>o", ":Neorg<CR>")

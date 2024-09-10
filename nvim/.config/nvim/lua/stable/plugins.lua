@@ -75,6 +75,11 @@ local plugins = {
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "David-Kunz/gen.nvim" },
 	{ "nvim-telescope/telescope-ui-select.nvim" },
+	{
+		"nvim-neorg/neorg",
+		lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+		version = "*", -- Pin Neorg to the latest stable release
+	},
 }
 local opts = {}
 lazy.setup(plugins, opts)
