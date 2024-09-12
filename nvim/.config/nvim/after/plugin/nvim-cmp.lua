@@ -31,6 +31,7 @@ local cmp_config = {
 		{ name = "luasnip" },
 		{ name = "path" },
 		{ name = "buffer" },
+		{ name = "neorg" },
 	}),
 }
 if lspkind ~= nil then
