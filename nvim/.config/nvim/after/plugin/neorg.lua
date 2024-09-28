@@ -6,10 +6,17 @@ require("neorg").setup({
 				icon_preset = "varied",
 			},
 		},
-		["core.dirman"] = {},
 		["core.completion"] = {
 			config = {
 				engine = "nvim-cmp",
+			},
+		},
+		["core.summary"] = {},
+		["core.dirman"] = {
+			config = {
+				workspaces = {
+					notes = "~/notes",
+				},
 			},
 		},
 	},
