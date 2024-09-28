@@ -4,7 +4,7 @@ local WIDTH_RATIO = 0.5 -- You can change this too
 require("nvim-tree").setup({
 	hijack_cursor = true,
 	prefer_startup_root = true,
-	sync_root_with_cwd = true,
+	select_prompts = false,
 	update_focused_file = {
 		enable = true,
 		update_root = true,
