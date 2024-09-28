@@ -35,7 +35,7 @@ vnoremap("<Leader>y", '"cy<cmd>let @+ .= @c<CR>')
 nnoremap("<Leader>z", ":set wrap!<CR>")
 
 -- Run neoformat
-nnoremap("<Leader>ff", ":Neoformat<CR>")
+-- nnoremap("<Leader>ff", ":Neoformat<CR>")
 
 -- Select filetype
 nnoremap("<Leader>ft", ":Telescope filetypes<CR>")
