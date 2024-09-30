@@ -23,7 +23,7 @@ require("nvim-tree").setup({
 			icons = {
 				corner = "└",
 				edge = "│",
-				item = "├",
+				item = "│",
 				none = " ",
 			},
 		},
