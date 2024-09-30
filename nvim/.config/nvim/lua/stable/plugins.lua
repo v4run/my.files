@@ -84,6 +84,11 @@ local plugins = {
 		"stevearc/conform.nvim",
 		opts = {},
 	},
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 }
 local opts = {}
 lazy.setup(plugins, opts)

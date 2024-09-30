@@ -60,7 +60,7 @@ nmap("<C-q>", ":confirm bd<CR>")
 
 nmap("<C-j>", ":cnext<CR>")
 nmap("<C-k>", ":cprev<CR>")
-nmap("<Leader>h", ":cclose<CR>:lclose<CR>")
+nmap("<Leader>l", ":cclose<CR>:lclose<CR>")
 
 nmap("<Up>", ":resize +2,<CR>")
 nmap("<Down>", ":resize -2,<CR>")
