@@ -23,3 +23,7 @@ require("conform").setup({
 		c = { "clang-format" },
 	},
 })
+
+vim.api.nvim_create_user_command("ConformFormat", function()
+	require("conform").format({ async = true, lsp_format = "fallback" })
+end, {})
