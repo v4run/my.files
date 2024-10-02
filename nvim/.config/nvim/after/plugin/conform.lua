@@ -21,6 +21,7 @@ require("conform").setup({
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		cpp = { "clang-format" },
 		c = { "clang-format" },
+		["_"] = { "trim_whitespace" },
 	},
 })
 
