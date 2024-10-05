@@ -34,9 +34,9 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.opt.foldlevelstart = 99
-vim.opt.pumblend = 10 -- popup menu blend
+-- vim.opt.pumblend = 10 -- popup menu blend
 vim.opt.fillchars = "eob: "
-vim.opt.winblend = 10
+-- vim.opt.winblend = 10
 vim.opt.cmdheight = 1
 
 vim.g.mapleader = " "

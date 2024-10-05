@@ -59,7 +59,7 @@ local plugins = {
 				-- Additional vim.wo and vim.bo options
 				bo = {},
 				wo = {
-					winblend = 50, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+					-- winblend = 50, -- value between 0-100 0 for fully opaque and 100 for fully transparent
 				},
 			},
 			layout = {

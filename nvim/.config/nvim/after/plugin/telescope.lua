@@ -44,7 +44,7 @@ telescope.setup({
 			"--hidden",
 		},
 		buffer_previewer_maker = binary_hider,
-		winblend = 10,
+		-- winblend = 10,
 		layout_config = {
 			bottom_pane = {
 				height = 25,
