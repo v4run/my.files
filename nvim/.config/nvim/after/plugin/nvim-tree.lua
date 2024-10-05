@@ -1,4 +1,4 @@
-local HEIGHT_RATIO = 0.8 -- You can change this
+local HEIGHT_RATIO = 1 -- You can change this
 local WIDTH_RATIO = 0.5 -- You can change this too
 
 require("nvim-tree").setup({
@@ -17,17 +17,83 @@ require("nvim-tree").setup({
 		highlight_git = true,
 		highlight_diagnostics = true,
 		highlight_modified = "all",
+		icons = {
+			web_devicons = {
+				file = {
+					enable = true,
+					color = true,
+				},
+				folder = {
+					enable = false,
+					color = true,
+				},
+			},
+			git_placement = "before",
+			modified_placement = "after",
+			hidden_placement = "after",
+			diagnostics_placement = "signcolumn",
+			bookmarks_placement = "signcolumn",
+			padding = " ",
+			symlink_arrow = " ➛ ",
+			show = {
+				file = true,
+				folder = true,
+				folder_arrow = true,
+				git = true,
+				modified = true,
+				hidden = false,
+				diagnostics = true,
+				bookmarks = true,
+			},
+			glyphs = {
+				default = "",
+				symlink = "",
+				bookmark = "󰆤",
+				modified = "●",
+				hidden = "󰜌",
+				folder = {
+					arrow_closed = "+",
+					arrow_open = "-",
+					default = "",
+					open = "",
+					empty = "",
+					empty_open = "",
+					symlink = "",
+					symlink_open = "",
+				},
+				git = {
+					unstaged = "✗",
+					staged = "✓",
+					unmerged = "",
+					renamed = "➜",
+					untracked = "★",
+					deleted = "",
+					ignored = "◌",
+				},
+			},
+		},
 		indent_markers = {
 			enable = true,
 			inline_arrows = true,
 			icons = {
-				corner = "└",
-				edge = "│",
-				item = "│",
+				corner = " ",
+				edge = " ",
+				item = " ",
 				none = " ",
 			},
 		},
 		symlink_destination = false,
+	},
+	actions = {
+		file_popup = {
+			open_win_config = {
+				col = 1,
+				row = 1,
+				relative = "cursor",
+				border = "rounded",
+				style = "minimal",
+			},
+		},
 	},
 	view = {
 		signcolumn = "no",
@@ -41,13 +107,15 @@ require("nvim-tree").setup({
 				local window_h = screen_h * HEIGHT_RATIO
 				local window_w_int = math.floor(window_w)
 				local window_h_int = math.floor(window_h)
-				local center_x = (screen_w - window_w) / 2
-				local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
+				local window_x = screen_w - window_w_int
+				local window_y = 0
+				-- local window_x = (screen_w - window_w) / 2
+				-- local window_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
 				return {
-					border = "rounded",
+					-- border = "rounded",
 					relative = "editor",
-					row = center_y,
-					col = center_x,
+					row = window_y,
+					col = window_x,
 					width = window_w_int,
 					height = window_h_int,
 				}
