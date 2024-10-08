@@ -81,3 +81,7 @@ nnoremap("<C-w>z", "<C-w>=")
 
 -- nnoremap("<Leader>lg", ":LazyGit<CR>")
 nnoremap("<Leader>o", ":Neorg<CR>")
+
+-- run command on file
+nnoremap("<Leader>.", ":! %<Left><Left>")
+nnoremap("<Leader>>", ":new | 0read ! #<Left><Left>")
