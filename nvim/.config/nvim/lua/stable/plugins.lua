@@ -5,6 +5,7 @@ local plugins = {
 	"nvim-treesitter/nvim-treesitter",
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	{ "nvim-treesitter/nvim-treesitter-context" },
 	{ "nvim-telescope/telescope-dap.nvim", dependencies = { "mfussenegger/nvim-dap" } },
 	{
 		"kylechui/nvim-surround",
