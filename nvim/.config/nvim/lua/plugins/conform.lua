@@ -20,8 +20,15 @@ return {
 		-- Define your formatters
 		formatters_by_ft = {
 			lua = { "stylua" },
-			python = { "isort", "black" },
+			python = { "ruff_format", "isort", "black" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
+			go = { "goimports", "gofmt" },
+			-- You can customize some of the format options for the filetype (:help conform.format)
+			rust = { "rustfmt", lsp_format = "fallback" },
+			-- Conform will run the first available formatter
+			cpp = { "clang-format" },
+			c = { "clang-format" },
+			["_"] = { "trim_whitespace" },
 		},
 		-- Set default options
 		default_format_opts = {
