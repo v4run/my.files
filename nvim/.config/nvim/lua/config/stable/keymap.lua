@@ -32,6 +32,8 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<C-w><C-z>", "<C-w>|<C-w>_", { desc = "Zoom window", noremap = true })
 vim.keymap.set("n", "<C-w>z", "<C-w>=", { desc = "Reset window sizes", noremap = true })
+vim.keymap.set("n", "<C-f>", ":bn<CR>", { desc = "Goto next buffer" })
+vim.keymap.set("n", "<C-b>", ":bp<CR>", { desc = "Goto previous buffer" })
 
 -- Nvimtree
 vim.keymap.set("n", "<leader>fe", ":NvimTreeToggle<CR>", { desc = "Toggle Nvimtree" })
