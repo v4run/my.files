@@ -32,7 +32,7 @@ local function get_buf_details(args)
 	local line_start, line_end = args.line1, args.line2
 	local content = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
 	local file_size = vim.fn.getfsize(file)
-	local modified = vim.api.nvim_buf_get_option(bufnr, "modified")
+	local modified = vim.api.nvim_get_option_value("modified", { buf = bufnr })
 	return {
 		bufnr = bufnr,
 		file = file,
@@ -87,4 +87,3 @@ end
 
 vim.api.nvim_create_user_command("GoAddTags", add_tags, { nargs = 1, range = 0 })
 vim.api.nvim_create_user_command("GoRemoveTags", remove_tags, { nargs = 1, range = 0 })
-

@@ -1,2 +1,1 @@
-require("stable")
-require("wip")
+require("config")
