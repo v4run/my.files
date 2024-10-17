@@ -17,6 +17,11 @@ return {
 					},
 				},
 				["core.summary"] = {},
+				["core.journal"] = {
+					config = {
+						workspace = "notes",
+					},
+				},
 				["core.dirman"] = {
 					config = {
 						workspaces = {
