@@ -3,6 +3,7 @@ vim.g.maplocalleader = "\\"
 
 vim.opt.showmatch = true
 vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.number = true
