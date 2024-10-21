@@ -47,8 +47,15 @@ vim.keymap.set("n", "<C-s>", builtin.spell_suggest, { desc = "Telescope spell su
 vim.keymap.set("n", "<leader>ft", builtin.filetypes, { desc = "Telescope select file type" })
 
 -- mini.pick
-vim.keymap.set("n", "<C-p>", ":Pick files<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>/", ":Pick grep_live<CR>", { desc = "Live grep" })
+vim.keymap.set("n", "<C-p>", function()
+	MiniPick.builtin.cli({
+		command = { "fd", "--type=f", "--no-follow", "--color=never", "--hidden" },
+		spawn_opts = {
+			name = "Files (fd)",
+		},
+	})
+end, { desc = "Find files" })
 
 -- Conform
 vim.keymap.set("n", "<leader>ff", "", { desc = "Format code" })
