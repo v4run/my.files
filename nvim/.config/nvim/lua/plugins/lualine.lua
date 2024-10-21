@@ -52,8 +52,8 @@ return {
 						mode = 4,
 						buffers_color = {
 							-- Same values as the general color option can be used here.
-							-- active = "lualine_c_inactive", -- Color for active buffer.
-							-- inactive = "lualine_c_normal", -- Color for inactive buffer.
+							active = "lualine_c_inactive", -- Color for active buffer.
+							inactive = "lualine_c_normal", -- Color for inactive buffer.
 						},
 					},
 				},

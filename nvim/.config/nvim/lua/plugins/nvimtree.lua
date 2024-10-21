@@ -17,7 +17,7 @@ return {
 			renderer = {
 				add_trailing = true,
 				root_folder_label = function(path)
-					return " .../" .. vim.fn.fnamemodify(path, ":t")
+					return "  " .. vim.fn.fnamemodify(path, ":t")
 				end,
 				hidden_display = "all",
 				highlight_git = "all",
@@ -36,18 +36,23 @@ return {
 					},
 				},
 				icons = {
+					git_placement = "after",
+					padding = " ",
 					glyphs = {
 						folder = {
-							arrow_closed = "+",
-							arrow_open = "-",
+							default = "+",
+							open = "-",
+							empty = "+",
+							empty_open = "-",
+							symlink = "+",
+							symlink_open = "-",
+							arrow_closed = "",
+							arrow_open = "",
 						},
 					},
 				},
 			},
 			update_focused_file = {
-				enable = true,
-			},
-			diagnostics = {
 				enable = true,
 			},
 			actions = {
