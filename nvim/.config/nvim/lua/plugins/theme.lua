@@ -15,7 +15,7 @@ return {
 				annotation = { italic = true },
 				tag_attribute = { italic = true }, -- attribute of tag in reactjs
 			},
-			filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+			filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
 			inc_search = "background", -- underline | background
 			background_clear = {
 				"float_win",
