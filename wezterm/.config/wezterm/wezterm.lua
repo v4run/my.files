@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = {}
 config.font = wezterm.font("Iosevka")
-config.color_scheme = "Gruvbox Material (Gogh)"
+config.color_scheme = "Monokai Remastered"
 config.font_size = 16
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = false
