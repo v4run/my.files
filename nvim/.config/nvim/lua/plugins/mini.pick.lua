@@ -67,7 +67,9 @@ return {
 				cwd = nil,
 
 				match = nil,
-				show = nil,
+				show = function(buf_id, items, query)
+					MiniPick.default_show(buf_id, items, query, { show_icons = true })
+				end,
 				preview = nil,
 
 				choose = nil,
