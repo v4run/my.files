@@ -26,13 +26,9 @@ return {
 			"nvim-tree",
 		},
 		plugins = {},
-		override = function(--[[c]])
-			return {
-				WhiteSpace = { fg = "#393939" },
-			}
-		end,
 	},
 	init = function()
 		vim.cmd.colorscheme("monokai-pro")
+		vim.cmd("highlight WhiteSpace guifg=#393939") -- Override hack
 	end,
 }
