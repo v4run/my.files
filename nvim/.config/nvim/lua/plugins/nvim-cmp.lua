@@ -10,7 +10,7 @@ return {
 		{ "saadparwaiz1/cmp_luasnip" },
 		{ "onsails/lspkind.nvim" },
 	},
-	config = function()
+	opts = function()
 		local cmp = require("cmp")
 		local lspkind = require("lspkind")
 		local luasnip = require("luasnip")
@@ -56,6 +56,6 @@ return {
 				}),
 			},
 		}
-		cmp.setup(cmp_config)
+		return cmp_config
 	end,
 }

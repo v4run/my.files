@@ -1,9 +1,25 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
-	config = function()
+	event = "VeryLazy",
+	init = function()
+		vim.g.lualine_laststatus = vim.o.laststatus
+		if vim.fn.argc(-1) > 0 then
+			-- set an empty statusline till lualine loads
+			vim.o.statusline = " "
+		else
+			-- hide the statusline on the starter page
+			vim.o.laststatus = 0
+		end
+	end,
+	opts = function()
+		-- PERF: we don't need this lualine require madness 🤷
+		local lualine_require = require("lualine_require")
+		lualine_require.require = require
+
+		-- local icons = LazyVim.config.icons
+		vim.o.laststatus = vim.g.lualine_laststatus
 		local filename = { "filename", path = 3 }
-		require("lualine").setup({
+		local opts = {
 			options = {
 				icons_enabled = true,
 				theme = "auto",
@@ -61,7 +77,9 @@ return {
 				lualine_y = { "filetype" },
 				lualine_z = { "fileformat" },
 			},
-			extensions = { "nvim-tree" },
-		})
+			extensions = { "nvim-tree", "lazy" },
+		}
+		return opts
 	end,
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 }
