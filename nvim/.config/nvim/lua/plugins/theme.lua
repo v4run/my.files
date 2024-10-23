@@ -15,7 +15,7 @@ return {
 				annotation = { italic = true },
 				tag_attribute = { italic = true }, -- attribute of tag in reactjs
 			},
-			filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
+			filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
 			inc_search = "background", -- underline | background
 			background_clear = {
 				"float_win",
@@ -26,6 +26,11 @@ return {
 				"nvim-tree",
 			},
 			plugins = {},
+			override = function(--[[c]])
+				return {
+					WhiteSpace = { fg = "#393939" },
+				}
+			end,
 		})
 		vim.cmd.colorscheme("monokai-pro")
 	end,
