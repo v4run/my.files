@@ -12,33 +12,43 @@ end
 
 local M = {
 	"nvim-treesitter/nvim-treesitter",
-	build = function()
-		require("nvim-treesitter.install").update({ with_sync = true })()
-	end,
+	build = ":TSUpdate",
+	event = { "VeryLazy" },
+	lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
 	dependencies = {
 		{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	},
+	init = function(plugin)
+		-- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
+		-- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
+		-- no longer trigger the **nvim-treesitter** module to be loaded in time.
+		-- Luckily, the only things that those plugins need are the custom queries, which we make available
+		-- during startup.
+		require("lazy.core.loader").add_to_rtp(plugin)
+		require("nvim-treesitter.query_predicates")
+	end,
+	cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 	opts = {
 		modules = {},
 		ignore_install = {},
 		-- A list of parser names, or "all" (the listed parsers MUST always be installed)
 		ensure_installed = {
-			"java",
+			"bash",
 			"c",
-			"lua",
-			"vim",
-			"javascript",
-			"python",
-			"typescript",
 			"cpp",
 			"go",
-			"rust",
-			"zig",
-			"vimdoc",
-			"query",
+			"java",
+			"javascript",
+			"lua",
 			"markdown",
 			"markdown_inline",
-			"bash",
+			"python",
+			"query",
+			"rust",
+			"typescript",
+			"vim",
+			"vimdoc",
+			"zig",
 		},
 
 		-- Install parsers synchronously (only applied to `ensure_installed`)
@@ -87,6 +97,9 @@ local M = {
 			enable = true,
 		},
 	},
+	config = function(_, opts)
+		require("nvim-treesitter.configs").setup(opts)
+	end,
 }
 
 return { M }
