@@ -83,3 +83,4 @@ __FUNCTION_PREFIX="_"            # Can be anything. I added '_' just to prevent 
 source "$SCRIPT_ROOT_DIR/init.sh"
 source <(kubectl completion zsh)
 eval "$(starship init zsh)"
+source <(fzf --zsh)
