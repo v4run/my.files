@@ -12,7 +12,7 @@ return {
 		end
 	end,
 	opts = function()
-		-- PERF: we don't need this lualine require madness 🤷
+		-- PERF: we don't need this lualine require madness
 		local lualine_require = require("lualine_require")
 		lualine_require.require = require
 
@@ -22,7 +22,13 @@ return {
 		local opts = {
 			options = {
 				icons_enabled = true,
-				theme = "auto",
+				theme = {
+					normal = {
+						c = { bg = "#040001" },
+						b = { bg = "#040001" },
+						a = { bg = "#040001" },
+					},
+				},
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
@@ -39,16 +45,10 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { "mode" },
-				lualine_b = { { "branch", icon = "" }, "diff", "diagnostics" },
+				lualine_a = {},
+				lualine_b = { { "branch", icon = "" } },
 				lualine_c = { filename },
-				lualine_x = {
-					-- {
-					-- 	require("noice").api.statusline.mode.get,
-					-- 	cond = require("noice").api.statusline.mode.has,
-					-- 	color = { fg = "#ff9e64" },
-					-- },
-				},
+				lualine_x = { "diff", "diagnostics" },
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
@@ -61,21 +61,19 @@ return {
 				lualine_z = {},
 			},
 			tabline = {
-				lualine_a = { "tabs" },
+				lualine_a = {},
 				lualine_b = {
 					{
 						"buffers",
 						mode = 4,
 						buffers_color = {
-							-- Same values as the general color option can be used here.
-							active = "lualine_c_inactive", -- Color for active buffer.
-							inactive = "lualine_c_normal", -- Color for inactive buffer.
+							inactive = { fg = "#393939" },
 						},
 					},
 				},
 				lualine_x = { "encoding" },
 				lualine_y = { "filetype" },
-				lualine_z = { "fileformat" },
+				lualine_z = {},
 			},
 			extensions = { "nvim-tree", "lazy" },
 		}

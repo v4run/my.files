@@ -11,4 +11,10 @@ config.window_padding = {
 	top = "0px",
 	bottom = "0px",
 }
+config.max_fps = 144
+config.colors = {
+	background = "#040001",
+	cursor_bg = "#ffd866",
+	cursor_border = "#ffd866",
+}
 return config

@@ -2,7 +2,7 @@ return {
 	"loctvl842/monokai-pro.nvim",
 	priority = 1000,
 	opts = {
-		transparent_background = false,
+		transparent_background = true,
 		terminal_colors = true,
 		devicons = true, -- highlight the icons of `nvim-web-devicons`
 		styles = {
@@ -29,6 +29,7 @@ return {
 	},
 	init = function()
 		vim.cmd.colorscheme("monokai-pro")
-		vim.cmd("highlight WhiteSpace guifg=#393939") -- Override hack
+		vim.cmd("highlight WhiteSpace guifg=#121212") -- Override hack
+		vim.cmd("highlight CursorLine guibg=#121212") -- Override hack
 	end,
 }

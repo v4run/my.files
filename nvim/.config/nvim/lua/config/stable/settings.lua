@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.g.ftplugin_sql_omni_key = "<C-]>"
 
 vim.opt.showmatch = true
 vim.opt.ignorecase = true
@@ -9,7 +10,7 @@ vim.opt.incsearch = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.list = true
-vim.opt.listchars = { tab = " ", space = "·", eol = "󰌑", trail = "␠" } -- indent guide lines
+vim.opt.listchars = { tab = "┃ ", space = "·", trail = "␠" } -- indent guide lines
 vim.opt.undofile = true
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
@@ -33,3 +34,6 @@ vim.opt.foldenable = false
 vim.opt.foldlevelstart = 99
 vim.opt.autowrite = true
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.scrolloff = 1
+vim.opt.winblend = 10
+vim.opt.pumblend = 10

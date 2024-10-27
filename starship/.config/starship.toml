@@ -20,7 +20,7 @@ format = "󱫋 [$localipv4](dimmed) "
 disabled = false
 
 [character]
-success_symbol = "[󰘧](fg:yellow)"
+success_symbol = "[󰘧](fg:bright-yellow)"
 error_symbol = "[χ](bold fg:red)"
 vicmd_symbol = ''
 format = '$symbol'
