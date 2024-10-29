@@ -31,5 +31,6 @@ return {
 		vim.cmd.colorscheme("monokai-pro")
 		vim.cmd("highlight WhiteSpace guifg=#121212") -- Override hack
 		vim.cmd("highlight CursorLine guibg=#121212") -- Override hack
+		vim.cmd("highlight Visual guibg=#101010") -- Override hack
 	end,
 }
