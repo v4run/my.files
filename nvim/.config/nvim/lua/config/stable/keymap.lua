@@ -27,7 +27,7 @@ vim.keymap.set("n", "<leader>.", ":! %<Left><Left>", { desc = "Run a command on 
 vim.keymap.set(
 	"n",
 	"<leader>>",
-	":new | 0read ! #<Left><Left>",
+	":new +setlocal\\ bt=nofile\\ bh=wipe\\ nobl\\ noswapfile\\ nu | 0read ! #<Left><Left>",
 	{ desc = "Run a command and read output to a new buffer", noremap = true }
 )
 vim.keymap.set("n", "<C-w><C-z>", "<C-w>|<C-w>_", { desc = "Zoom window", noremap = true })
