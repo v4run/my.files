@@ -6,7 +6,12 @@ return {
 		{ "hrsh7th/cmp-path" },
 		{ "hrsh7th/cmp-cmdline" },
 		{ "hrsh7th/nvim-cmp" },
-		{ "L3MON4D3/LuaSnip" },
+		{
+			"L3MON4D3/LuaSnip",
+			version = "v2.*",
+			build = "make install_jsregexp",
+			dependencies = { "rafamadriz/friendly-snippets" },
+		},
 		{ "saadparwaiz1/cmp_luasnip" },
 		{ "onsails/lspkind.nvim" },
 	},
@@ -14,6 +19,7 @@ return {
 		local cmp = require("cmp")
 		local lspkind = require("lspkind")
 		local luasnip = require("luasnip")
+		require("luasnip.loaders.from_vscode").lazy_load()
 		local cmp_config = {
 			snippet = {
 				-- specify snippen engine

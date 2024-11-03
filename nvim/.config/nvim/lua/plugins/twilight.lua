@@ -19,8 +19,9 @@ return {
 			"method_declaration",
 			"function",
 			"method",
+			"function_item",
+			"function_signature_item",
 			"table",
-			"if_statement",
 		},
 		exclude = {}, -- exclude these filetypes
 	},
