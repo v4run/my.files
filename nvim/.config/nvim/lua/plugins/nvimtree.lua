@@ -57,6 +57,7 @@ return {
 		actions = {
 			change_dir = {
 				global = true,
+				restrict_above_cwd = true,
 			},
 			file_popup = {
 				open_win_config = {
@@ -67,5 +68,16 @@ return {
 				quit_on_open = true,
 			},
 		},
+		on_attach = function(bufnr)
+			local api = require("nvim-tree.api")
+			local function opts(desc)
+				return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+			end
+			api.config.mappings.default_on_attach(bufnr)
+			vim.keymap.set("n", "P", function(node)
+				vim.cmd("cd ..")
+				api.tree.change_root_to_parent(node)
+			end, opts("Up"))
+		end,
 	},
 }
