@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.ftplugin_sql_omni_key = "<C-]>"
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.opt.showmatch = true
 vim.opt.ignorecase = true
