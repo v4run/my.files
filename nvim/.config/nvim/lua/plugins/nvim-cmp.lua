@@ -36,7 +36,21 @@ return {
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
 				["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 				["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }),
+				["<Tab>"] = cmp.mapping(function(fallback)
+					if luasnip.locally_jumpable(1) then
+						luasnip.jump(1)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+				["<S-Tab>"] = cmp.mapping(function(fallback)
+					if luasnip.locally_jumpable(-1) then
+						luasnip.jump(-1)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
