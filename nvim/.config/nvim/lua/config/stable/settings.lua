@@ -37,3 +37,4 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.scrolloff = 1
 vim.opt.winblend = 10
 vim.opt.pumblend = 10
+vim.opt.cmdheight = 0
