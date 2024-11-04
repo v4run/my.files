@@ -28,7 +28,9 @@ return {
 				end,
 			},
 			window = {
-				completion = cmp.config.window.bordered(),
+				completion = cmp.config.window.bordered({
+					winhilight = "CursorLine:Visual",
+				}),
 				documentation = cmp.config.window.bordered(),
 			},
 			mapping = cmp.mapping.preset.insert({

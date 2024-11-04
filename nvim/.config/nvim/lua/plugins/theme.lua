@@ -32,7 +32,7 @@ return {
 		vim.cmd("highlight WhiteSpace guifg=#121212") -- Override hack
 		vim.cmd("highlight CursorLine guibg=#121212") -- Override hack
 		vim.cmd("highlight CursorColumn guibg=#121212") -- Override hack
-		vim.cmd("highlight Visual guibg=#191919") -- Override hack
+		vim.cmd("highlight Visual guibg=#eaeadc guifg=#040001") -- Override hack
 		vim.cmd("highlight LspInlayHint guibg=#040001 guifg=#434343") -- Override hack
 	end,
 }
