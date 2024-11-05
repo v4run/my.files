@@ -1,6 +1,7 @@
 require("config.stable.settings")
 require("config.stable.lazy")
 require("config.stable.keymap")
+require("config.stable.highlight")
 
 -- Initialize autocmds
 local autocmds = require("config.stable.autocmds")

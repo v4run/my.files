@@ -29,7 +29,7 @@ return {
 			},
 			window = {
 				completion = cmp.config.window.bordered({
-					winhilight = "CursorLine:Visual",
+					winhighlight = "CursorLine:X_CMPCurrent",
 				}),
 				documentation = cmp.config.window.bordered(),
 			},
