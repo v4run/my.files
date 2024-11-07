@@ -24,9 +24,9 @@ return {
 				icons_enabled = true,
 				theme = {
 					normal = {
-						c = { bg = "#040001" },
-						b = { bg = "#040001" },
-						a = { bg = "#040001" },
+						c = { bg = "#040001", fg = "#d3cdcc" },
+						b = { bg = "#040001", fg = "#d3cdcc" },
+						a = { bg = "#040001", fg = "#d3cdcc" },
 					},
 				},
 				component_separators = { left = "", right = "" },
@@ -66,13 +66,14 @@ return {
 					{
 						"buffers",
 						mode = 4,
+						icons_enabled = false,
 						buffers_color = {
-							inactive = { fg = "#393939" },
+							inactive = { fg = "#29242a" },
 						},
 					},
 				},
 				lualine_x = { { "branch", icon = "" } },
-				lualine_y = { "filetype" },
+				lualine_y = { { "filetype", icon = { align = "right" } } },
 				lualine_z = {},
 			},
 			extensions = { "nvim-tree", "lazy" },
