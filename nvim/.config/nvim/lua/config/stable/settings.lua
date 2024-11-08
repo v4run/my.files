@@ -12,7 +12,7 @@ vim.opt.incsearch = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.list = true
-vim.opt.listchars = { tab = "┃ ", space = "·", trail = "␠" } -- indent guide lines
+vim.opt.listchars = { tab = "┃ ", space = "۰", trail = "␠" } -- indent guide lines
 vim.opt.undofile = true
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
@@ -39,4 +39,4 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.scrolloff = 1
 vim.opt.winblend = 0
 vim.opt.pumblend = 0
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
