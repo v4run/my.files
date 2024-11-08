@@ -17,6 +17,7 @@ return {
 			-- Conform will run the first available formatter
 			cpp = { "clang-format" },
 			c = { "clang-format" },
+			markdown = { "prettierd", "prettier" },
 			["_"] = { "trim_whitespace" },
 		},
 		-- Set default options
