@@ -33,10 +33,10 @@ return {
 		vim.cmd("highlight CursorLine guibg=#221f22") -- Override hack
 		vim.cmd("highlight CursorColumn guibg=#221f22") -- Override hack
 		vim.cmd("highlight Visual guibg=#221f22") -- Override hack
-		vim.cmd("highlight LspInlayHint guibg=#040001 guifg=#434343") -- Override hack
-		vim.cmd("highlight DiagnosticVirtualTextError guibg=#040001") -- Override hack
-		vim.cmd("highlight DiagnosticVirtualTextInfo guibg=#040001") -- Override hack
-		vim.cmd("highlight DiagnosticVirtualTextWarn guibg=#040001") -- Override hack
-		vim.cmd("highlight DiagnosticVirtualTextHint guibg=#040001") -- Override hack
+		vim.cmd("highlight LspInlayHint guibg=none guifg=#434343") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextError guifg=#b3445f guibg=none") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextInfo guifg=#549aa2 guibg=none") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextWarn guifg=#b06a48 guibg=none") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextHint guifg=#549aa2 guibg=none") -- Override hack
 	end,
 }
