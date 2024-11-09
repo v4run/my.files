@@ -34,5 +34,9 @@ return {
 		vim.cmd("highlight CursorColumn guibg=#221f22") -- Override hack
 		vim.cmd("highlight Visual guibg=#221f22") -- Override hack
 		vim.cmd("highlight LspInlayHint guibg=#040001 guifg=#434343") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextError guibg=#040001") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextInfo guibg=#040001") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextWarn guibg=#040001") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextHint guibg=#040001") -- Override hack
 	end,
 }
