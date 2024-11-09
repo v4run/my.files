@@ -74,7 +74,7 @@ return {
 				return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 			end
 			api.config.mappings.default_on_attach(bufnr)
-			vim.keymap.set("n", "P", function(node)
+			vim.keymap.set("n", "-", function(node)
 				vim.cmd("cd ..")
 				api.tree.change_root_to_parent(node)
 			end, opts("Up"))
