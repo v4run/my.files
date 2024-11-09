@@ -40,13 +40,9 @@ vim.keymap.set("n", "<C-k>", ":silent! cprevious<CR>", { desc = "Display previou
 -- Nvimtree
 vim.keymap.set("n", "<leader>fe", ":NvimTreeToggle<CR>", { desc = "Toggle Nvimtree" })
 
--- Telescope
-local builtin = require("telescope.builtin")
-
-vim.keymap.set("n", "<C-s>", builtin.spell_suggest, { desc = "Telescope spell suggest" })
-vim.keymap.set("n", "<leader>ft", builtin.filetypes, { desc = "Telescope select file type" })
-
 -- mini.pick
+vim.keymap.set("n", "<leader>ft", ":Pick filetypes<CR>", { desc = "Choose file type" })
+vim.keymap.set("n", "<C-s>", ":Pick spellsuggest<CR>", { desc = "Pick spell suggest" })
 vim.keymap.set("n", "<leader>/", ":Pick grep_live<CR>", { desc = "Live grep" })
 vim.keymap.set("n", "<C-p>", function()
 	MiniPick.builtin.cli({

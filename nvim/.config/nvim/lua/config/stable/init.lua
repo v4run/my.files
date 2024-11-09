@@ -2,6 +2,7 @@ require("config.stable.settings")
 require("config.stable.lazy")
 require("config.stable.keymap")
 require("config.stable.highlight")
+require("config.stable.pickers")
 
 -- Initialize autocmds
 local autocmds = require("config.stable.autocmds")
