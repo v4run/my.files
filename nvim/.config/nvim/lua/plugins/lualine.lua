@@ -24,9 +24,9 @@ return {
 				icons_enabled = true,
 				theme = {
 					normal = {
-						c = { bg = "#040001", fg = "#d3cdcc" },
-						b = { bg = "#040001", fg = "#d3cdcc" },
-						a = { bg = "#040001", fg = "#d3cdcc" },
+						c = { bg = "#040001", fg = "#938f8e" },
+						b = { bg = "#040001", fg = "#938f8e" },
+						a = { bg = "#040001", fg = "#938f8e" },
 					},
 				},
 				component_separators = { left = "", right = "" },
@@ -46,7 +46,7 @@ return {
 			},
 			sections = {
 				lualine_a = {},
-				lualine_b = { "mode" },
+				lualine_b = {},
 				lualine_c = { filename },
 				lualine_x = { "diff", "diagnostics" },
 				lualine_y = { "progress" },
