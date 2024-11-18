@@ -5,5 +5,9 @@ return {
 		vim.diagnostic.config({
 			virtual_text = false,
 		})
+		vim.diagnostic.config({
+			virtual_text = true,
+			virtual_lines = false,
+		}, vim.api.nvim_create_namespace("lazy"))
 	end,
 }
