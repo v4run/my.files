@@ -49,6 +49,7 @@ local diagnostic_signs = {
 }
 vim.diagnostic.config({
 	virtual_text = {},
+	update_in_insert = true,
 	severity_sort = true,
 	float = {
 		border = "rounded",
