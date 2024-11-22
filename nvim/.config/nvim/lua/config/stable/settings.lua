@@ -40,19 +40,25 @@ vim.opt.scrolloff = 1
 vim.opt.winblend = 0
 vim.opt.pumblend = 0
 vim.opt.cmdheight = 1
+vim.opt.textwidth = 109
+vim.opt.colorcolumn = "110"
 
 local diagnostic_signs = {
-	[vim.diagnostic.severity.ERROR] = "",
-	[vim.diagnostic.severity.INFO] = "",
-	[vim.diagnostic.severity.WARN] = "",
-	[vim.diagnostic.severity.HINT] = "",
+	[vim.diagnostic.severity.ERROR] = "〄",
+	[vim.diagnostic.severity.INFO] = "〄",
+	[vim.diagnostic.severity.WARN] = "〄",
+	[vim.diagnostic.severity.HINT] = "〄",
 }
 vim.diagnostic.config({
-	virtual_text = {},
+	virtual_text = {
+		virt_text_win_col = 107,
+		prefix = "",
+	},
 	update_in_insert = true,
 	severity_sort = true,
 	float = {
 		border = "rounded",
+		scope = "cursor",
 	},
 	signs = {
 		text = diagnostic_signs,
