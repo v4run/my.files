@@ -51,8 +51,7 @@ local diagnostic_signs = {
 }
 vim.diagnostic.config({
 	virtual_text = {
-		virt_text_win_col = 107,
-		prefix = "",
+		prefix = "▩",
 	},
 	update_in_insert = true,
 	severity_sort = true,
