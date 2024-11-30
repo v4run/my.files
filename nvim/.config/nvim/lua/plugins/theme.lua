@@ -29,15 +29,17 @@ return {
 	},
 	init = function()
 		vim.cmd.colorscheme("monokai-pro")
-		vim.cmd("highlight WhiteSpace guifg=#221f22") -- Override hack
-		vim.cmd("highlight CursorLine guibg=#221f22") -- Override hack
-		vim.cmd("highlight CursorColumn guibg=#221f22") -- Override hack
-		vim.cmd("highlight Visual guibg=#221f22") -- Override hack
+		vim.cmd("highlight WhiteSpace guifg=#121112") -- Override hack
+		vim.cmd("highlight CursorLine guibg=#121112") -- Override hack
+		vim.cmd("highlight CursorColumn guibg=#121112") -- Override hack
+		vim.cmd("highlight ColorColumn guibg=#121112") -- Override hack
+		vim.cmd("highlight Visual guibg=#2d2a2e") -- Override hack
 		vim.cmd("highlight MsgArea guibg=#040001 guifg=#938f8e") -- Override hack
 		vim.cmd("highlight LspInlayHint guibg=none guifg=#434343") -- Override hack
 		vim.cmd("highlight DiagnosticVirtualTextError guifg=#b3445f guibg=none") -- Override hack
 		vim.cmd("highlight DiagnosticVirtualTextInfo guifg=#549aa2 guibg=none") -- Override hack
 		vim.cmd("highlight DiagnosticVirtualTextWarn guifg=#b06a48 guibg=none") -- Override hack
 		vim.cmd("highlight DiagnosticVirtualTextHint guifg=#549aa2 guibg=none") -- Override hack
+		vim.cmd("highlight CursorLineNr guifg=#ffd866") -- Override hack
 	end,
 }
