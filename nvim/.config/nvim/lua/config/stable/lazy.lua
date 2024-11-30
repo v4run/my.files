@@ -35,4 +35,7 @@ require("lazy").setup({
 	change_detection = {
 		enabled = false,
 	},
+	dev = {
+		path = "~/projects/personal/nvim-plugins",
+	},
 })
