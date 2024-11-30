@@ -27,5 +27,13 @@ return {
 				text = diagnostic_signs,
 			},
 		})
+		vim.diagnostic.config({
+			virtual_text = {
+				virt_text_pos = "right_align",
+				suffix = string.rep(" ", 4),
+				prefix = "▨",
+			},
+			virtual_lines = false,
+		}, vim.api.nvim_create_namespace("lazy"))
 	end,
 }
