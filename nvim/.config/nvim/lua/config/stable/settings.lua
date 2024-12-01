@@ -12,7 +12,7 @@ vim.opt.incsearch = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.list = true
-vim.opt.listchars = { trail = "␠" } -- indent guide lines
+vim.opt.listchars = { tab = "  ", trail = "␠" } -- indent guide lines
 vim.opt.undofile = true
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
