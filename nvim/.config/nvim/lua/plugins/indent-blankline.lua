@@ -4,7 +4,7 @@ return {
 	---@module "ibl"
 	---@type ibl.config
 	opts = {
-		indent = { tab_char = "▏", char = "▏" },
+		indent = { tab_char = { "▏" }, char = "▏" },
 		scope = {
 			show_start = false,
 			enabled = true,

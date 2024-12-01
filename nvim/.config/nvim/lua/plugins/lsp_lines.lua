@@ -1,5 +1,5 @@
 return {
-	"v4run/lsp_lines",
+	"v4run/lsp_lines.nvim",
 	config = {},
 	init = function()
 		local diagnostic_signs = {
