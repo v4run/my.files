@@ -4,22 +4,22 @@ return {
 	init = function()
 		local diagnostic_info = {
 			[vim.diagnostic.severity.ERROR] = {
-				icon = " ",
+				icon = "󰀩",
 				icon_hl = "DiagnosticVirtualTextIconError",
 				hl = "DiagnosticVirtualTextError",
 			},
 			[vim.diagnostic.severity.WARN] = {
-				icon = " ",
+				icon = "󰀦",
 				icon_hl = "DiagnosticVirtualTextIconWarn",
 				hl = "DiagnosticVirtualTextWarn",
 			},
 			[vim.diagnostic.severity.INFO] = {
-				icon = " ",
+				icon = "󰀨",
 				icon_hl = "DiagnosticVirtualTextIconInfo",
 				hl = "DiagnosticVirtualTextInfo",
 			},
 			[vim.diagnostic.severity.HINT] = {
-				icon = " ",
+				icon = "󰭺",
 				icon_hl = "DiagnosticVirtualTextIconHint",
 				hl = "DiagnosticVirtualTextHint",
 			},
@@ -29,13 +29,13 @@ return {
 			virtual_lines = {
 				prefix = function(diagnostic)
 					local di = diagnostic_info[diagnostic.severity]
-					return { { di.icon .. " ", di.hl } }
+					return { { "▏" .. di.icon .. " ", di.icon_hl }, { " ", di.hl } }
 				end,
 				only_current_line = {
 					virtual_text = {
 						prefix = function(diagnostic)
 							local di = diagnostic_info[diagnostic.severity]
-							return { di.icon, di.icon_hl }
+							return { "▏" .. di.icon .. " ", di.icon_hl }
 						end,
 					},
 				},
