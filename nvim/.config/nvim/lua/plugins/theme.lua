@@ -36,10 +36,21 @@ return {
 		vim.cmd("highlight Visual guibg=#2d2a2e") -- Override hack
 		vim.cmd("highlight MsgArea guibg=#040001 guifg=#938f8e") -- Override hack
 		vim.cmd("highlight LspInlayHint guibg=none guifg=#434343") -- Override hack
-		vim.cmd("highlight DiagnosticVirtualTextError guifg=#b3445f guibg=none") -- Override hack
-		vim.cmd("highlight DiagnosticVirtualTextInfo guifg=#549aa2 guibg=none") -- Override hack
-		vim.cmd("highlight DiagnosticVirtualTextWarn guifg=#b06a48 guibg=none") -- Override hack
-		vim.cmd("highlight DiagnosticVirtualTextHint guifg=#549aa2 guibg=none") -- Override hack
 		vim.cmd("highlight CursorLineNr guifg=#ffd866") -- Override hack
+
+		vim.cmd("highlight DiagnosticVirtualTextIconError guifg=#ff6188 guibg=#4f1d2a") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextIconWarn  guifg=#fc9867 guibg=#4e2e20") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextIconInfo  guifg=#78dce8 guibg=#274246") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextIconHint  guifg=#fcfcfa guibg=#4e4c4c") -- Override hack
+
+		vim.cmd("highlight DiagnosticVirtualTextError guifg=#ff6188 guibg=#221f22") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextWarn  guifg=#fc9867 guibg=#221f22") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextInfo  guifg=#78dce8 guibg=#221f22") -- Override hack
+		vim.cmd("highlight DiagnosticVirtualTextHint  guifg=#fcfcfa guibg=#221f22") -- Override hack
+
+		vim.cmd("highlight DiagnosticSignError guifg=#ff6188 guibg=none") -- Override hack
+		vim.cmd("highlight DiagnosticSignWarn  guifg=#fc9867 guibg=none") -- Override hack
+		vim.cmd("highlight DiagnosticSignInfo  guifg=#78dce8 guibg=none") -- Override hack
+		vim.cmd("highlight DiagnosticSignHint  guifg=#fcfcfa guibg=none") -- Override hack
 	end,
 }

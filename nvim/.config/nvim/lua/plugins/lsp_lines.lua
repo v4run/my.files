@@ -2,18 +2,41 @@ return {
 	"v4run/lsp_lines.nvim",
 	config = {},
 	init = function()
-		local diagnostic_signs = {
-			[vim.diagnostic.severity.ERROR] = "▨",
-			[vim.diagnostic.severity.INFO] = "▨",
-			[vim.diagnostic.severity.WARN] = "▨",
-			[vim.diagnostic.severity.HINT] = "▨",
+		local diagnostic_info = {
+			[vim.diagnostic.severity.ERROR] = {
+				icon = " ",
+				icon_hl = "DiagnosticVirtualTextIconError",
+				hl = "DiagnosticVirtualTextError",
+			},
+			[vim.diagnostic.severity.WARN] = {
+				icon = " ",
+				icon_hl = "DiagnosticVirtualTextIconWarn",
+				hl = "DiagnosticVirtualTextWarn",
+			},
+			[vim.diagnostic.severity.INFO] = {
+				icon = " ",
+				icon_hl = "DiagnosticVirtualTextIconInfo",
+				hl = "DiagnosticVirtualTextInfo",
+			},
+			[vim.diagnostic.severity.HINT] = {
+				icon = " ",
+				icon_hl = "DiagnosticVirtualTextIconHint",
+				hl = "DiagnosticVirtualTextHint",
+			},
 		}
 		vim.diagnostic.config({
 			virtual_text = false,
 			virtual_lines = {
+				prefix = function(diagnostic)
+					local di = diagnostic_info[diagnostic.severity]
+					return { { di.icon .. " ", di.hl } }
+				end,
 				only_current_line = {
 					virtual_text = {
-						prefix = "▨",
+						prefix = function(diagnostic)
+							local di = diagnostic_info[diagnostic.severity]
+							return { di.icon, di.icon_hl }
+						end,
 					},
 				},
 			},
@@ -24,7 +47,12 @@ return {
 				scope = "cursor",
 			},
 			signs = {
-				text = diagnostic_signs,
+				text = {
+					[vim.diagnostic.severity.ERROR] = diagnostic_info[vim.diagnostic.severity.ERROR].icon,
+					[vim.diagnostic.severity.WARN] = diagnostic_info[vim.diagnostic.severity.WARN].icon,
+					[vim.diagnostic.severity.INFO] = diagnostic_info[vim.diagnostic.severity.INFO].icon,
+					[vim.diagnostic.severity.HINT] = diagnostic_info[vim.diagnostic.severity.HINT].icon,
+				},
 			},
 		})
 		vim.diagnostic.config({
