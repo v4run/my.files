@@ -74,6 +74,18 @@ return {
 				function(server_name)
 					require("lspconfig")[server_name].setup(config())
 				end,
+				["clangd"] = function()
+					require("lspconfig").clangd.setup(config({
+						cmd = {
+							"clangd",
+							"--background-index",
+							"--clang-tidy",
+							"--completion-style=detailed",
+							"--header-insertion-decorators",
+							"--log=error",
+						},
+					}))
+				end,
 				["gopls"] = function()
 					require("lspconfig").gopls.setup(config({
 						cmd = { "gopls", "serve" },
