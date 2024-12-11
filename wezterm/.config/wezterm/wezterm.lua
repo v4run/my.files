@@ -36,4 +36,17 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 	end
 	window:set_config_overrides(overrides)
 end)
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	config.window_decorations = "RESIZE"
+	config.default_prog = { "powershell.exe" }
+	config.wsl_domains = {
+		{
+			name = "Ubuntu",
+			distribution = "Ubuntu",
+			username = "varun",
+			default_cwd = "/home/varun",
+		},
+	}
+	config.default_domain = "Ubuntu"
+end
 return config
