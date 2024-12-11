@@ -53,9 +53,9 @@ return {
 		vim.cmd("highlight DiagnosticVirtualTextInfo  guifg=#559aa3 guibg=#221f22") -- Override hack
 		vim.cmd("highlight DiagnosticVirtualTextHint  guifg=#b2b0af guibg=#221f22") -- Override hack
 
-		vim.cmd("highlight DiagnosticSignError guifg=#ff6188 guibg=none") -- Override hack
-		vim.cmd("highlight DiagnosticSignWarn  guifg=#fc9867 guibg=none") -- Override hack
-		vim.cmd("highlight DiagnosticSignInfo  guifg=#78dce8 guibg=none") -- Override hack
-		vim.cmd("highlight DiagnosticSignHint  guifg=#fcfcfa guibg=none") -- Override hack
+		vim.cmd("highlight DiagnosticSignWarn  guifg=#b26a48 guibg=none") -- Override hack
+		vim.cmd("highlight DiagnosticSignError guifg=#b4445f guibg=none") -- Override hack
+		vim.cmd("highlight DiagnosticSignInfo  guifg=#559aa3 guibg=none") -- Override hack
+		vim.cmd("highlight DiagnosticSignHint  guifg=#b2b0af guibg=none") -- Override hack
 	end,
 }
