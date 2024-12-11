@@ -36,6 +36,9 @@ vim.keymap.set("n", "<C-f>", ":bn<CR>", { desc = "Goto next buffer" })
 vim.keymap.set("n", "<C-b>", ":bp<CR>", { desc = "Goto previous buffer" })
 vim.keymap.set("n", "<C-j>", ":silent! cnext<CR>", { desc = "Display next error in list" })
 vim.keymap.set("n", "<C-k>", ":silent! cprevious<CR>", { desc = "Display previous error in list" })
+vim.keymap.set("n", "<leader>ih", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+end, { desc = "Toogle inlay hints" })
 
 -- Nvimtree
 vim.keymap.set("n", "<leader>fe", ":NvimTreeToggle<CR>", { desc = "Toggle Nvimtree" })
