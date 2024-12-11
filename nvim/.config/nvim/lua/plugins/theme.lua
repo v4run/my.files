@@ -43,11 +43,6 @@ return {
 		vim.cmd("highlight DiagnosticVirtualTextIconInfo  guifg=#78dce8 guibg=#274246") -- Override hack
 		vim.cmd("highlight DiagnosticVirtualTextIconHint  guifg=#fcfcfa guibg=#4e4c4c") -- Override hack
 
-		-- vim.cmd("highlight DiagnosticVirtualTextError guifg=#ff6188 guibg=#221f22") -- Override hack
-		-- vim.cmd("highlight DiagnosticVirtualTextWarn  guifg=#fc9867 guibg=#221f22") -- Override hack
-		-- vim.cmd("highlight DiagnosticVirtualTextInfo  guifg=#78dce8 guibg=#221f22") -- Override hack
-		-- vim.cmd("highlight DiagnosticVirtualTextHint  guifg=#fcfcfa guibg=#221f22") -- Override hack
-
 		vim.cmd("highlight DiagnosticVirtualTextError guifg=#b4445f guibg=#221f22") -- Override hack
 		vim.cmd("highlight DiagnosticVirtualTextWarn  guifg=#b26a48 guibg=#221f22") -- Override hack
 		vim.cmd("highlight DiagnosticVirtualTextInfo  guifg=#559aa3 guibg=#221f22") -- Override hack
