@@ -16,7 +16,7 @@ return {
 		renderer = {
 			add_trailing = true,
 			root_folder_label = function(path)
-				return "  " .. vim.fn.fnamemodify(path, ":t")
+				return " " .. vim.fn.fnamemodify(path, ":t")
 			end,
 			hidden_display = "all",
 			highlight_git = "all",
