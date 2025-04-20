@@ -18,6 +18,9 @@ return {
 			cpp = { "clang-format" },
 			c = { "clang-format" },
 			markdown = { "prettierd", "prettier" },
+			json = { "jq" },
+			yaml = { "yq" },
+			java = { "google-java-format" },
 			["_"] = { "trim_whitespace" },
 		},
 		-- Set default options
