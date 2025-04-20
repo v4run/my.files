@@ -1,19 +1,7 @@
 return {
 	harpoon_menu = {
 		opts = {},
-		cmds = {
-			{
-				"VimEnter",
-				opts = {
-					callback = function(--[[ev]])
-						local harpoon = require("harpoon")
-						if harpoon:list():length() > 0 then
-							harpoon.ui:toggle_quick_menu(harpoon:list())
-						end
-					end,
-				},
-			},
-		},
+		cmds = {},
 	},
 	terminal_job = {
 		opts = {},
