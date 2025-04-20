@@ -32,13 +32,14 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<C-w><C-z>", "<C-w>|<C-w>_", { desc = "Zoom window", noremap = true })
 vim.keymap.set("n", "<C-w>z", "<C-w>=", { desc = "Reset window sizes", noremap = true })
-vim.keymap.set("n", "<C-f>", ":bn<CR>", { desc = "Goto next buffer" })
-vim.keymap.set("n", "<C-b>", ":bp<CR>", { desc = "Goto previous buffer" })
+vim.keymap.set("n", "<C-l>", ":bn<CR>", { desc = "Goto next buffer" })
+vim.keymap.set("n", "<C-h>", ":bp<CR>", { desc = "Goto previous buffer" })
 vim.keymap.set("n", "<C-j>", ":silent! cnext<CR>", { desc = "Display next error in list" })
 vim.keymap.set("n", "<C-k>", ":silent! cprevious<CR>", { desc = "Display previous error in list" })
 vim.keymap.set("n", "<leader>ih", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
 end, { desc = "Toogle inlay hints" })
+vim.keymap.set("n", "<leader>gb", ":Gitsigns blame_line<CR>", { desc = "Show git blame for current line" })
 
 -- Nvimtree
 vim.keymap.set("n", "<leader>fe", ":NvimTreeToggle<CR>", { desc = "Toggle Nvimtree" })
@@ -57,7 +58,9 @@ vim.keymap.set("n", "<C-p>", function()
 end, { desc = "Find files" })
 
 -- Conform
-vim.keymap.set("n", "<leader>ff", "", { desc = "Format code" })
+vim.keymap.set("n", "<leader>ff", function()
+	require("conform").format()
+end, { desc = "Format code" })
 
 -- harpoon
 local harpoon = require("harpoon")
