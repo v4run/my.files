@@ -16,10 +16,10 @@ return {
 				vim.lsp.buf.document_symbol()
 			end, opts)
 			vim.keymap.set("n", "gh", function()
-				vim.diagnostic.goto_prev({ float = false })
+				vim.diagnostic.jump({ count = -1, float = false })
 			end, opts)
 			vim.keymap.set("n", "gl", function()
-				vim.diagnostic.goto_next({ float = false })
+				vim.diagnostic.jump({ count = 1, float = false })
 			end, opts)
 			vim.keymap.set("n", "gi", function()
 				vim.lsp.buf.implementation()
@@ -48,9 +48,6 @@ return {
 		local config = function(_config)
 			return vim.tbl_deep_extend("force", {
 				on_attach = on_attach,
-				handlers = {
-					["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-				},
 				capabilities = lsp_capabilities,
 				flags = {
 					debounce_text_changes = 150,

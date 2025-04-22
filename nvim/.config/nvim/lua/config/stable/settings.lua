@@ -42,3 +42,4 @@ vim.opt.pumblend = 0
 vim.opt.cmdheight = 1
 vim.opt.textwidth = 109
 vim.opt.colorcolumn = "110"
+vim.o.winborder = "rounded"
