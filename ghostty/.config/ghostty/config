@@ -14,3 +14,4 @@ keybind = super+ctrl+shift+l=move_tab:+1
 keybind = super+ctrl+shift+h=move_tab:-1
 keybind = ctrl+q=unbind
 font-codepoint-map = U+E000-U+F8FF,U+F0000-U+FFFFF,U+100000-U+10ffff=Iosevka Nerd Font Mono
+window-decoration = server
