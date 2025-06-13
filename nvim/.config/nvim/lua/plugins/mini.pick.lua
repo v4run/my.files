@@ -81,7 +81,7 @@ return {
 			config = nil,
 
 			-- String to use as cursor in prompt
-			prompt_cursor = "▏",
+			prompt_caret = "▏",
 
 			-- String to use as prefix in prompt
 			prompt_prefix = "> ",
