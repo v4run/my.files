@@ -46,7 +46,7 @@ return {
 		end
 		local lsp_capabilities =
 			require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-		local config = function(_config)
+		local merge_config = function(_config)
 			return vim.tbl_deep_extend("force", {
 				on_attach = on_attach,
 				capabilities = lsp_capabilities,
@@ -55,6 +55,11 @@ return {
 				},
 			}, _config or {})
 		end
+		local function setup_lsp(server_name, lsp_config)
+			vim.lsp.config(server_name, merge_config(lsp_config))
+			vim.lsp.enable(server_name)
+		end
+
 		local opts = {
 			ensure_installed = {
 				"bashls",
@@ -68,12 +73,13 @@ return {
 				"ts_ls",
 				"yamlls",
 			},
+			automatic_installation = true,
 			handlers = {
 				function(server_name)
-					require("lspconfig")[server_name].setup(config())
+					setup_lsp(server_name, {})
 				end,
-				["jdtls"] = function()
-					require("lspconfig").jdtls.setup(config({
+				["jdtls"] = function(server_name)
+					setup_lsp(server_name, {
 						cmd = {
 							"jdtls",
 							"--jvm-arg=" .. string.format(
@@ -82,10 +88,10 @@ return {
 							),
 						},
 						root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", ".git", "mvnw" }, { upward = true })[1]),
-					}))
+					})
 				end,
-				["clangd"] = function()
-					require("lspconfig").clangd.setup(config({
+				["clangd"] = function(server_name)
+					setup_lsp(server_name, {
 						cmd = {
 							"clangd",
 							"--background-index",
@@ -94,10 +100,10 @@ return {
 							"--header-insertion-decorators",
 							"--log=error",
 						},
-					}))
+					})
 				end,
-				["gopls"] = function()
-					require("lspconfig").gopls.setup(config({
+				["gopls"] = function(server_name)
+					setup_lsp(server_name, {
 						cmd = { "gopls", "serve" },
 						settings = {
 							gopls = {
@@ -115,10 +121,10 @@ return {
 								vulncheck = "Imports", -- "Imports" or "Off"
 							},
 						},
-					}))
+					})
 				end,
-				["rust_analyzer"] = function()
-					require("lspconfig").rust_analyzer.setup(config({
+				["rust_analyzer"] = function(server_name)
+					setup_lsp(server_name, {
 						settings = {
 							["rust-analyzer"] = {
 								imports = {
@@ -137,10 +143,10 @@ return {
 								},
 							},
 						},
-					}))
+					})
 				end,
-				["lua_ls"] = function()
-					require("lspconfig").lua_ls.setup(config({
+				["lua_ls"] = function(server_name)
+					setup_lsp(server_name, {
 						settings = {
 							Lua = {
 								runtime = {
@@ -162,7 +168,7 @@ return {
 								},
 							},
 						},
-					}))
+					})
 				end,
 			},
 		}
