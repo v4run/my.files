@@ -53,6 +53,6 @@ deleted = '✘'
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "fg:black bg:blue"
-format = '[ $time ]($style)'
+style = "fg:white bold"
+format = '[$time]($style)'
 
