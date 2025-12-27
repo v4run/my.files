@@ -1,6 +1,5 @@
 return {
 	"v4run/lsp_lines.nvim",
-	config = {},
 	init = function()
 		local diagnostic_info = {
 			[vim.diagnostic.severity.ERROR] = {
@@ -25,22 +24,23 @@ return {
 			},
 		}
 		vim.diagnostic.config({
-			virtual_text = false,
-			virtual_lines = {
-				prefix = function(diagnostic)
-					local di = diagnostic_info[diagnostic.severity]
-					return { { "▏" .. di.icon .. " ", di.icon_hl }, { " ", di.hl } }
-				end,
-				only_current_line = {
-					virtual_text = {
-						only_count = true,
-						prefix = function(diagnostic)
-							local di = diagnostic_info[diagnostic.severity]
-							return { "▏" .. di.icon .. " ", di.icon_hl }
-						end,
-					},
-				},
-			},
+			virtual_text = true,
+			virtual_lines = false,
+			-- virtual_lines = {
+			-- 	prefix = function(diagnostic)
+			-- 		local di = diagnostic_info[diagnostic.severity]
+			-- 		return { { "▏" .. di.icon .. " ", di.icon_hl }, { " ", di.hl } }
+			-- 	end,
+			-- 	only_current_line = {
+			-- 		virtual_text = {
+			-- 			only_count = true,
+			-- 			prefix = function(diagnostic)
+			-- 				local di = diagnostic_info[diagnostic.severity]
+			-- 				return { "▏" .. di.icon .. " ", di.icon_hl }
+			-- 			end,
+			-- 		},
+			-- 	},
+			-- },
 			update_in_insert = true,
 			severity_sort = true,
 			float = {

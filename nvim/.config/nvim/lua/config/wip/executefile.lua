@@ -4,7 +4,7 @@ local exec_commands = {
 	["python"] = "!python %",
 	["javascript"] = "!node %",
 	["c"] = "!clang -o /tmp/a.out % && /tmp/a.out",
-	["cpp"] = "!clang++ -std=c++20 -o /tmp/a.out % && /tmp/a.out",
+	["cpp"] = "!clang++ -std=c++20 -o ./a.out % && ./a.out",
 	["lua"] = "source",
 }
 local function exec_file()
