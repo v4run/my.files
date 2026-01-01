@@ -3,6 +3,10 @@ font-size = 15
 theme = "Batman"
 background = #0c0c0c
 foreground = #d9d9d9
+font-codepoint-map = U+E000-U+F8FF,U+F0000-U+FFFFF,U+100000-U+10ffff=Iosevka Nerd Font Mono
+window-decoration = server
+split-divider-color = #ffffff
+
 keybind = super+shift+h=goto_split:left
 keybind = super+shift+j=goto_split:bottom
 keybind = super+shift+k=goto_split:top
@@ -15,5 +19,5 @@ keybind = super+ctrl+h=previous_tab
 keybind = super+ctrl+shift+l=move_tab:+1
 keybind = super+ctrl+shift+h=move_tab:-1
 keybind = ctrl+q=unbind
-font-codepoint-map = U+E000-U+F8FF,U+F0000-U+FFFFF,U+100000-U+10ffff=Iosevka Nerd Font Mono
-window-decoration = server
+keybind = command+shift+,=prompt_surface_title
+keybind = command+shift+r=reload_config
