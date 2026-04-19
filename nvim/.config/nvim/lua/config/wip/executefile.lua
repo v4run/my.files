@@ -1,7 +1,7 @@
 local exec_commands = {
 	["rust"] = "!cargo run --release",
 	["go"] = "!go build -o /tmp/a && /tmp/a",
-	["python"] = "!python %",
+	["python"] = "!python3 %",
 	["javascript"] = "!node %",
 	["c"] = "!clang -o /tmp/a.out % && /tmp/a.out",
 	["cpp"] = "!clang++ -std=c++20 -o ./a.out % && ./a.out",
