@@ -113,10 +113,12 @@ keybinds clear-defaults=true {
     renametab {
         bind "esc" { UndoRenameTab; SwitchToMode "tab"; }
         bind "Ctrl c" { SwitchToMode "locked"; }
+        bind "Enter" { SwitchToMode "locked"; }
     }
     renamepane {
         bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
         bind "Ctrl c" { SwitchToMode "locked"; }
+        bind "Enter" { SwitchToMode "locked"; }
     }
 	shared {
     }
