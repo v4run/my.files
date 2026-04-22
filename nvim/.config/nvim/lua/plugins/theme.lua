@@ -4,7 +4,7 @@ return {
 	priority = 1000,
 	config = function()
 		require("batman").setup({})
-		vim.cmd.colorscheme("batman")
+		vim.cmd.colorscheme("batman-dark-knight")
 	end,
 }
 -- return {
