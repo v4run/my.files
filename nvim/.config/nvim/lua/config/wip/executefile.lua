@@ -6,6 +6,7 @@ local exec_commands = {
 	["c"] = "!clang -o /tmp/a.out % && /tmp/a.out",
 	["cpp"] = "!clang++ -std=c++20 -o ./a.out % && ./a.out",
 	["lua"] = "source",
+	["zig"] = "!zig run %",
 }
 local function exec_file()
 	local filetype = vim.o.filetype

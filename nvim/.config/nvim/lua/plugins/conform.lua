@@ -21,6 +21,7 @@ return {
 			json = { "jq" },
 			yaml = { "yq" },
 			java = { "google-java-format" },
+			sh = { "shfmt" },
 			["_"] = { "trim_whitespace" },
 		},
 		-- Set default options
