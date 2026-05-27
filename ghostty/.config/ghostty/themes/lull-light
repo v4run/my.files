@@ -1,0 +1,31 @@
+# lull — light
+# A matching Ghostty theme for lull.nvim.
+# Drop in:  ~/.config/ghostty/themes/lull-light
+# Then in ~/.config/ghostty/config:  theme = lull-light
+
+background = f2efe8
+foreground = 4a4842
+
+cursor-color      = 4a4842
+cursor-text       = f2efe8
+
+selection-background = ddd9cf
+selection-foreground = 4a4842
+
+# 16-color ANSI palette — matches g:terminal_color_0..15 from the Neovim theme
+palette = 0=#d8d5cc
+palette = 1=#a85050
+palette = 2=#5a7a5a
+palette = 3=#a07840
+palette = 4=#4a6880
+palette = 5=#805880
+palette = 6=#4a8077
+palette = 7=#4a4842
+palette = 8=#94928a
+palette = 9=#a06868
+palette = 10=#6a8a6a
+palette = 11=#b08a48
+palette = 12=#5a7894
+palette = 13=#906890
+palette = 14=#5a908a
+palette = 15=#5a5851
