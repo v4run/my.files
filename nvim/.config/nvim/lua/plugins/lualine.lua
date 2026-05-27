@@ -22,13 +22,6 @@ return {
 		local opts = {
 			options = {
 				icons_enabled = true,
-				theme = {
-					normal = {
-						c = { bg = "#040001", fg = "#938f8e" },
-						b = { bg = "#040001", fg = "#938f8e" },
-						a = { bg = "#040001", fg = "#938f8e" },
-					},
-				},
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
@@ -66,10 +59,7 @@ return {
 					{
 						"buffers",
 						mode = 4,
-						icons_enabled = false,
-						buffers_color = {
-							inactive = { fg = "#29242a" },
-						},
+						icons_enabled = true,
 					},
 				},
 				lualine_x = { { "branch", icon = "" } },

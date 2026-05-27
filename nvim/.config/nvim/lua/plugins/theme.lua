@@ -1,12 +1,44 @@
 return {
-	"v4run/batman.nvim",
+	"v4run/lull.nvim",
 	lazy = false,
 	priority = 1000,
-	config = function()
-		require("batman").setup({})
-		vim.cmd.colorscheme("batman-dark-knight")
+	opts = {
+		style = "auto",
+		italic_comments = true,
+		plugins = {
+			telescope = true,
+			neo_tree = true,
+			nvim_tree = true,
+			gitsigns = true,
+			which_key = true,
+			nvim_cmp = true,
+			blink_cmp = true,
+			noice = true,
+			mini = true,
+			render_markdown = true,
+			snacks = true,
+			treesitter_context = true,
+			indent_blankline = true,
+			flash = true,
+			trouble = true,
+			lazy = true,
+			mason = true,
+		},
+	},
+	config = function(_, opts)
+		require("lull").setup(opts)
+		vim.cmd.colorscheme("lull")
 	end,
 }
+-- return {
+-- 	"v4run/batman.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+-- 	config = function()
+-- 		require("batman").setup({})
+-- 		vim.cmd.colorscheme("batman-dark-knight")
+-- 	end,
+-- }
 -- return {
 -- 	"loctvl842/monokai-pro.nvim",
 -- 	priority = 1000,
