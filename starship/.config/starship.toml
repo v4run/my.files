@@ -1,58 +1,162 @@
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
+# ─────────────────────────────────────────────────────────────────────────────
+# starship.toml — powerline prompt, two-line layout
+# colors: your terminal's ANSI palette (no custom hex — adapts to your scheme)
+# ─────────────────────────────────────────────────────────────────────────────
 
-format = """\
-$localip$git_branch$git_status$directory
-$character """
+add_newline      = true      # blank line between commands — visual breathing room
+command_timeout  = 1000      # bail on any module that hangs past 1s
+scan_timeout     = 30        # bail on directory scans past 30ms
 
-right_format = """$time"""
+# Top-level format. Line 1 = context ribbon. $fill pushes $time to the right edge.
+# Line 2 = just $character, so commands always start at column 1.
+format = """
+$username$hostname\
+$directory\
+$git_branch$git_status\
+$python$nodejs$golang$rust\
+$cmd_duration\
+$status\
+$fill$time\
+$line_break\
+$character"""
 
-add_newline = false
+# Disabled — explicitly off so prompts stay quick and quiet.
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[battery]
+disabled = true
+
+[package]
+disabled = true
+
+# ─── COLOR FLOW (all ANSI names — your terminal supplies the actual RGB) ─────
+#   red ▶ blue ▶ green/yellow ▶ {bright-blue|cyan|bright-cyan|bright-red}
+#                                  ▶ bright-yellow ▶ red
+#   SSH    dir    git              language          duration       err
+# Each segment ends with \ue0bc colored fg:own_bg bg:next_bg so the ribbon flows.
+# Foreground on every filled segment is `black` for contrast on bright bgs.
+
+# ─── ssh chip (red) ──────────────────────────────────────────────────────────
+[username]
+show_always    = false                          # local: hide entirely
+style_user     = "bg:red fg:black bold"
+style_root     = "bg:red fg:black bold"
+format         = "[\ue0ba](fg:red)[ \uf023 $user](bg:red fg:black bold)"     # leading \ue0ba ◣ slants the SSH chip's left edge \ (matches the rhombus aesthetic)
 
 [hostname]
-ssh_only = true
-ssh_symbol = '\[󱫋\]'
-format = '$ssh_symbol'
+ssh_only       = true                           # show only when SSH_CONNECTION is set
+style          = "bg:red fg:black bold"
+format         = "[@$hostname ](bg:red fg:black bold)[\ue0bc](fg:red)"
 
-[localip]
-ssh_only = true
-format = "󱫋 [$localipv4](dimmed) "
-disabled = false
-
-[character]
-success_symbol = "[󰘧](fg:bright-yellow)"
-error_symbol = "[χ](bold fg:red)"
-vicmd_symbol = ''
-format = '$symbol'
-
+# ─── directory (blue) ────────────────────────────────────────────────────────
 [directory]
-format = "$path"
-truncation_length = 3
-truncate_to_repo = false
-fish_style_pwd_dir_length = 2
-truncation_symbol = "…/"
+style              = "bg:blue fg:black bold"
+truncation_length  = 3
+truncate_to_repo   = true           # in a git repo, show from repo root onward
+truncation_symbol  = "…/"
+read_only          = " \uf023"           # lock glyph on read-only dirs
+format             = "[\ue0ba](fg:blue)[ \uf07b  $path$read_only ](bg:blue fg:black bold)[\ue0bc](fg:blue)"     # trailing slant fades to terminal bg — slanted right edge when dir is the last segment (no git, no lang, etc). When git/lang follows, doubles with the next module's leading slant → small 1-cell notch. Accepted trade-off.
+# Note: when SSH is OFF, [hostname] doesn't emit its trailing arrow, so directory's
+# leading "[\ue0bc](fg:red bg:blue)" appears against the terminal bg — we override
+# that fg via [directory.repo_root_style] when no preceding segment exists:
+[directory.substitutions]
+"~/code"        = "~"                       # dotfile habit: collapse ~/code → ~
 
+# ─── git (green = clean, yellow = dirty) ─────────────────────────────────────
 [git_branch]
-symbol = ""
-format = "$symbol [$branch](dimmed) "
+symbol  = "\ue0a0 "                                # powerline branch glyph
+style   = "bg:green fg:black bold"
+format  = "[\ue0ba](fg:green)[ $symbol$branch ]($style)"
 
 [git_status]
-format = '[$conflicted$untracked$modified$staged$deleted$ahead_behind ](yellow dimmed)'
-conflicted = '='
-ahead = '⇡'
-behind = '⇣'
-diverged = '⇕'
-up_to_date = '✓'
-untracked = ''
-stashed = ''
-modified = '󰛄'
-staged = '󰐕󰐕\($count\)'
-renamed = ''
-deleted = '✘'
+# When ANY of these counters are nonzero, the bg flips to yellow via fg/bg in style
+style          = "bg:green fg:black bold"
+conflicted     = "!${count} "
+ahead          = "⇡${count} "                       # ⇡ plain Unicode — NF-agnostic
+behind         = "⇣${count} "                       # ⇣ plain Unicode — NF-agnostic
+diverged       = "⇕${ahead_count}/${behind_count} "
+up_to_date     = ""
+untracked      = "?${count} "
+stashed        = "≡${count} "
+modified       = "~${count} "
+staged         = "+${count} "
+renamed        = "»${count} "
+deleted        = "✘${count} "
+# \ue0ba
+# Dirty branches paint themselves yellow by writing the bg in $all_status's style:
+format         = "([ $all_status$ahead_behind](bg:green fg:black bold))[\ue0bc](fg:green)"     # trailing slant fades to terminal bg — gives the git block a slanted right edge when it's the last segment in the ribbon. Note: when a language follows, this slant is REDUNDANT with the language's leading slant, producing a 1-cell notch between segments. Trade-off between "slanted end" and "no notch".
+
+# ─── languages (each its own bg; all hand off to bright-yellow) ──────────────
+# Each language hands off into bright-yellow (cmd_duration's bg) so dropping the
+# duration module never strands a colored arrow.
+
+[python]
+symbol             = "\ue235 "                          #  python glyph
+style              = "bg:bright-blue fg:black bold"
+format             = "[\ue0ba](fg:bright-blue)[ $symbol($version) ]($style)[\ue0bc](fg:bright-blue)"
+detect_extensions  = ["py", "ipynb"]
+detect_files       = ["pyproject.toml", "requirements.txt", "setup.py", "Pipfile"]
+version_format     = "${raw}"
+
+[nodejs]
+symbol             = "\ue718 "                          #  node glyph
+style              = "bg:cyan fg:black bold"
+format             = "[\ue0ba](fg:cyan)[ $symbol($version) ]($style)[\ue0bc](fg:cyan)"
+detect_extensions  = ["js", "mjs", "cjs", "ts", "tsx", "jsx"]
+detect_files       = ["package.json", ".nvmrc", ".node-version"]
+
+[golang]
+symbol             = "\ue627 "                          #  go glyph
+style              = "bg:bright-cyan fg:black bold"
+format             = "[\ue0ba](fg:bright-cyan)[ $symbol($version) ]($style)[\ue0bc](fg:bright-cyan)"
+detect_extensions  = ["go"]
+detect_files       = ["go.mod", "go.sum", "go.work"]
+
+[rust]
+symbol             = "\ue7a8 "                          #  rust glyph
+style              = "bg:bright-red fg:black bold"
+format             = "[\ue0ba](fg:bright-red)[ $symbol($version) ]($style)[\ue0bc](fg:bright-red)"
+detect_extensions  = ["rs"]
+detect_files       = ["Cargo.toml"]
+
+# ─── cmd_duration (bright-yellow) — only if > 2s ─────────────────────────────
+[cmd_duration]
+min_time            = 2000
+style               = "bg:bright-yellow fg:black bold"
+format              = "[\ue0ba](fg:bright-yellow)[ \uf520 $duration ]($style)[\ue0bc](fg:bright-yellow)"     # trailing arrow has no `bg:` — fades to terminal bg, so a successful slow command (no $status) doesn't leave a stranded red arrow
+show_milliseconds   = true
+
+# ─── status (red) — only on non-zero exit ────────────────────────────────────
+[status]
+disabled           = false
+style              = "bg:red fg:black bold"
+format             = "[\ue0ba](fg:red)[ \uf00d $status ]($style)[\ue0bc](fg:red)"     # status owns the duration→err transition arrow; renders only when this module renders (non-zero exit)
+map_symbol         = false
+recognize_signal_code = true
+
+# ─── filler + clock ──────────────────────────────────────────────────────────
+[fill]
+symbol  = " "                                            # spaces between left ribbon and clock
+style   = "fg:bright-black"
 
 [time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "fg:white bold"
-format = '[$time]($style)'
+disabled     = false
+time_format  = "%H:%M"
+style        = "bg:bright-purple fg:black"
+format       = "[\ue0d7](fg:bright-purple)[ \uf017  $time ]($style)"
 
+# ─── line 2: just the prompt char so columns are always aligned ──────────────
+[character]
+success_symbol     = "[󰘧](bold green)"
+error_symbol       = "[󰘧](bold red)"
+vimcmd_symbol      = "[\ue62b](bold bright-purple)"
+
+# ─── colors are ANSI names ───────────────────────────────────────────────────
+# No `palette = "…"` and no `[palettes.…]` block — every color above is one of:
+# black, red, green, yellow, blue, purple, cyan, white, or its `bright-*` sibling.
+# The actual RGB comes from your terminal's color scheme, so changing themes
+# (Catppuccin / Gruvbox / Solarized / default) restyles the prompt for free.
