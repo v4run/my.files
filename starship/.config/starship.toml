@@ -59,7 +59,7 @@ truncation_length  = 3
 truncate_to_repo   = true           # in a git repo, show from repo root onward
 truncation_symbol  = "…/"
 read_only          = " \uf023"           # lock glyph on read-only dirs
-format             = "[\ue0ba](fg:blue)[ \uf07b  $path$read_only ](bg:blue fg:black bold)[\ue0bc](fg:blue)"     # trailing slant fades to terminal bg — slanted right edge when dir is the last segment (no git, no lang, etc). When git/lang follows, doubles with the next module's leading slant → small 1-cell notch. Accepted trade-off.
+format             = "[\ue0ba](fg:blue)[ $path$read_only ](bg:blue fg:black bold)[\ue0bc](fg:blue)"     # trailing slant fades to terminal bg — slanted right edge when dir is the last segment (no git, no lang, etc). When git/lang follows, doubles with the next module's leading slant → small 1-cell notch. Accepted trade-off.
 # Note: when SSH is OFF, [hostname] doesn't emit its trailing arrow, so directory's
 # leading "[\ue0bc](fg:red bg:blue)" appears against the terminal bg — we override
 # that fg via [directory.repo_root_style] when no preceding segment exists:
@@ -146,8 +146,8 @@ style   = "fg:bright-black"
 [time]
 disabled     = false
 time_format  = "%H:%M"
-style        = "bg:bright-purple fg:black"
-format       = "[\ue0d7](fg:bright-purple)[ \uf017  $time ]($style)"
+style        = "bg:bright-purple fg:black bold"
+format       = "[\ue0d7](fg:bright-purple)[ $time ]($style)"
 
 # ─── line 2: just the prompt char so columns are always aligned ──────────────
 [character]
