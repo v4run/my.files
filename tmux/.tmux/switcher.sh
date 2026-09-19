@@ -38,25 +38,35 @@ list() {
   esac
 }
 
+# Both run inside the popup via execute(), so they own the tty and can
+# prompt. Non-zero exits are swallowed by fzf; the list reloads either way.
 delete() {
   [ -n "${1:-}" ] || return 0
-  case "$1" in
-    *:*) tmux kill-window -t "$1" ;;
-    *)   tmux kill-session -t "$1" ;;
+  local target="$1" what yn
+  case "$target" in
+    *:*) what="window $target ($(tmux display -p -t "$target" "#W"))" ;;
+    *)   what="session $target" ;;
+  esac
+  read -r -n1 -p "delete $what? [y/N] " yn
+  [ "$yn" = y ] || [ "$yn" = Y ] || return 0
+  case "$target" in
+    *:*) tmux kill-window -t "$target" ;;
+    *)   tmux kill-session -t "$target" ;;
   esac
 }
 
-# Runs inside the popup via execute(): fzf hands us the tty, so a line editor
-# works. zsh's vared pre-fills the current name (bash's read -i needs bash 4,
-# which macOS lacks).
+# fzf with no items doubles as a line editor: --query pre-fills the current
+# name, enter prints it (exit 1 since nothing matched), esc cancels (130).
 rename() {
   [ -n "${1:-}" ] || return 0
-  local target="$1" current new
+  local target="$1" current new rc=0
   case "$target" in
     *:*) current="$(tmux display -p -t "$target" "#W")" ;;
     *)   current="$target" ;;
   esac
-  new="$(zsh -c 'new="$1"; vared -p "rename to: " new && print -r -- "$new"' -- "$current")" || return 0
+  new="$(fzf --print-query --query "$current" --prompt "rename to: " \
+             --height=3 --reverse --info=hidden --color=16 </dev/null)" || rc=$?
+  [ "$rc" -le 1 ] || return 0
   [ -z "$new" ] || [ "$new" = "$current" ] && return 0
   case "$target" in
     *:*) tmux rename-window -t "$target" -- "$new" ;;
@@ -106,7 +116,7 @@ run() {
     --bind "esc:$back" \
     --bind "ctrl-c:$back" \
     --bind "c:clear-query+search()" \
-    --bind "x:execute-silent($self delete {1})+$reload" \
+    --bind "x:execute($self delete {1})+$reload" \
     --bind "r:execute($self rename {1})+$reload" \
     | cut -d" " -f1 \
     | xargs -r -I{} tmux switch-client -t "{}"
