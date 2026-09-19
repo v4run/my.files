@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	priority = 1000,
 	opts = {
-		style = "auto",
+		style = "black",
 		italic_comments = true,
 		plugins = {
 			telescope = true,
