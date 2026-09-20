@@ -111,11 +111,11 @@ run() {
   # text + a small pointer instead, no gutter bar), muted ANSI colours so it
   # follows the terminal theme.
   list "$scope" | fzf --disabled --no-sort --reverse \
-    --color="16,bg+:-1,fg+:green:bold,pointer:green,hl:blue,hl+:blue:bold,prompt:blue,header:bright-black,info:bright-black" \
+    --color="16,bg+:-1,fg+:green:bold,pointer:green,hl:blue,hl+:blue:bold,prompt:blue,header:bright-black,info:bright-black,border:bright-black" \
     --pointer="›" --gutter=" " --no-separator --info=inline-right \
     --prompt="$prompt" \
     --header="j/k move  / search  c clear  x delete  r rename  enter switch  q quit" \
-    --preview "tmux capture-pane -ep -t {1}" --preview-window "right:60%:noborder" \
+    --preview "tmux capture-pane -ep -t {1}" --preview-window "right:60%:border-left" \
     "${ignore[@]}" \
     --bind "j:down,k:up,g:first,G:last,ctrl-d:half-page-down,ctrl-u:half-page-up" \
     --bind "q:abort" \
