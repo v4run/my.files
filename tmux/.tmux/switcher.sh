@@ -107,10 +107,15 @@ run() {
   # esc / C-c: leave search mode if in it, otherwise quit.
   local back; back="$(in_search '"$SWITCHER_TO_NORMAL"' abort)"
 
-  list "$scope" | fzf --disabled --no-sort --reverse --color=16 \
+  # Look: no borders, no background block on the current line (bold green
+  # text + a small pointer instead, no gutter bar), muted ANSI colours so it
+  # follows the terminal theme.
+  list "$scope" | fzf --disabled --no-sort --reverse \
+    --color="16,bg+:-1,fg+:green:bold,pointer:green,hl:blue,hl+:blue:bold,prompt:blue,header:bright-black,info:bright-black" \
+    --pointer="›" --gutter=" " --no-separator --info=inline-right \
     --prompt="$prompt" \
     --header="j/k move  / search  c clear  x delete  r rename  enter switch  q quit" \
-    --preview "tmux capture-pane -ep -t {1}" --preview-window "right:60%" \
+    --preview "tmux capture-pane -ep -t {1}" --preview-window "right:60%:noborder" \
     "${ignore[@]}" \
     --bind "j:down,k:up,g:first,G:last,ctrl-d:half-page-down,ctrl-u:half-page-up" \
     --bind "q:abort" \
