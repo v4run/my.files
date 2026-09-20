@@ -90,4 +90,37 @@ return {
 	init = function()
 		vim.ui.select = require("mini.pick").ui_select
 	end,
+	config = function(_, opts)
+		local pick = require("mini.pick")
+		pick.setup(opts)
+
+		-- Make terminal paste (Cmd+V) work inside a picker. mini.pick's own
+		-- `vim.paste` override only accepts single-call pastes (phase == -1),
+		-- but the TUI streams bracketed pastes as phases 1/2/3. Buffer the
+		-- chunks and hand them over as one non-streaming paste, which mini.pick
+		-- then inserts at the caret exactly like `<C-r>+`.
+		local paste = vim.paste
+		local chunks = {}
+		vim.paste = function(lines, phase)
+			if phase == -1 or not pick.is_picker_active() then
+				return paste(lines, phase)
+			end
+			if phase == 1 then
+				chunks = {}
+			end
+			-- A chunk's first line continues the previous chunk's last line.
+			if #chunks > 0 then
+				chunks[#chunks] = chunks[#chunks] .. (lines[1] or "")
+				vim.list_extend(chunks, lines, 2)
+			else
+				vim.list_extend(chunks, lines)
+			end
+			if phase == 3 then
+				local all = chunks
+				chunks = {}
+				return paste(all, -1)
+			end
+			return true
+		end
+	end,
 }
