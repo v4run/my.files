@@ -81,12 +81,11 @@ run() {
     *)        prompt="switch > " ;;
   esac
 
-  # Every printable key, plus the editing keys that would eat the kept
-  # filter. In normal mode they are all bound to ignore (the letters with a
-  # job are re-bound below, later --bind wins); / unbinds the lot so they
-  # type again in search mode, and esc / C-c rebinds them.
-  local keys="space,bspace,del,ctrl-w" i k
-  local -a ignore=(--bind "space:ignore" --bind "bspace:ignore" --bind "del:ignore" --bind "ctrl-w:ignore")
+  # Every printable key. In normal mode they are all bound to ignore (the
+  # letters with a job are re-bound below, later --bind wins); / unbinds the
+  # lot so they type again in search mode, and esc / C-c rebinds them.
+  local keys="space" i k
+  local -a ignore=(--bind "space:ignore")
   for i in $(seq 33 126); do
     k="$(printf "\\$(printf %o "$i")")"
     keys+=",$k"
@@ -100,10 +99,13 @@ run() {
   # unbind/rebind take the rest of the string as their key list, so they
   # must stay last in each chain.
   local to_search="enable-search+change-prompt(/ )+unbind:$keys"
-  # esc / C-c: leave search mode if in it, otherwise quit. The normal-mode
-  # actions go via the environment since the key list contains quotes.
+  # Keys whose meaning depends on the mode: run $1 in search mode, $2 in
+  # normal mode. The normal-mode return actions go via the environment since
+  # the key list contains quotes.
   export SWITCHER_TO_NORMAL="disable-search+change-prompt($prompt)+rebind:$keys"
-  local back="transform:if [ \"\$FZF_PROMPT\" = '/ ' ]; then echo \"\$SWITCHER_TO_NORMAL\"; else echo abort; fi"
+  in_search() { echo "transform:if [ \"\$FZF_PROMPT\" = '/ ' ]; then echo $1; else echo $2; fi"; }
+  # esc / C-c: leave search mode if in it, otherwise quit.
+  local back; back="$(in_search '"$SWITCHER_TO_NORMAL"' abort)"
 
   list "$scope" | fzf --disabled --no-sort --reverse --color=16 \
     --prompt="$prompt" \
@@ -115,6 +117,9 @@ run() {
     --bind "/:$to_search" \
     --bind "esc:$back" \
     --bind "ctrl-c:$back" \
+    --bind "bspace:$(in_search backward-delete-char ignore)" \
+    --bind "del:$(in_search delete-char ignore)" \
+    --bind "ctrl-w:$(in_search unix-word-rubout ignore)" \
     --bind "c:clear-query+search()" \
     --bind "x:execute($self delete {1})+$reload" \
     --bind "r:execute($self rename {1})+$reload" \
