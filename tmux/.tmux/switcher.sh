@@ -107,10 +107,21 @@ run() {
   # esc / C-c: leave search mode if in it, otherwise quit.
   local back; back="$(in_search '"$SWITCHER_TO_NORMAL"' abort)"
 
+  # Pre-select the active entry (current session, or current window in "all").
+  # Input loads asynchronously, so jump on the first load event and then
+  # unbind it; later reloads (delete/rename) keep the cursor where it was.
+  local items active pos
+  items="$(list "$scope")"
+  case "$scope" in
+    sessions) active="$(tmux display -p "#S")" ;;
+    *)        active="$(tmux display -p "#S:#I")" ;;
+  esac
+  pos="$(awk -v t="$active" '$1 == t { print NR; exit }' <<<"$items")"
+
   # Look: no borders, no background block on the current line (bold green
   # text + a small pointer instead, no gutter bar), muted ANSI colours so it
   # follows the terminal theme.
-  list "$scope" | fzf --disabled --no-sort --reverse \
+  fzf --disabled --no-sort --reverse <<<"$items" \
     --color="16,bg+:-1,fg+:green:bold,pointer:green,hl:blue,hl+:blue:bold,prompt:blue,header:bright-black,info:bright-black,border:bright-black" \
     --pointer="›" --gutter=" " --no-separator --info=inline-right \
     --prompt="$prompt" \
@@ -128,6 +139,7 @@ run() {
     --bind "c:clear-query+search()" \
     --bind "x:execute($self delete {1})+$reload" \
     --bind "r:execute($self rename {1})+$reload" \
+    --bind "load:pos(${pos:-1})+unbind(load)" \
     | cut -d" " -f1 \
     | xargs -r -I{} tmux switch-client -t "{}"
 }
