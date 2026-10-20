@@ -1,0 +1,18 @@
+# Defaults for command-line flags (flags still win)
+layout      = "horizontal"        # horizontal | grid
+week-start  = "sun"         # sun | mon
+highlight   = "combined"    # combined | reverse | bracket | color | none
+clock-style = "block"       # block | inline | boxed
+with-clock  = true
+no-color    = false
+bg          = "seasons"      # none | random | <background name>
+bg-color    = true
+events      = true
+
+# Personal
+# birthday = "05-17"          # MM-DD (YYYY-MM-DD also accepted; the year is ignored)
+
+# [random]
+# Backgrounds --bg random may pick. Omit to allow all of them.
+# backgrounds = ["sky", "seasons", "aquarium", "harbor", "train", "life"]
+
