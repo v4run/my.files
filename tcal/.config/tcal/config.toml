@@ -1,18 +1,48 @@
-# Defaults for command-line flags (flags still win)
-layout      = "horizontal"        # horizontal | grid
-week-start  = "sun"         # sun | mon
-highlight   = "combined"    # combined | reverse | bracket | color | none
-clock-style = "block"       # block | inline | boxed
-with-clock  = true
-no-color    = false
-bg          = "seasons"      # none | random | <background name>
-bg-color    = true
-events      = true
+# tcal config. Every key is optional; command-line flags win over it.
+# The values below are the built-in defaults.
 
-# Personal
-# birthday = "05-17"          # MM-DD (YYYY-MM-DD also accepted; the year is ignored)
+# ambient background in live mode: none|random|ants|aquarium|automaton|container|flow|harbor|hourglass|langton|lava|life|rain|seasons|sky|starfield|train
+bg = "rain"
 
-# [random]
+# tint the background; false draws it dim in the foreground color
+bg-color = true
+
+# background colors: auto|truecolor|ansi
+bg-palette = "truecolor"
+
+# background style: classic|smooth
+bg-style = "smooth"
+
+# block|inline|boxed
+clock-style = "block"
+
+# show holiday scenes in the seasons background
+events = true
+
+# combined|reverse|bracket|color|none
+highlight = "combined"
+
+# horizontal|grid
+layout = "horizontal"
+
+# number of months (0 = layout default)
+months = 0
+
+# disable ANSI color (also honors NO_COLOR env)
+no-color = false
+
+# sun|mon
+week-start = "sun"
+
+# terminal width (print mode only)
+width = 0
+
+# include block clock in print mode
+with-clock = true
+
+# Your birthday shows a cake in the seasons background: MM-DD (YYYY-MM-DD also accepted).
+# birthday = "05-17"
+
 # Backgrounds --bg random may pick. Omit to allow all of them.
-# backgrounds = ["sky", "seasons", "aquarium", "harbor", "train", "life"]
-
+# [random]
+# backgrounds = ["ants", "aquarium", "automaton", "container", "flow", "harbor", "hourglass", "langton", "lava", "life", "rain", "seasons", "sky", "starfield", "train"]
