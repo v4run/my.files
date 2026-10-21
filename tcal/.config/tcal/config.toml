@@ -2,7 +2,10 @@
 # The values below are the built-in defaults.
 
 # ambient background in live mode: none|random|ants|aquarium|automaton|container|flow|harbor|hourglass|langton|lava|life|rain|seasons|sky|starfield|train
-bg = "rain"
+bg = "trees"
+
+# background opacity behind the calendar and clock, 0-100 (0 = off); [ and ] change it live
+bg-behind = 50
 
 # tint the background; false draws it dim in the foreground color
 bg-color = true
@@ -25,8 +28,14 @@ highlight = "combined"
 # horizontal|grid
 layout = "horizontal"
 
+# clock and calendar look: classic|thin (thin falls back to classic when it does not fit)
+look = "thin"
+
 # number of months (0 = layout default)
 months = 0
+
+# thin look, the months either side of this one: auto (big if they fit, else small) | small (always small) | big (big if they fit, else hidden)
+neighbors = "small"
 
 # disable ANSI color (also honors NO_COLOR env)
 no-color = false
